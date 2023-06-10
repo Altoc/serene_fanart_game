@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://nxvnmvql4cxf"]
+
+[ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
+[ext_resource type="PackedScene" uid="uid://ca6kf1nxv7mf7" path="res://scenes/terrain/terrain_001.tscn" id="1_vfeln"]
+[ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player.tscn" id="2_f5acn"]
+[ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="3_ksg2j"]
+
+[node name="Main" type="Node3D"]
+
+[node name="SignalBus" type="Node" parent="."]
+script = ExtResource("1_f4a8i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.303058, -0.638871, 0, 0.9035, 0.428588, 0.707107, -0.303058, 0.638871, -41, 41.1755, 49.752)
+
+[node name="Terrain001" parent="." instance=ExtResource("1_vfeln")]
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_ksg2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14829, 4.36548)
+player = NodePath("../Player")
+
+[node name="Player" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("2_f5acn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14829, 4.36548)
+myCamera = NodePath("../Camera")

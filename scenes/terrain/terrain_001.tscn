@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://ca6kf1nxv7mf7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y58yg"]
+size = Vector2(25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vp60"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.137255, 0.752941, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbrk6"]
+size = Vector3(98.5026, 1, 99.5873)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3214"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.607843, 0.631373, 0.623529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xobjr"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.415686, 0.219608, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b5jv"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.298039, 0.752941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh2ho"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.188235, 0.65098, 1, 1)
+
+[node name="Terrain001" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_y58yg")
+surface_material_override/0 = SubResource("StandardMaterial3D_4vp60")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156489, 0)
+shape = SubResource("BoxShape3D_gbrk6")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4292, 0, 0)
+mesh = SubResource("PlaneMesh_y58yg")
+surface_material_override/0 = SubResource("StandardMaterial3D_d3214")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6373, 0, 0)
+mesh = SubResource("PlaneMesh_y58yg")
+surface_material_override/0 = SubResource("StandardMaterial3D_xobjr")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644724, 0, 30.4862)
+mesh = SubResource("PlaneMesh_y58yg")
+surface_material_override/0 = SubResource("StandardMaterial3D_0b5jv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.644724, 0, -26.8204)
+mesh = SubResource("PlaneMesh_y58yg")
+surface_material_override/0 = SubResource("StandardMaterial3D_kh2ho")
