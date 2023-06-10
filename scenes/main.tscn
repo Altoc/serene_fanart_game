@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=6 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="PackedScene" uid="uid://ca6kf1nxv7mf7" path="res://scenes/terrain/terrain_001.tscn" id="1_vfeln"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player.tscn" id="2_f5acn"]
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="3_ksg2j"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_r0f8h")
 
 [node name="SignalBus" type="Node" parent="."]
 script = ExtResource("1_f4a8i")
