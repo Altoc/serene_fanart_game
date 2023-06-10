@@ -32,8 +32,9 @@ func _physics_process(delta):
 	input = Vector3()
 	handleInput(Input)
 	input = input.normalized()
-	if (Input.get_action_strength("PlayerLeft") > 0.0 || Input.get_action_strength("PlayerRight") > 0.0
-	|| Input.get_action_strength("PlayerBackward") > 0.0 || Input.get_action_strength("PlayerForward") > 0.0):
+	#if (Input.get_action_strength("PlayerLeft") > 0.0 || Input.get_action_strength("PlayerRight") > 0.0
+	#|| Input.get_action_strength("PlayerBackward") > 0.0 || Input.get_action_strength("PlayerForward") > 0.0):
+	if (Input.get_action_strength("PlayerForward") > 0.0):
 		dir = (transform.basis.z * input.z + transform.basis.x * input.x)
 		dirInput = Vector2(Input.get_axis("PlayerLeft", "PlayerRight"), Input.get_axis("PlayerForward", "PlayerBackward"))
 		var inputAngle = dirInput.angle()
@@ -49,10 +50,10 @@ func _physics_process(delta):
 
 func handleInput(argInput):
 	inputReceived = false
-	if(argInput.is_action_pressed("PlayerForward") 
-	|| argInput.is_action_pressed("PlayerRight")
-	|| argInput.is_action_pressed("PlayerLeft")
-	|| argInput.is_action_pressed("PlayerBackward")):
+	if(argInput.is_action_pressed("PlayerForward")): 
+	#|| argInput.is_action_pressed("PlayerRight")
+	#|| argInput.is_action_pressed("PlayerLeft")
+	#|| argInput.is_action_pressed("PlayerBackward")):
 		inputReceived = true
 		input.x += 1
 		setPlayerState(playerStates.RUN)
