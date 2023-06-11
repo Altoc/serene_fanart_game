@@ -1,3 +1,3 @@
 extends Node
 
-
+signal PLAYER_MOVEMENT_DIRECTION_UPDATE
