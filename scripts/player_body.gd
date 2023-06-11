@@ -9,7 +9,8 @@ func _ready():
 func onPlayerMovementDirectionUpdate(argInput):
 	if(argInput.is_action_pressed("forward_roll") 
 	|| argInput.is_action_pressed("super_spin")):
-		print("TODO move player mesh around ball")
+		pass
+		#print("TODO move player mesh around ball")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

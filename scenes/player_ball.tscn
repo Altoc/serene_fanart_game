@@ -1,23 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd5mdk6ah7gyy"]
+[gd_scene load_steps=6 format=3 uid="uid://dd5mdk6ah7gyy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_s7c13"]
 [ext_resource type="Texture2D" uid="uid://dbcmx6uha3nmb" path="res://icon.svg" id="2_3ttpn"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8wf54"]
-radius = 1.0
-height = 2.0
+radius = 1.25
+height = 2.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j2ab"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.27451, 0.635294, 1, 1)
 albedo_texture = ExtResource("2_3ttpn")
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qnydh"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o5yno"]
+points = PackedVector3Array(-0.341006, -1.17955, -0.226738, 0.230677, 1.22212, 0.115787, 0.30607, 1.18036, 0.267864, 1.10466, -0.113906, -0.569085, 0.380367, -0.340929, 1.13815, -1.13716, 0.303365, -0.415846, -0.113128, 0.229218, -1.22181, -0.871903, 0.1898, 0.874526, 1.10009, -0.416715, 0.418115, -0.865295, -0.753454, 0.491192, 0.52983, -0.905813, -0.678078, 0.266427, -1.09818, 0.531392, -0.714415, -0.602605, -0.827329, 0.679533, 0.640267, 0.829994, 0.948676, 0.719955, -0.377211, -0.490556, 1.09724, -0.338983, -0.489316, 0.830135, 0.793941, 0.341326, 0.831005, -0.867475, -0.189631, -0.152687, 1.22361, 0.343708, -0.228096, -1.17793, -1.1412, -0.495078, -0.112647, -1.09797, 0.530578, 0.266689, 1.14478, 0.457227, 0.191693, -0.564888, 0.528328, -0.980052, 0.761455, -0.98801, -0.0745458, -0.301206, -0.945269, 0.757615, 0.115534, 0.570416, 1.10435, -0.112237, -0.75859, -0.984862, 0.758627, 0.302653, -0.944983, 0.873385, 0.189521, 0.873244, -1.22126, -0.114392, 0.230423, -0.529221, 1.09925, 0.266654)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tjsh0"]
-points = PackedVector3Array(0.980344, 0.183469, 0.0315765, -0.977477, -0.183355, -0.0904639, -0.942976, -0.274012, -0.181475, 0.152638, -0.666639, 0.728356, -0.211037, 0.78831, 0.576929, 0.184627, -0.0915623, -0.976969, -0.180659, 0.817713, -0.543999, 0.243737, -0.909689, -0.332273, -0.121109, 0.152902, 0.979443, -0.542369, -0.724769, 0.423657, 0.604588, 0.724305, -0.330643, 0.634171, 0.391896, 0.664077, -0.879055, 0.30349, 0.365178, -0.542663, -0.422869, -0.723919, 0.852268, -0.51673, 0.0618464, -0.724288, 0.332336, -0.603236, 0.760092, -0.121365, -0.636416, 0.638071, -0.242667, 0.728959, -0.394561, 0.913095, -0.090039, 0.365549, 0.911196, 0.18319, -0.394563, -0.913101, -0.0900396, -0.604357, -0.242246, 0.757853, 0.213378, 0.424522, -0.878365, 0.274246, -0.910695, 0.304605, 0.152873, -0.667673, -0.727284, -0.332904, 0.24293, -0.909566, -0.81657, 0.545227, -0.18048, -0.66277, 0.513033, 0.544283, 0.604588, -0.724305, -0.330643, 0.243867, 0.637198, 0.72921, 0.72941, 0.637067, 0.243636, 0.154338, -0.0917767, 0.981459)
-
-[node name="PlayerBall" type="RigidBody3D"]
+[node name="PlayerBall" type="RigidBody3D" groups=["player_ball"]]
+collision_layer = 2
+collision_mask = 5
+mass = 10.0
+max_contacts_reported = 100
+contact_monitor = true
 can_sleep = false
 script = ExtResource("1_s7c13")
 
@@ -25,9 +28,5 @@ script = ExtResource("1_s7c13")
 mesh = SubResource("SphereMesh_8wf54")
 surface_material_override/0 = SubResource("StandardMaterial3D_8j2ab")
 
-[node name="Body" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_qnydh")
-surface_material_override/0 = SubResource("StandardMaterial3D_8j2ab")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_tjsh0")
+shape = SubResource("ConvexPolygonShape3D_o5yno")

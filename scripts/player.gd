@@ -11,15 +11,41 @@ var mousePrevPos = Vector2(0,0)
 enum playerStates {IDLE=0,TURN=1,FALLING=2,LANDING=3,RUN=4}
 var currPlayerState
 var prevPlayerState = null
+@export var torqueFactor = 200
+var torqueIncreaseRate
 @export
 var myCamera : Node3D
+var size = 1
+@onready
+var ballMesh = get_node("Ball")
+
+func _ready():
+	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
+	torqueIncreaseRate = torqueFactor / mass
+
+func getSize():
+	return size
+
+func calculateTorque(argMass, argIncreaseRate):
+	return argMass * argIncreaseRate
+
+#increase ball size and mass
+func onAddObjectToPlayerBall(argObject):
+	var sizeIncreaseFactor = (argObject.mass * 0.1) 
+	var scaleIncreaseFactor = 1 + (argObject.pickupThreshold * 0.0025)
+	size += sizeIncreaseFactor
+	mass += argObject.mass
+	torqueFactor = calculateTorque(mass, torqueIncreaseRate)
+	ballMesh.scale *= scaleIncreaseFactor
+	get_node("CollisionShape3D").scale *= scaleIncreaseFactor
+	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)
 
 func _physics_process(delta):
 	input = Vector3()
 	handleInput(Input)
 	input = input.normalized()
 	if(input.x > 0):
-		torque = myCamera.get_global_transform().basis.x * -10
+		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque(torque)
 
 func handleInput(argInput):
