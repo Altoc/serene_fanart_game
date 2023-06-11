@@ -1,20 +1,11 @@
-extends CharacterBody3D
+extends RigidBody3D
 
 @onready
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
-var gravity = 50.0
-var movementSpeed = 0.0
-#factor by which movement speed increases
-var movementSpeedIncreaseFactor = 30.0
-#value read from algs
-var movementSpeedMax = 15.0
-#max running speed
-var runSpeedMax = 18.0
 var input = Vector3()
 var inputReceived = false
-var dirInput = Vector2()
-var dir = Vector3()
+var torque = Vector3()
 #previous mouse position. used for camera panning kbm
 var mousePrevPos = Vector2(0,0)
 enum playerStates {IDLE=0,TURN=1,FALLING=2,LANDING=3,RUN=4}
@@ -24,39 +15,20 @@ var prevPlayerState = null
 var myCamera : Node3D
 
 func _physics_process(delta):
-	velocity.y -= gravity * delta
-	if(currPlayerState == playerStates.FALLING):
-		setPlayerState(playerStates.LANDING)
-	velocity.x = 0
-	velocity.z = 0
 	input = Vector3()
 	handleInput(Input)
 	input = input.normalized()
-	#if (Input.get_action_strength("PlayerLeft") > 0.0 || Input.get_action_strength("PlayerRight") > 0.0
-	#|| Input.get_action_strength("PlayerBackward") > 0.0 || Input.get_action_strength("PlayerForward") > 0.0):
-	if (Input.get_action_strength("PlayerForward") > 0.0):
-		dir = (transform.basis.z * input.z + transform.basis.x * input.x)
-		dirInput = Vector2(Input.get_axis("PlayerLeft", "PlayerRight"), Input.get_axis("PlayerForward", "PlayerBackward"))
-		var inputAngle = dirInput.angle()
-		var cameraAngle = myCamera.rotation.y
-		rotation.y = (cameraAngle - inputAngle)
-		if(movementSpeed < movementSpeedMax):
-			movementSpeed += movementSpeedIncreaseFactor * delta
-		elif(movementSpeed > movementSpeedMax):
-			movementSpeed -= movementSpeedIncreaseFactor * delta
-		velocity.x = dir.x * movementSpeed
-		velocity.z = dir.z * movementSpeed
-	move_and_slide()
+	if(input.x > 0):
+		torque = myCamera.get_global_transform().basis.x * -10
+		apply_torque(torque)
 
 func handleInput(argInput):
 	inputReceived = false
-	if(argInput.is_action_pressed("PlayerForward")): 
-	#|| argInput.is_action_pressed("PlayerRight")
-	#|| argInput.is_action_pressed("PlayerLeft")
-	#|| argInput.is_action_pressed("PlayerBackward")):
+	if(argInput.is_action_pressed("forward_roll") 
+	|| argInput.is_action_pressed("super_spin")):
 		inputReceived = true
 		input.x += 1
-		setPlayerState(playerStates.RUN)
+		SIGNAL_BUS.emit_signal("PLAYER_MOVEMENT_DIRECTION_UPDATE", argInput)
 	if(!inputReceived):
 		setPlayerState(playerStates.IDLE)
 
@@ -74,7 +46,7 @@ func setPlayerState(argState):
 		currPlayerState = argState
 	match currPlayerState:
 		playerStates.IDLE:
-			movementSpeed = 0.0
+			#constant_torque = Vector3(0, 0, 0)
 			pass
 		playerStates.RUN:
 			pass

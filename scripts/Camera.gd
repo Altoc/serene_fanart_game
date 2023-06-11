@@ -4,7 +4,7 @@ extends Node3D
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
 @export
-var player : CharacterBody3D
+var player : Node3D
 var tiltLimit = 45
 var rotationY = rotation.y
 var rotationX = rotation.x
