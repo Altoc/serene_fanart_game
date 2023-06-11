@@ -3,14 +3,6 @@ extends RigidBody3D
 @onready
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
-var gravity = 50.0
-var movementSpeed = 0.0
-#factor by which movement speed increases
-var movementSpeedIncreaseFactor = 30.0
-#value read from algs
-var movementSpeedMax = 15.0
-#max running speed
-var runSpeedMax = 18.0
 var input = Vector3()
 var inputReceived = false
 var dirInput = Vector2()
@@ -28,7 +20,7 @@ func _physics_process(delta):
 	handleInput(Input)
 	input = input.normalized()
 	
-	##IPW TODO this is a mess and doesnt work
+	
 	
 	if (Input.get_action_strength("PlayerForward") > 0.0
 	|| Input.get_action_strength("PlayerRight") > 0.0
