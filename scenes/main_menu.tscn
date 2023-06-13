@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt27vtlblovc2"]
+
+[ext_resource type="PackedScene" uid="uid://b5gxxdxdwpjt2" path="res://models/mario_head.tscn" id="1_sdqvm"]
+[ext_resource type="Texture2D" uid="uid://dsge5s1qxifgd" path="res://images/Katamari_Damacy-title.png" id="2_wiljs"]
+
+[sub_resource type="Environment" id="Environment_0w8oj"]
+background_mode = 1
+
+[node name="MainMenu" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0w8oj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 46.786)
+current = true
+fov = 8.3
+
+[node name="MarioHead" parent="." instance=ExtResource("1_sdqvm")]
+transform = Transform3D(1, 0, 0, 0, 0.994703, -0.102793, 0, 0.102793, 0.994703, 0, -2.798, -80)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.965926, -0.12941, -0.224144, 0, 0.866025, -0.5, 0.258819, 0.482963, 0.836516, -29.25, -5.75, 2.25)
+light_energy = 0.5
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -225)
+pixel_size = 0.05
+texture = ExtResource("2_wiljs")

@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsr13j1uvqa1"
-path.s3tc="res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"
+uid="uid://d32heyjwa8f7x"
+path.s3tc="res://.godot/imported/mario_head_SKIN.png-2e6079313e9fd2a1baf47b87c8658593.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://models/dev-garb/blue.png"
-dest_files=["res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"]
+source_file="res://models/model_import/mario_head_SKIN.png"
+dest_files=["res://.godot/imported/mario_head_SKIN.png-2e6079313e9fd2a1baf47b87c8658593.s3tc.ctex"]
 
 [params]
 

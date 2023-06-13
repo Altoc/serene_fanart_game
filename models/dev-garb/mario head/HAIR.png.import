@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsr13j1uvqa1"
-path.s3tc="res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"
+uid="uid://bsxmutcfj4ew0"
+path.s3tc="res://.godot/imported/HAIR.png-9a1fe7c1d733bcc3d95d1920d9825f06.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/dev-garb/blue.png"
-dest_files=["res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"]
+source_file="res://models/dev-garb/mario head/HAIR.png"
+dest_files=["res://.godot/imported/HAIR.png-9a1fe7c1d733bcc3d95d1920d9825f06.s3tc.ctex"]
 
 [params]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=7 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="Script" path="res://scripts/BallSizeValue.gd" id="3_4avfj"]
-[ext_resource type="PackedScene" uid="uid://btut56k8i33rn" path="res://scenes/level_dev.tscn" id="4_28oll"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="3_kfjfd"]
+[ext_resource type="PackedScene" uid="uid://dt27vtlblovc2" path="res://scenes/main_menu.tscn" id="4_new0g"]
+[ext_resource type="Script" path="res://scripts/StartGame.gd" id="5_xw1bk"]
 
 [node name="Main" type="Node3D"]
 process_mode = 3
@@ -15,19 +17,68 @@ script = ExtResource("1_f4a8i")
 [node name="UI" type="BoxContainer" parent="."]
 offset_right = 1154.0
 offset_bottom = 649.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_kfjfd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="HUD" type="VBoxContainer" parent="UI"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HUD"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/VBoxContainer"]
-layout_mode = 2
-
-[node name="BallSizeLabel" type="Label" parent="UI/VBoxContainer/HBoxContainer"]
+[node name="BallSizeLabel" type="Label" parent="UI/HUD/HBoxContainer"]
 layout_mode = 2
 text = "Ball Size: "
 
-[node name="BallSizeValue" type="Label" parent="UI/VBoxContainer/HBoxContainer"]
+[node name="BallSizeValue" type="Label" parent="UI/HUD/HBoxContainer"]
 layout_mode = 2
 script = ExtResource("3_4avfj")
 
-[node name="LevelDev" parent="." instance=ExtResource("4_28oll")]
+[node name="MainMenu" type="HBoxContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartGame" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+script = ExtResource("5_xw1bk")
+
+[node name="QuitGame" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LevelSlot" type="Node" parent="."]
+
+[node name="MainMenu" parent="LevelSlot" instance=ExtResource("4_new0g")]
+
+[connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" method="_on_button_up"]

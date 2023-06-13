@@ -16,8 +16,6 @@ var torqueIncreaseRate
 @export
 var myCamera : Node3D
 var size = 1
-@onready
-var ballMesh = get_node("Ball")
 
 func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)

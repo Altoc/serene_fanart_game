@@ -1,116 +1,116 @@
-[gd_scene load_steps=28 format=3 uid="uid://dd5mdk6ah7gyy"]
+[gd_scene load_steps=27 format=3 uid="uid://b5gxxdxdwpjt2"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_s7c13"]
-[ext_resource type="Texture2D" uid="uid://bium4p3t4u7qa" path="res://models/model_import/mario_head_BLACK.png" id="2_e211d"]
-[ext_resource type="Texture2D" uid="uid://cwh5cnko43mkx" path="res://models/model_import/mario_head_WHITE.png" id="3_cqj3w"]
-[ext_resource type="Texture2D" uid="uid://bggraj3tmgd4y" path="res://models/model_import/mario_head_BLUE.png" id="4_2f87q"]
-[ext_resource type="Texture2D" uid="uid://ci84cb7koiae2" path="res://models/model_import/mario_head_RED.png" id="5_yk5l4"]
-[ext_resource type="Texture2D" uid="uid://dlg2emlsmq0h4" path="res://models/model_import/mario_head_HAIR.png" id="6_xkp6w"]
-[ext_resource type="Texture2D" uid="uid://d32heyjwa8f7x" path="res://models/model_import/mario_head_SKIN.png" id="7_ag0ji"]
+[ext_resource type="Script" path="res://scripts/mario_head.gd" id="1_5eh30"]
+[ext_resource type="Texture2D" uid="uid://bium4p3t4u7qa" path="res://models/model_import/mario_head_BLACK.png" id="1_n5y73"]
+[ext_resource type="Texture2D" uid="uid://cwh5cnko43mkx" path="res://models/model_import/mario_head_WHITE.png" id="2_rravy"]
+[ext_resource type="Texture2D" uid="uid://bggraj3tmgd4y" path="res://models/model_import/mario_head_BLUE.png" id="3_8hy8x"]
+[ext_resource type="Texture2D" uid="uid://ci84cb7koiae2" path="res://models/model_import/mario_head_RED.png" id="4_x5eak"]
+[ext_resource type="Texture2D" uid="uid://dlg2emlsmq0h4" path="res://models/model_import/mario_head_HAIR.png" id="5_xga6m"]
+[ext_resource type="Texture2D" uid="uid://d32heyjwa8f7x" path="res://models/model_import/mario_head_SKIN.png" id="6_rtgpc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0vnh"]
 resource_name = "Material_123_BLACK_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_e211d")
+albedo_texture = ExtResource("1_n5y73")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43if1"]
 resource_name = "Material_122_BLACK_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_e211d")
+albedo_texture = ExtResource("1_n5y73")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gxtt"]
 resource_name = "Material_121_BLACK_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_e211d")
+albedo_texture = ExtResource("1_n5y73")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aifmf"]
 resource_name = "Material_120_WHITE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_cqj3w")
+albedo_texture = ExtResource("2_rravy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_athev"]
 resource_name = "Material_119_BLACK_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_e211d")
+albedo_texture = ExtResource("1_n5y73")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emmv7"]
 resource_name = "Material_118_BLUE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_2f87q")
+albedo_texture = ExtResource("3_8hy8x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gae54"]
 resource_name = "Material_117_WHITE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_cqj3w")
+albedo_texture = ExtResource("2_rravy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yboju"]
 resource_name = "Material_116_BLACK_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_e211d")
+albedo_texture = ExtResource("1_n5y73")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xywe"]
 resource_name = "Material_115_BLUE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_2f87q")
+albedo_texture = ExtResource("3_8hy8x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bbns"]
 resource_name = "Material_114_RED_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_yk5l4")
+albedo_texture = ExtResource("4_x5eak")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xoxds"]
 resource_name = "Material_113_RED_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_yk5l4")
+albedo_texture = ExtResource("4_x5eak")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yryuj"]
 resource_name = "Material_112_HAIR_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_xkp6w")
+albedo_texture = ExtResource("5_xga6m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c2vhr"]
 resource_name = "Material_111_WHITE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_cqj3w")
+albedo_texture = ExtResource("2_rravy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhy0g"]
 resource_name = "Material_110_WHITE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_cqj3w")
+albedo_texture = ExtResource("2_rravy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5d8w"]
 resource_name = "Material_109_HAIR_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("6_xkp6w")
+albedo_texture = ExtResource("5_xga6m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obdsv"]
 resource_name = "Material_121_SKIN_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("7_ag0ji")
+albedo_texture = ExtResource("6_rtgpc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_338ju"]
 resource_name = "Material_121_WHITE_png"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_cqj3w")
+albedo_texture = ExtResource("2_rravy")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_natsb"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ybdt"]
 _surfaces = [{
 "aabb": AABB(-1.5325, 1.4226, 0.524, 3.06, 0.6298, 1.3944),
 "format": 4097,
@@ -276,7 +276,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_72oks"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_exgi7"]
 resource_name = "mario_head_mariohead"
 _surfaces = [{
 "aabb": AABB(-1.5325, 1.4226, 0.524, 3.06, 0.6298, 1.3944),
@@ -476,24 +476,12 @@ _surfaces = [{
 "vertex_data": PackedByteArray(41, 92, 79, 62, 102, 102, 174, 63, 195, 245, 4, 64, 152, 146, 115, 120, 133, 255, 16, 202, 0, 0, 48, 63, 102, 102, 174, 63, 123, 20, 230, 63, 239, 81, 62, 108, 113, 125, 174, 15, 123, 20, 30, 191, 102, 102, 174, 63, 184, 30, 221, 63, 54, 166, 222, 104, 109, 165, 23, 126, 225, 122, 84, 190, 61, 10, 175, 63, 41, 92, 3, 64, 73, 99, 201, 120, 211, 221, 84, 189, 133, 235, 241, 190, 236, 81, 192, 63, 61, 10, 239, 63, 78, 86, 232, 149, 54, 195, 142, 185, 102, 102, 134, 190, 31, 133, 195, 63, 51, 51, 251, 63, 149, 107, 47, 169, 91, 215, 191, 187, 102, 102, 134, 62, 31, 133, 195, 63, 102, 102, 254, 63, 225, 141, 191, 171, 241, 246, 172, 208, 133, 235, 1, 63, 195, 245, 192, 63, 31, 133, 243, 63, 43, 157, 30, 152, 168, 238, 55, 218)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_natsb")
+shadow_mesh = SubResource("ArrayMesh_7ybdt")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_faqop"]
-radius = 1.0
+[node name="MarioHead" type="Node3D"]
+script = ExtResource("1_5eh30")
 
-[node name="PlayerBall" type="RigidBody3D" groups=["player_ball"]]
-collision_layer = 2
-collision_mask = 5
-mass = 10.0
-max_contacts_reported = 100
-contact_monitor = true
-can_sleep = false
-script = ExtResource("1_s7c13")
-
-[node name="Ball" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0)
-mesh = SubResource("ArrayMesh_72oks")
+[node name="mariohead" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.19209e-07, -1, 0, 1, -1.19209e-07, 0, 0, 0)
+mesh = SubResource("ArrayMesh_exgi7")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_faqop")

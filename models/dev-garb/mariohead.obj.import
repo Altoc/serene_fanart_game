@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ci2rb5k2jxyt5"
+path="res://.godot/imported/mariohead.obj-591a3964e4863e12f0c8ec81361fc3ba.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mariohead.obj-591a3964e4863e12f0c8ec81361fc3ba.mesh"]
+
+source_file="res://models/dev-garb/mariohead.obj"
+dest_files=["res://.godot/imported/mariohead.obj-591a3964e4863e12f0c8ec81361fc3ba.mesh", "res://.godot/imported/mariohead.obj-591a3964e4863e12f0c8ec81361fc3ba.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

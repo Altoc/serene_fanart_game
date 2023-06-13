@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btsr13j1uvqa1"
-path.s3tc="res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"
+uid="uid://cgodfni1sutes"
+path.s3tc="res://.godot/imported/RED.png-6d2eb6c2ab8c44fbc74078a6d1849ca3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://models/dev-garb/blue.png"
-dest_files=["res://.godot/imported/blue.png-3961d12d5c079e526f17a7772079b0a2.s3tc.ctex"]
+source_file="res://models/dev-garb/mario head/RED.png"
+dest_files=["res://.godot/imported/RED.png-6d2eb6c2ab8c44fbc74078a6d1849ca3.s3tc.ctex"]
 
 [params]
 

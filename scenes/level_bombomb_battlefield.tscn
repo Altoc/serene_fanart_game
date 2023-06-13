@@ -19,6 +19,7 @@ myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("3_4jqyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+visible = false
 
 [node name="Objects" type="Node3D" parent="."]
 
