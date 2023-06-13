@@ -7,4 +7,4 @@ ideas:
 
 credits:
 	- booscaster for ripping the 2d mario 64 textures
-	- alec pike for ripping the mario head model
+	- alec pike for ripping the mario head model, ripping the peach model
