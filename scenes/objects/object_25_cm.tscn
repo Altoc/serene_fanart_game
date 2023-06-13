@@ -13,23 +13,22 @@ size = Vector3(0.25, 0.25, 0.25)
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.243137, 0.54902, 1)
 
-[node name="Object25cm" type="RigidBody3D" groups=["object"]]
+[node name="Object25cm" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["object"]]
 collision_layer = 4
 collision_mask = 3
 mass = 0.25
 max_contacts_reported = 7
 contact_monitor = true
 can_sleep = false
-lock_rotation = true
 script = ExtResource("1_vggns")
-pickupThreshold = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_yq2xx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("BoxMesh_csugv")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2mlnj")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

@@ -1,12 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4lkpgs5n4ah"]
 
 [ext_resource type="Script" path="res://scripts/player_body.gd" id="1_i7xl5"]
+[ext_resource type="PackedScene" uid="uid://bcdg7xbymdktk" path="res://models/model_mario.tscn" id="2_lpnw1"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4jutg"]
-radius = 0.25
-height = 1.0
-
-[node name="PlayerBody" type="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27631, 6)
-mesh = SubResource("CapsuleMesh_4jutg")
+[node name="PlayerBody" type="Node3D"]
 script = ExtResource("1_i7xl5")
+
+[node name="ModelMario" parent="." instance=ExtResource("2_lpnw1")]

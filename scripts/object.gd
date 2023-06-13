@@ -18,6 +18,12 @@ enum OBJECT_STATES {
 func _ready():
 	setState(OBJECT_STATES.NOT_PICKED_UP)
 
+func _process(delta):
+	if(currState == OBJECT_STATES.PICKED_UP):
+		#set center point to be the player ball
+		pass
+		#transform.basis = playerBall.transform.basis
+
 func setState(argNewState):
 	currState = argNewState
 	match(currState):
@@ -26,10 +32,21 @@ func setState(argNewState):
 		OBJECT_STATES.PICKED_UP:
 			#turn collision detection for player ball OFF
 			set_collision_mask_value(2, false)
+			#turn off collision detection for floor (TEMPORARY?)
+			set_collision_mask_value(1, false)
+			#lock_rotation = true
+			
+			#transform.basis = playerBall.transform.basis
+		
+			#reparent to ball
+			#get_parent().call_deferred("remove_child", self)
+			#playerBall.call_deferred("add_child", self)
+			#self.call_deferred("set_owner", playerBall)
+			
 			var glue = PinJoint3D.new()
-			add_child(glue)
-			glue.set_owner(self)
-			glue.node_a = self.get_path()
+			get_parent().add_child(glue)
+			glue.set_owner(get_parent())
+			glue.node_a = get_parent().get_path()
 			glue.node_b = playerBall.get_path()
 			SIGNAL_BUS.emit_signal("ADD_OBJECT_TO_PLAYER_BALL", self)
 			mass = 0.001

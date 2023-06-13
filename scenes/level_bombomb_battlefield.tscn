@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://tmeto6qaqqv3"]
+
+[ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
+[ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="2_2r78r"]
+[ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="3_4jqyy"]
+[ext_resource type="PackedScene" uid="uid://deocwqogkvuyo" path="res://scenes/terrain/model_bombomb_battlefield.tscn" id="7_ppc0x"]
+
+[node name="LevelBombombBattlefield" type="Node3D"]
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_fksdl")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14829, 4.36548)
+player = NodePath("../PlayerBall")
+
+[node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("2_2r78r")]
+process_mode = 1
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.5, 18.3983, -86.8845)
+myCamera = NodePath("../Camera")
+
+[node name="PlayerBody" parent="PlayerBall" instance=ExtResource("3_4jqyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+process_mode = 1
+transform = Transform3D(0.707107, 0.303058, -0.638871, 0, 0.9035, 0.428589, 0.707107, -0.303058, 0.638871, -41, 146.676, 23.752)
+
+[node name="ModelBombombBattlefield" parent="." instance=ExtResource("7_ppc0x")]

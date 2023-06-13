@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 @onready
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
@@ -10,7 +10,6 @@ func onPlayerMovementDirectionUpdate(argInput):
 	if(argInput.is_action_pressed("forward_roll") 
 	|| argInput.is_action_pressed("super_spin")):
 		pass
-		#print("TODO move player mesh around ball")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

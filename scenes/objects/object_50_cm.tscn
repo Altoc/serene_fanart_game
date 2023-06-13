@@ -21,7 +21,6 @@ mass = 0.5
 max_contacts_reported = 7
 contact_monitor = true
 can_sleep = false
-lock_rotation = true
 script = ExtResource("1_ipb00")
 pickupThreshold = 2
 

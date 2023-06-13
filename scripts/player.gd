@@ -32,11 +32,11 @@ func calculateTorque(argMass, argIncreaseRate):
 #increase ball size and mass
 func onAddObjectToPlayerBall(argObject):
 	var sizeIncreaseFactor = (argObject.mass * 0.1) 
-	var scaleIncreaseFactor = 1 + (argObject.pickupThreshold * 0.0025)
+	var scaleIncreaseFactor = 1 + (argObject.pickupThreshold * 0.0005)
 	size += sizeIncreaseFactor
 	mass += argObject.mass
 	torqueFactor = calculateTorque(mass, torqueIncreaseRate)
-	ballMesh.scale *= scaleIncreaseFactor
+	#ballMesh.scale *= scaleIncreaseFactor
 	get_node("CollisionShape3D").scale *= scaleIncreaseFactor
 	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)
 
