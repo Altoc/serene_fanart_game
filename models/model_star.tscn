@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkg7duo1g664e"]
+
+[ext_resource type="PackedScene" uid="uid://bhu486ydw6s5g" path="res://models/model_import/star.glb" id="1_cqexb"]
+
+[node name="ModelStar" instance=ExtResource("1_cqexb")]

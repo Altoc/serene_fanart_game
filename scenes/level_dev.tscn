@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://btut56k8i33rn"]
+[gd_scene load_steps=14 format=3 uid="uid://btut56k8i33rn"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_jp522"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="2_srrgg"]
@@ -6,7 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://w2smdlaxb32r" path="res://scenes/objects/object_25_cm.tscn" id="4_ejvs6"]
 [ext_resource type="PackedScene" uid="uid://xuyfc2ntk4qf" path="res://scenes/objects/object_50_cm.tscn" id="5_ypjhi"]
 [ext_resource type="PackedScene" uid="uid://b8v5xsq5b1f2" path="res://scenes/objects/object_1_m.tscn" id="6_u33io"]
+[ext_resource type="PackedScene" uid="uid://cehj1bih32m3" path="res://scenes/objects/object_1_mm.tscn" id="7_nsm2p"]
 [ext_resource type="PackedScene" uid="uid://ca6kf1nxv7mf7" path="res://scenes/terrain/terrain_001.tscn" id="7_r1x1a"]
+[ext_resource type="PackedScene" uid="uid://ctgrun28jgyyb" path="res://scenes/objects/object_1_dm.tscn" id="8_xdeh4"]
+[ext_resource type="PackedScene" uid="uid://bef0esnvcs1mp" path="res://scenes/objects/object_1_dam.tscn" id="9_vesv5"]
+[ext_resource type="PackedScene" uid="uid://d3sn32modvjkr" path="res://scenes/objects/object_1_km.tscn" id="10_kwx1l"]
+[ext_resource type="PackedScene" uid="uid://bltr2vplie1op" path="res://scenes/objects/object_1_hm.tscn" id="11_lbif8"]
+[ext_resource type="PackedScene" uid="uid://c7h23we2q16hj" path="res://scenes/objects/object_1_cm.tscn" id="12_hmmce"]
 
 [node name="LevelDev" type="Node3D"]
 
@@ -2159,6 +2165,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0.5, 11)
 
 [node name="Object1m168" parent="Objects" instance=ExtResource("6_u33io")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0.5, 11)
+
+[node name="Object1mm" parent="Objects" instance=ExtResource("7_nsm2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 1.5, 1.5)
+
+[node name="Object1dm" parent="Objects" instance=ExtResource("8_xdeh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 2, 1.25)
+
+[node name="Object1dam" parent="Objects" instance=ExtResource("9_vesv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.25, 3, 1)
+
+[node name="Object1km" parent="Objects" instance=ExtResource("10_kwx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.75, 2.5, 0)
+
+[node name="Object1hm" parent="Objects" instance=ExtResource("11_lbif8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.75, 2.75, 0.75)
+
+[node name="Object1m169" parent="Objects" instance=ExtResource("6_u33io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 2.5, 1)
+
+[node name="Object1cm" parent="Objects" instance=ExtResource("12_hmmce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.75, 2.25, 1.5)
 
 [node name="Terrain001" parent="." instance=ExtResource("7_r1x1a")]
 

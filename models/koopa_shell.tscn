@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnfegdte4g2b1"]
+
+[ext_resource type="PackedScene" uid="uid://bbbhekgj0e3qo" path="res://models/model_import/koopa_shell.glb" id="1_pv8qg"]
+
+[node name="KoopaShell" instance=ExtResource("1_pv8qg")]

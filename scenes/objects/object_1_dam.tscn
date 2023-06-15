@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bef0esnvcs1mp"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_r2mc2"]
+[ext_resource type="PackedScene" uid="uid://gqfjtaj371sv" path="res://models/model_thwomp.tscn" id="2_da46w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5cao7"]
+resource_local_to_scene = true
+size = Vector3(2.5, 2.5, 2.5)
+
+[node name="Object1dam" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 5.0
+max_contacts_reported = 7
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_r2mc2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_5cao7")
+
+[node name="ModelThwomp" parent="." instance=ExtResource("2_da46w")]
+transform = Transform3D(6.004, 0, 0, 0, 6.004, 0, 0, 0, 6.004, 0, -1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

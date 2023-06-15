@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkl07ay7p0y6c"]
+
+[ext_resource type="PackedScene" uid="uid://b3op1k4l5i2t6" path="res://models/model_import/shy_guy.glb" id="1_5d4kj"]
+
+[node name="ModelShyGuy" instance=ExtResource("1_5d4kj")]

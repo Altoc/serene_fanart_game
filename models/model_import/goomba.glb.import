@@ -14,7 +14,7 @@ dest_files=["res://.godot/imported/goomba.glb-c07f13a6badb615d0b463cb1ae42a359.s
 [params]
 
 nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_name="ModelGoomba"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true

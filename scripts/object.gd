@@ -2,9 +2,8 @@ extends RigidBody3D
 
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 @onready var myCollider = get_node("CollisionShape3D")
-@onready var mesh = get_node("MeshInstance3D")
 
-@export var pickupThreshold = 0
+@onready var pickupThreshold = mass
 
 var playerBall
 

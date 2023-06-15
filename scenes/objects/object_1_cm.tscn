@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7h23we2q16hj"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_6so6a"]
+[ext_resource type="PackedScene" uid="uid://bltv1fsklk5p6" path="res://models/model_toad.tscn" id="2_jr6t7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ri2if"]
+resource_local_to_scene = true
+
+[node name="Object1cm" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 2.0
+max_contacts_reported = 7
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_6so6a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ri2if")
+
+[node name="ModelToad" parent="." instance=ExtResource("2_jr6t7")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, -0.5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bltr2vplie1op"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_1c1pg"]
+[ext_resource type="PackedScene" uid="uid://cexn3l5en1wqi" path="res://models/model_dorrie.tscn" id="2_ek8rd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmv6r"]
+resource_local_to_scene = true
+size = Vector3(3, 3, 3)
+
+[node name="Object1hm" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 6.0
+max_contacts_reported = 7
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_1c1pg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dmv6r")
+
+[node name="ModelDorrie" parent="." instance=ExtResource("2_ek8rd")]
+transform = Transform3D(0.09, 0, 0, 0, -3.93403e-09, 0.09, 0, -0.09, -3.93403e-09, 0, -0.5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
