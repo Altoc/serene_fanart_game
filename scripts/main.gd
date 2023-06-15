@@ -33,11 +33,10 @@ func setMouseMode(argMouseMode):
 		MOUSE_MODES.VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-func loadLevel():
+func loadLevel(argLevelPath):
 	var levelSlot = get_node("LevelSlot")
-	var levelPath = "res://scenes/level_bombomb_battlefield.tscn"
 	levelSlot.get_children()[0].queue_free()
-	var levelTscn = load(levelPath).instantiate()
+	var levelTscn = load(argLevelPath).instantiate()
 	levelSlot.add_child(levelTscn)
 	levelTscn.set_owner(levelSlot)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=12 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -6,6 +6,22 @@
 [ext_resource type="Script" path="res://scripts/UI.gd" id="3_kfjfd"]
 [ext_resource type="PackedScene" uid="uid://dt27vtlblovc2" path="res://scenes/main_menu.tscn" id="4_new0g"]
 [ext_resource type="Script" path="res://scripts/StartGame.gd" id="5_xw1bk"]
+[ext_resource type="Script" path="res://scripts/Next.gd" id="6_j4i1s"]
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_n0g0r"]
+button_index = 1
+
+[sub_resource type="InputEventKey" id="InputEventKey_ulncj"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="InputEventKey" id="InputEventKey_tatlr"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_hh0xx"]
+events = [SubResource("InputEventMouseButton_n0g0r"), SubResource("InputEventKey_ulncj"), SubResource("InputEventKey_tatlr")]
 
 [node name="Main" type="Node3D"]
 process_mode = 3
@@ -38,6 +54,7 @@ layout_mode = 2
 script = ExtResource("3_4avfj")
 
 [node name="MainMenu" type="HBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -77,8 +94,82 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="DialogueHUD" type="HBoxContainer" parent="UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/DialogueHUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/DialogueHUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.85
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Panel" type="Panel" parent="UI/DialogueHUD/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="UI/DialogueHUD/VBoxContainer2/Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 912.0
+offset_bottom = 110.0
+size_flags_vertical = 3
+text = "mario this is a video game and i need you to roll up all of the stuff in bombombbattlefield oh my god please mario would you please do this for me holy FUCK dude!!"
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DialogueHUD"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DialogueHUD/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Next" type="Button" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_hh0xx")
+text = "Next"
+script = ExtResource("6_j4i1s")
+
+[node name="Next2" type="Button" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+shortcut = SubResource("Shortcut_hh0xx")
+text = "DEV"
+script = ExtResource("6_j4i1s")
+levelToLoad = "res://scenes/level_dev.tscn"
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/DialogueHUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="LevelSlot" type="Node" parent="."]
 
 [node name="MainMenu" parent="LevelSlot" instance=ExtResource("4_new0g")]
 
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" method="_on_button_up"]
+[connection signal="pressed" from="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next" to="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next" method="_on_pressed"]
+[connection signal="pressed" from="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next2" to="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next2" method="_on_pressed"]

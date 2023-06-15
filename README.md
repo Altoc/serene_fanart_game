@@ -3,6 +3,7 @@
 ideas:
 	- speed lines when ball torque greater than a value
 	- better ui
+	- No barrier, but instead teleport player if they fall out
 
 
 credits:

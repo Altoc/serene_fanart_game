@@ -20,6 +20,7 @@ collision_mask = 3
 mass = 0.5
 max_contacts_reported = 7
 contact_monitor = true
+sleeping = true
 can_sleep = false
 script = ExtResource("1_ipb00")
 pickupThreshold = 2

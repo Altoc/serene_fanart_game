@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://j8tmtd8jlug7"]
+[gd_scene load_steps=31 format=3 uid="uid://j8tmtd8jlug7"]
 
 [ext_resource type="Texture2D" uid="uid://cydw3malukcgk" path="res://models/model_import/peach_Peach_grp.png" id="1_4ngk3"]
 
@@ -376,6 +376,220 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ew838")
 
+[sub_resource type="Animation" id="Animation_xw131"]
+resource_name = "T_POSE"
+
+[sub_resource type="Animation" id="Animation_jrn15"]
+resource_name = "HOLD_MARIO"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.278694, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.717405, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.345311, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Bone/Bone001/Bone004:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.24955, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Bone/Bone001/Bone004:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.4061, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Armature/Bone/Bone001/Bone004:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.79845, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005:rotation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.489202, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005:rotation:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.13572, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005:rotation:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0239953, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005/Bone006:rotation:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.269207, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005/Bone006:rotation:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.0659974, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Armature/Bone/Bone001/Bone004/Bone005/Bone006:rotation:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.0448942, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Armature/Bone/Bone001/Bone007:rotation:x")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.253629, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/13/type = "bezier"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Armature/Bone/Bone001/Bone007:rotation:y")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3.11545, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Armature/Bone/Bone001/Bone007:rotation:z")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-3.02269, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_i0oas"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.102302, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.755029, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Bone/Bone001/Bone002/Bone003:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.147996, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m1o58"]
+_data = {
+"HOLD_MARIO": SubResource("Animation_jrn15"),
+"RESET": SubResource("Animation_i0oas"),
+"T_POSE": SubResource("Animation_xw131")
+}
+
 [node name="ModelPeach" type="Node3D"]
 
 [node name="Armature" type="Node3D" parent="."]
@@ -391,7 +605,7 @@ transform = Transform3D(0.00274169, -0.00756484, -0.999968, 0.119952, 0.992754, 
 transform = Transform3D(0.998871, 0.0473815, -0.00341887, -0.047369, 0.998871, 0.00363876, 0.00358741, -0.00347271, 0.999988, 6.11604e-10, 0.276823, -1.01181e-10)
 
 [node name="Bone003" type="Node3D" parent="Armature/Bone/Bone001/Bone002"]
-transform = Transform3D(0.994001, -0.109369, 4.0746e-07, 0.109369, 0.994001, -7.43071e-06, 4.07671e-07, 7.4307e-06, 1, 1.87465e-09, 0.060958, 2.08062e-11)
+transform = Transform3D(0.709969, 0.176607, -0.681727, -0.146685, 0.983897, 0.102124, 0.688784, 0.0274945, 0.724443, -5.96046e-08, 0.0609584, 2.32831e-10)
 
 [node name="Head" type="MeshInstance3D" parent="Armature/Bone/Bone001/Bone002/Bone003"]
 transform = Transform3D(-6.47618e-07, 0.00942539, -0.00141427, 0, -0.00141427, -0.0094254, -0.00953091, -6.40517e-07, 9.60066e-08, -0.204607, -1.31512, 0.00289158)
@@ -404,13 +618,13 @@ mesh = SubResource("ArrayMesh_omntl")
 skeleton = NodePath("")
 
 [node name="Bone004" type="Node3D" parent="Armature/Bone/Bone001"]
-transform = Transform3D(0.995887, -0.026715, -0.0865727, -0.0871279, -0.0203668, -0.995989, 0.0248446, 0.999436, -0.0226105, -0.0773965, 0.200881, 0.137661)
+transform = Transform3D(-0.46931, 0.826274, 0.311479, 0.106235, -0.297343, 0.948842, 0.876619, 0.478392, 0.0517672, -0.0773965, 0.200881, 0.137661)
 
 [node name="Bone005" type="Node3D" parent="Armature/Bone/Bone001/Bone004"]
-transform = Transform3D(0.999971, 0.00761997, 0.000617365, -0.00762989, 0.999807, 0.0180795, -0.000479481, -0.0180836, 0.999836, -2.18279e-09, 0.271495, 7.18228e-09)
+transform = Transform3D(0.992045, 0.0397915, 0.119434, 0.0211788, 0.882454, -0.469921, -0.124094, 0.468712, 0.874591, -2.98023e-08, 0.271495, 0)
 
 [node name="Bone006" type="Node3D" parent="Armature/Bone/Bone001/Bone004/Bone005"]
-transform = Transform3D(0.998552, 0.0537991, -5.49443e-05, -0.0537917, 0.99843, 0.0156275, 0.000895605, -0.0156019, 0.999878, 4.59955e-09, 0.211975, -6.98417e-09)
+transform = Transform3D(0.99603, 0.0623041, -0.0635742, -0.0432627, 0.963011, 0.265967, 0.0777935, -0.262161, 0.961883, 2.98023e-08, 0.211975, -1.19209e-07)
 
 [node name="Hand_r" type="MeshInstance3D" parent="Armature/Bone/Bone001/Bone004/Bone005/Bone006"]
 transform = Transform3D(0.000383479, 0.00952319, 3.76373e-06, -0.0095229, 0.000383496, -7.39759e-05, -7.40674e-05, -7.84137e-07, 0.00953062, 0.0943413, -0.623906, 1.17364)
@@ -433,7 +647,7 @@ mesh = SubResource("ArrayMesh_a365j")
 skeleton = NodePath("")
 
 [node name="Bone007" type="Node3D" parent="Armature/Bone/Bone001"]
-transform = Transform3D(0.995901, -0.0261541, 0.0865878, -0.0867371, -0.00463045, 0.99622, -0.0256544, -0.999647, -0.00687993, -0.0735511, 0.200858, -0.123823)
+transform = Transform3D(0.993378, -0.112072, 0.025303, -0.11483, -0.961173, 0.250919, -0.00380029, -0.252163, -0.967677, -0.0735511, 0.200858, -0.123823)
 
 [node name="Bone008" type="Node3D" parent="Armature/Bone/Bone001/Bone007"]
 transform = Transform3D(0.99957, 0.0293013, 0.000566259, -0.0293067, 0.999426, 0.0169758, -6.85211e-05, -0.0169851, 0.999856, -2.86991e-09, 0.294576, 1.05806e-08)
@@ -470,3 +684,8 @@ skeleton = NodePath("")
 transform = Transform3D(0.00953083, -2.53962e-06, 3.78125e-05, 3.78763e-05, 0.000319034, -0.00952549, 1.27246e-06, 0.00952557, 0.000319041, 6.93699e-05, 0.00815165, -0.000273002)
 mesh = SubResource("ArrayMesh_qlyo4")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m1o58")
+}

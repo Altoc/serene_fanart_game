@@ -1,11 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=9 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
+[ext_resource type="Texture2D" uid="uid://dbke37kcnwa4f" path="res://images/bobomb_battlefield_skybox.png" id="1_ssjug"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="2_2r78r"]
 [ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="3_4jqyy"]
 [ext_resource type="PackedScene" uid="uid://deocwqogkvuyo" path="res://scenes/terrain/model_bombomb_battlefield.tscn" id="7_ppc0x"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ky2v0"]
+panorama = ExtResource("1_ssjug")
+
+[sub_resource type="Sky" id="Sky_2pmgv"]
+sky_material = SubResource("PanoramaSkyMaterial_ky2v0")
+
+[sub_resource type="Environment" id="Environment_brvlw"]
+background_mode = 2
+sky = SubResource("Sky_2pmgv")
+sky_rotation = Vector3(0, -6.28319, 0)
+
 [node name="LevelBombombBattlefield" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_brvlw")
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_fksdl")]
 process_mode = 1
@@ -25,6 +40,6 @@ visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 process_mode = 1
-transform = Transform3D(0.707107, 0.303058, -0.638871, 0, 0.9035, 0.428589, 0.707107, -0.303058, 0.638871, -41, 146.676, 23.752)
+transform = Transform3D(0.94506, 0.10053, 0.311056, -0.270866, -0.2919, 0.917293, 0.183013, -0.951151, -0.248633, -41, 191.176, 72.502)
 
 [node name="ModelBombombBattlefield" parent="." instance=ExtResource("7_ppc0x")]
