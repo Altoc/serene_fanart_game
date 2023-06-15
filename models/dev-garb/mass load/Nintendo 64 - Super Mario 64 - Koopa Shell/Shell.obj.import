@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfgvtwo0041mt"
+path="res://.godot/imported/Shell.obj-fbd6ce53d4b5b60d17ef5e0ecf3e1d17.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shell.obj-fbd6ce53d4b5b60d17ef5e0ecf3e1d17.mesh"]
+
+source_file="res://models/dev-garb/mass load/Nintendo 64 - Super Mario 64 - Koopa Shell/Shell.obj"
+dest_files=["res://.godot/imported/Shell.obj-fbd6ce53d4b5b60d17ef5e0ecf3e1d17.mesh", "res://.godot/imported/Shell.obj-fbd6ce53d4b5b60d17ef5e0ecf3e1d17.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

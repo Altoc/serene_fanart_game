@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://osiekbmsh5mg"
+path="res://.godot/imported/MIPS.obj-29c6a82e54a3199e9b57248a08c9d06a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MIPS.obj-29c6a82e54a3199e9b57248a08c9d06a.mesh"]
+
+source_file="res://models/dev-garb/mass load/MIPS.obj"
+dest_files=["res://.godot/imported/MIPS.obj-29c6a82e54a3199e9b57248a08c9d06a.mesh", "res://.godot/imported/MIPS.obj-29c6a82e54a3199e9b57248a08c9d06a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

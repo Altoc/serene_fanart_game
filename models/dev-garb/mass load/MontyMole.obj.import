@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kpxkyvy2842f"
+path="res://.godot/imported/MontyMole.obj-f4fac2d3c3ef1b6db4440e7b391e6c28.mesh"
+
+[deps]
+
+files=["res://.godot/imported/MontyMole.obj-f4fac2d3c3ef1b6db4440e7b391e6c28.mesh"]
+
+source_file="res://models/dev-garb/mass load/MontyMole.obj"
+dest_files=["res://.godot/imported/MontyMole.obj-f4fac2d3c3ef1b6db4440e7b391e6c28.mesh", "res://.godot/imported/MontyMole.obj-f4fac2d3c3ef1b6db4440e7b391e6c28.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bov0jc20ywi6h"
+path="res://.godot/imported/pirahna plant.obj-5d0f334b24efacdff3a0f114754b85ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pirahna plant.obj-5d0f334b24efacdff3a0f114754b85ae.mesh"]
+
+source_file="res://models/dev-garb/mass load/pirahna plant.obj"
+dest_files=["res://.godot/imported/pirahna plant.obj-5d0f334b24efacdff3a0f114754b85ae.mesh", "res://.godot/imported/pirahna plant.obj-5d0f334b24efacdff3a0f114754b85ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

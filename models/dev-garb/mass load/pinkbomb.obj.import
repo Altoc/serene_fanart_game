@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cofumvawdylgy"
+path="res://.godot/imported/pinkbomb.obj-0a2dd04b6cae316f82a1e19efc4ef18f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pinkbomb.obj-0a2dd04b6cae316f82a1e19efc4ef18f.mesh"]
+
+source_file="res://models/dev-garb/mass load/pinkbomb.obj"
+dest_files=["res://.godot/imported/pinkbomb.obj-0a2dd04b6cae316f82a1e19efc4ef18f.mesh", "res://.godot/imported/pinkbomb.obj-0a2dd04b6cae316f82a1e19efc4ef18f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

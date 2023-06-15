@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt4b5vp57a4yw"
+path="res://.godot/imported/ChainChomp.obj-c84ec39dd5fa7504c9c7e392f9e5add7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ChainChomp.obj-c84ec39dd5fa7504c9c7e392f9e5add7.mesh"]
+
+source_file="res://models/dev-garb/mass load/ChainChomp.obj"
+dest_files=["res://.godot/imported/ChainChomp.obj-c84ec39dd5fa7504c9c7e392f9e5add7.mesh", "res://.godot/imported/ChainChomp.obj-c84ec39dd5fa7504c9c7e392f9e5add7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
