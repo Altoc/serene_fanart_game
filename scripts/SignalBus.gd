@@ -12,3 +12,5 @@ signal SET_UI_MODE
 signal GAME_PAUSED
 signal LOAD_LEVEL
 
+signal PLAY_BGM
+

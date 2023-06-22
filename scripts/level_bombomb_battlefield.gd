@@ -12,6 +12,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
+	SIGNAL_BUS.emit_signal("PLAY_BGM", "bgmBobomb")
 
 func _process(delta):
 	if(respawnFlag):

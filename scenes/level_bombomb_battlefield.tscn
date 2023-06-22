@@ -32,7 +32,27 @@ script = ExtResource("1_pijkb")
 player = NodePath("PlayerBall")
 
 [node name="SereneText" type="Sprite3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 0)
+transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 125)
+texture = ExtResource("11_5hmfv")
+
+[node name="SereneText2" type="Sprite3D" parent="."]
+transform = Transform3D(10.6066, -10.6066, -4.63629e-07, 2.32941e-21, -6.55671e-07, 15, -10.6066, -10.6066, -4.63629e-07, 188, -886.75, 35.5)
+texture = ExtResource("11_5hmfv")
+
+[node name="SereneText3" type="Sprite3D" parent="."]
+transform = Transform3D(10.6066, 10.6066, 4.63629e-07, 2.32941e-21, -6.55671e-07, 15, 10.6066, -10.6066, -4.63629e-07, -202.75, -886.75, 47.25)
+texture = ExtResource("11_5hmfv")
+
+[node name="SereneText4" type="Sprite3D" parent="."]
+transform = Transform3D(-10.6066, 10.6066, 4.63629e-07, 2.32941e-21, -6.55671e-07, 15, 10.6066, 10.6066, 4.63629e-07, -207.75, -886.75, -156)
+texture = ExtResource("11_5hmfv")
+
+[node name="SereneText5" type="Sprite3D" parent="."]
+transform = Transform3D(-10.6066, -10.6066, -4.63629e-07, 2.32941e-21, -6.55671e-07, 15, -10.6066, 10.6066, 4.63629e-07, 167.25, -886.75, -176.75)
+texture = ExtResource("11_5hmfv")
+
+[node name="SereneText6" type="Sprite3D" parent="."]
+transform = Transform3D(-15, 0, -2.27374e-13, 2.32941e-21, -6.55671e-07, 15, 0, 15, 6.55671e-07, -1.75, -886.75, -233)
 texture = ExtResource("11_5hmfv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

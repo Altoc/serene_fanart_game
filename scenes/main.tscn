@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=14 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="AudioStream" uid="uid://cttccqk65lnhp" path="res://sounds/sfx/sm64_pause.wav" id="2_eint3"]
+[ext_resource type="AudioStream" uid="uid://bhf0aes5c62we" path="res://sounds/bgm/bobomb_battlefield.mp3" id="2_wouhk"]
 [ext_resource type="Script" path="res://scripts/BallSizeValue.gd" id="3_4avfj"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="3_kfjfd"]
 [ext_resource type="PackedScene" uid="uid://dt27vtlblovc2" path="res://scenes/main_menu.tscn" id="4_new0g"]
@@ -28,8 +29,12 @@ events = [SubResource("InputEventMouseButton_n0g0r"), SubResource("InputEventKey
 process_mode = 3
 script = ExtResource("1_r0f8h")
 
+[node name="bgm_bobomb_battlefield" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wouhk")
+
 [node name="sfx_pause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_eint3")
+bus = &"SFX"
 
 [node name="SignalBus" type="Node" parent="."]
 script = ExtResource("1_f4a8i")

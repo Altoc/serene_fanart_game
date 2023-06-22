@@ -504,6 +504,7 @@ shape = SubResource("SphereShape3D_faqop")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_o84ct")
+bus = &"SFX"
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
