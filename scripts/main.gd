@@ -2,6 +2,8 @@ extends Node3D
 
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
+@onready var sfxSound = get_node("sfx_pause")
+
 #godot mouse modes: 0=VISIBLE, 1=HIDDEN, 2=CAPTURED, 3=CONFINED
 # Then why did I make 1 CONFINED...? Probably because I only use 0 and 2...
 enum MOUSE_MODES {CAPTURED=0, CONFINED=1, VISIBLE=2}
@@ -18,10 +20,7 @@ func _ready():
 
 func _input(event):
 	if(event.is_action_pressed("pause_game")):
-		if !PAUSE_GAME:
-			togglePauseGame(true)
-		else:
-			togglePauseGame(false)
+		togglePauseGame(!PAUSE_GAME)
 
 func setMouseMode(argMouseMode):
 	currentGameMode=argMouseMode
@@ -42,8 +41,10 @@ func loadLevel(argLevelPath):
 
 #argFlag - true = pause game, false = unpause game
 func togglePauseGame(argFlag):
+	sfxSound.play()
 	get_tree().paused = argFlag
 	PAUSE_GAME = !PAUSE_GAME
+	SIGNAL_BUS.emit_signal("GAME_PAUSED", PAUSE_GAME)
 	if(argFlag):
 		setMouseMode(MOUSE_MODES.VISIBLE)
 	else:

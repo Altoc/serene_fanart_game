@@ -1,5 +1,7 @@
 extends Node
 
+@onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
+
 @onready var velocity = Vector3.ZERO
 @onready var gravity = 50
 @export var walkSpeed : float = 5
@@ -22,6 +24,14 @@ enum MOVEMENT_STATES {
 #array holding vector3s of the destination nodes we want to stop at
 @export var destNodes : Array[Vector3]
 
+@onready var gamePaused = false
+
+func _ready():
+	SIGNAL_BUS.GAME_PAUSED.connect(onGamePause)
+
+func onGamePause(argPausedFlag):
+	gamePaused = argPausedFlag
+
 #Get definitive position
 func getPosition():
 	return parent.transform.origin
@@ -31,7 +41,8 @@ func setRotation(argTargetVec3):
 	parent.look_at(argTargetVec3, Vector3.UP)
 
 func _process(delta):
-	movementAction(delta)
+	if(!gamePaused):
+		movementAction(delta)
 
 func movementAction(delta):
 	match(currState):
@@ -59,7 +70,6 @@ func setState(argNewState):
 
 #Called when the npc has reached their current node destination
 func onDestinationReached():
-	print("destination reached!")
 	setState(MOVEMENT_STATES.IDLE)
 	#go to the next dest node
 	currDestNode += 1
@@ -68,6 +78,5 @@ func onDestinationReached():
 		currDestNode = 0
 
 func onRestTimerTimeout():
-	print("done resting!")
 	restTime = 0
 	setState(MOVEMENT_STATES.WALKING)

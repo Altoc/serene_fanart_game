@@ -9,5 +9,6 @@ signal ADD_OBJECT_TO_PLAYER_BALL
 signal SET_MOUSE_MODE
 signal SET_UI_MODE
 
+signal GAME_PAUSED
 signal LOAD_LEVEL
 
