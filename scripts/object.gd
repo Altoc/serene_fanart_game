@@ -6,6 +6,8 @@ extends RigidBody3D
 @onready var pickupThreshold = mass
 
 @export var goal = false
+@export var myName = ""
+@export var peachMessage = ""
 @onready var cutscenePath = "res://scenes/level_outro.tscn"
 
 var movementMod
@@ -30,8 +32,6 @@ func setState(argNewState):
 	currState = argNewState
 	match(currState):
 		OBJECT_STATES.CANT_BE_PICKED_UP:
-			#angular_damp = 100
-			#linear_damp = 100
 			freeze = true
 		OBJECT_STATES.CAN_BE_PICKED_UP:
 			freeze = false
@@ -56,7 +56,7 @@ func _on_body_entered(body):
 
 func processBallCollision(argPlayer):
 	if(pickupThreshold <= argPlayer.getSize()):
-		print("Object picked up.")
+		#print("Object picked up.")
 		if(goal):
 			#CAPTURED = 0
 			SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 0)
@@ -65,8 +65,8 @@ func processBallCollision(argPlayer):
 			SIGNAL_BUS.emit_signal("LOAD_LEVEL", cutscenePath)
 		playerBall = argPlayer
 		setState(OBJECT_STATES.PICKED_UP)
-	else:
-		print("Object too heavy. Threshold: " + str(pickupThreshold))
+	#else:
+		#print("Object too heavy. Threshold: " + str(pickupThreshold))
 
 func canBePickedUp(argSize):
 	if(pickupThreshold <= argSize):

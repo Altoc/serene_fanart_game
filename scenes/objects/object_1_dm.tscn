@@ -17,6 +17,7 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_na3p1")
+myName = "Monty Mole"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fq0ur")

@@ -17,6 +17,8 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_r2mc2")
+myName = "Thwomp"
+peachMessage = "Not bad. Thwomps are pretty heavy."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

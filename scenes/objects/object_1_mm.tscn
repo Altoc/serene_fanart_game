@@ -16,6 +16,8 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_oybj1")
+myName = "Goomba"
+peachMessage = "Wow.. A Goomba. You got a long way to go."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_q1unh")
