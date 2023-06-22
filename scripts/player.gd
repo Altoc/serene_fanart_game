@@ -45,7 +45,7 @@ func onAddObjectToPlayerBall(argObject):
 	get_node("CollisionShape3D").scale *= scaleIncreaseFactor
 	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	input = Vector3()
 	handleInput(Input)
 	input = input.normalized()

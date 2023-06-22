@@ -8,6 +8,8 @@ extends RigidBody3D
 @export var goal = false
 @onready var cutscenePath = "res://scenes/level_outro.tscn"
 
+var movementMod
+
 var playerBall
 
 enum OBJECT_STATES {
@@ -20,6 +22,9 @@ var currState
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setState(OBJECT_STATES.CANT_BE_PICKED_UP)
+	for child in get_children():
+		if(child.is_in_group("movement_mod")):
+			movementMod = child
 
 func setState(argNewState):
 	currState = argNewState
@@ -31,6 +36,8 @@ func setState(argNewState):
 		OBJECT_STATES.CAN_BE_PICKED_UP:
 			freeze = false
 		OBJECT_STATES.PICKED_UP:
+			if(movementMod):
+				movementMod.queue_free()
 			#turn collision detection for player ball OFF
 			set_collision_mask_value(2, false)
 			#turn off collision detection for floor (TEMPORARY?)

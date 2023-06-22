@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=17 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
 [ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_pijkb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3sn32modvjkr" path="res://scenes/objects/object_1_km.tscn" id="6_fppue"]
 [ext_resource type="PackedScene" uid="uid://c7h23we2q16hj" path="res://scenes/objects/object_1_cm.tscn" id="7_75jws"]
 [ext_resource type="PackedScene" uid="uid://deocwqogkvuyo" path="res://scenes/terrain/model_bombomb_battlefield.tscn" id="7_ppc0x"]
+[ext_resource type="PackedScene" uid="uid://yvkba3a63x6a" path="res://scenes/movement_cycle.tscn" id="8_7psm7"]
 [ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="9_nn060"]
 [ext_resource type="Texture2D" uid="uid://dksq0no6ruj7x" path="res://images/serene.png" id="11_5hmfv"]
 
@@ -48,7 +49,6 @@ player = NodePath("../PlayerBall")
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("2_2r78r")]
 process_mode = 1
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.5, 1.8983, -125.634)
-torqueFactor = 200
 myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("3_4jqyy")]
@@ -59,9 +59,6 @@ visible = false
 
 [node name="Object1mm" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 1.25, -126.75)
-
-[node name="Object1mm2" parent="Objects" instance=ExtResource("5_wfce1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 1.25, -126.75)
 
 [node name="Object1mm3" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, 1.25, -126.75)
@@ -97,7 +94,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.75, 5, -126.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 1.25, -131)
 
 [node name="Object1mm14" parent="Objects" instance=ExtResource("5_wfce1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 1.25, -131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 0.789136, -123)
+
+[node name="MovementCycle" parent="Objects/Object1mm14" instance=ExtResource("8_7psm7")]
+walkSpeed = 1.0
+restTimer = 1
+destNodes = Array[Vector3]([Vector3(102, 0.75, -131), Vector3(102, 0.75, -123)])
 
 [node name="Object1mm15" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, 1.25, -131)
@@ -132,9 +134,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.75, 5, -131)
 [node name="Object1mm25" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 1.25, -128.75)
 
-[node name="Object1mm26" parent="Objects" instance=ExtResource("5_wfce1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 1.25, -128.75)
-
 [node name="Object1mm27" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, 1.25, -128.75)
 
@@ -167,9 +166,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.75, 5, -128.75)
 
 [node name="Object1mm37" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99, 1.25, -124.25)
-
-[node name="Object1mm38" parent="Objects" instance=ExtResource("5_wfce1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 1.25, -124.25)
 
 [node name="Object1mm39" parent="Objects" instance=ExtResource("5_wfce1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, 1.25, -124.25)
@@ -206,6 +202,14 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 
 [node name="Object1cm" parent="Objects" instance=ExtResource("7_75jws")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -126.75)
+
+[node name="Object1cm13" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 95.25, 1, -135)
+
+[node name="MovementCycle" parent="Objects/Object1cm13" instance=ExtResource("8_7psm7")]
+walkSpeed = 3.0
+restTimer = 1
+destNodes = Array[Vector3]([Vector3(110, 1, -135), Vector3(95, 1, -135)])
 
 [node name="Object1cm2" parent="Objects" instance=ExtResource("7_75jws")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -125.25)
