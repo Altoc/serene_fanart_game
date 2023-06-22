@@ -2169,23 +2169,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0.5, 11)
 [node name="Object1mm" parent="Objects" instance=ExtResource("7_nsm2p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 1.5, 1.5)
 
-[node name="Object1dm" parent="Objects" instance=ExtResource("8_xdeh4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.25, 2, 1.25)
-
 [node name="Object1dam" parent="Objects" instance=ExtResource("9_vesv5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.25, 3, 1)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.75, 1.25, 1)
 
 [node name="Object1km" parent="Objects" instance=ExtResource("10_kwx1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.75, 2.5, 0)
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 41, 2.5, -13.75)
 
 [node name="Object1hm" parent="Objects" instance=ExtResource("11_lbif8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.75, 2.75, 0.75)
-
-[node name="Object1m169" parent="Objects" instance=ExtResource("6_u33io")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 2.5, 1)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.25, 4.5, 0.75)
 
 [node name="Object1cm" parent="Objects" instance=ExtResource("12_hmmce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.75, 2.25, 1.5)
+
+[node name="Object1dm2" parent="Objects" instance=ExtResource("8_xdeh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1.5, 0)
+
+[node name="Object1m169" parent="Objects" instance=ExtResource("6_u33io")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.25, 0.5, 0)
 
 [node name="Terrain001" parent="." instance=ExtResource("7_r1x1a")]
 

@@ -9,6 +9,8 @@ extends Node3D
 	"bgmBobomb": bgmBobomb
 }
 
+var currBgmKey
+
 #godot mouse modes: 0=VISIBLE, 1=HIDDEN, 2=CAPTURED, 3=CONFINED
 # Then why did I make 1 CONFINED...? Probably because I only use 0 and 2...
 enum MOUSE_MODES {CAPTURED=0, CONFINED=1, VISIBLE=2}
@@ -22,7 +24,11 @@ func _ready():
 	SIGNAL_BUS.SET_MOUSE_MODE.connect(setMouseMode)
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
+	bgmBobomb.finished.connect(onBgmFinished)
 	setMouseMode(MOUSE_MODES.VISIBLE)
+
+func onBgmFinished():
+	playBgm(currBgmKey)
 
 func _input(event):
 	if(event.is_action_pressed("pause_game")):
@@ -46,6 +52,7 @@ func loadLevel(argLevelPath):
 	levelTscn.set_owner(levelSlot)
 
 func playBgm(argKey):
+	currBgmKey = argKey
 	match(argKey):
 		"bgmBobomb":
 			bgmMap.get(argKey).play()

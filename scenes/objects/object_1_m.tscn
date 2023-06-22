@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m3a14"]
 resource_local_to_scene = true
-size = Vector3(2, 2, 2)
+size = Vector3(4, 4.75, 2.25)
 
 [node name="Object1m" type="RigidBody3D" groups=["object"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -14,13 +14,15 @@ collision_mask = 3
 mass = 4.0
 max_contacts_reported = 7
 contact_monitor = true
+sleeping = true
 can_sleep = false
 script = ExtResource("1_nq8m4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_m3a14")
 
 [node name="ModelMips" parent="." instance=ExtResource("2_c2syc")]
-transform = Transform3D(0.142, 0, 0, 0, 0.142, 0, 0, 0, 0.142, 0, -1, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -1, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

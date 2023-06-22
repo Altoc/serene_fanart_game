@@ -38,7 +38,8 @@ func getPosition():
 
 #Turn NPC towards target Vec3
 func setRotation(argTargetVec3):
-	parent.look_at(argTargetVec3, Vector3.UP)
+	if(parent.transform.origin.y != argTargetVec3.y):
+		parent.look_at(argTargetVec3, Vector3.UP)
 
 func _process(delta):
 	if(!gamePaused):

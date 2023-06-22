@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_1c1pg"]
 [ext_resource type="PackedScene" uid="uid://cexn3l5en1wqi" path="res://models/model_dorrie.tscn" id="2_ek8rd"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dmv6r"]
-resource_local_to_scene = true
-size = Vector3(3, 3, 3)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sed2l"]
+points = PackedVector3Array(-2.40872, -26.0353, -29.1977, 27.7307, -24.9166, 16.58, -6.87226, -24.9166, 26.6269, -31.0094, 15.6005, -2.29553, 38.9105, -10.3966, -1.27655, -18.0381, 20.8666, -3.51379, 27.7307, -22.6838, -18.0233, -19.1575, 18.6339, 5.41154, -11.3428, -21.5651, -21.3762, 0.942433, -23.7978, 29.9857, -31.4427, 9.69816, 3.1802, -0.169953, -23.7978, -30.3193, -12.4552, -20.451, 19.927, 27.7307, -24.9166, -18.0233, 7.04319, -1.54343, 10.4927, 0.942433, -26.0353, 29.9857, 36.6647, -9.27789, 0.942971, -23.621, 18.6339, -5.74512, -29.3817, 16.3518, 2.98093, 27.7307, -22.6838, 16.58, -18.0381, 20.8666, 3.1802, -4.64049, -23.7978, -29.1977, -31.4427, 9.69816, -3.51379, 7.04345, -1.5434, -10.827, -4.64049, -23.7978, 28.8641, -24.1918, 20.6059, 1.93078, 0.942433, -26.0353, -30.3193, -18.0381, 19.7479, -4.62355, 35.5593, -9.27789, -2.39222, -2.40872, -26.0353, 28.8641, -18.0381, 19.7479, 4.28997, -1.28934, -23.7978, 29.9857)
 
 [node name="Object1hm" type="RigidBody3D" groups=["object"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -14,13 +13,15 @@ collision_mask = 3
 mass = 6.0
 max_contacts_reported = 7
 contact_monitor = true
+sleeping = true
 can_sleep = false
 script = ExtResource("1_1c1pg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_dmv6r")
+transform = Transform3D(-1.09278e-08, -1.88744e-08, -0.25, 0, 0.25, -1.88744e-08, 0.25, -8.25026e-16, -1.09278e-08, 0, -0.5, 0)
+shape = SubResource("ConvexPolygonShape3D_sed2l")
 
 [node name="ModelDorrie" parent="." instance=ExtResource("2_ek8rd")]
-transform = Transform3D(0.09, 0, 0, 0, -3.93403e-09, 0.09, 0, -0.09, -3.93403e-09, 0, -0.5, 0)
+transform = Transform3D(-1.09278e-08, 0.25, 1.09278e-08, 0, -1.09278e-08, 0.25, 0.25, 1.09278e-08, 4.77671e-16, 0, -0.5, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
