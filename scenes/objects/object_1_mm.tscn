@@ -15,6 +15,7 @@ max_contacts_reported = 7
 contact_monitor = true
 sleeping = true
 can_sleep = false
+freeze_mode = 1
 script = ExtResource("1_oybj1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

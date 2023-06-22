@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dd5mdk6ah7gyy"]
+[gd_scene load_steps=30 format=3 uid="uid://dd5mdk6ah7gyy"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_s7c13"]
 [ext_resource type="Texture2D" uid="uid://bium4p3t4u7qa" path="res://models/model_import/mario_head_BLACK.png" id="2_e211d"]
@@ -482,6 +482,9 @@ shadow_mesh = SubResource("ArrayMesh_natsb")
 [sub_resource type="SphereShape3D" id="SphereShape3D_faqop"]
 radius = 1.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_3yd24"]
+radius = 2.5
+
 [node name="PlayerBall" type="RigidBody3D" groups=["player_ball"]]
 collision_layer = 2
 collision_mask = 5
@@ -501,3 +504,12 @@ shape = SubResource("SphereShape3D_faqop")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_o84ct")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_3yd24")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -11,25 +11,26 @@ extends RigidBody3D
 var playerBall
 
 enum OBJECT_STATES {
-	NOT_PICKED_UP=0,
-	PICKED_UP=1
+	CANT_BE_PICKED_UP=0,
+	CAN_BE_PICKED_UP=1,
+	PICKED_UP=2
 }
-@onready var currState = OBJECT_STATES.NOT_PICKED_UP
+var currState
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	setState(OBJECT_STATES.NOT_PICKED_UP)
+	setState(OBJECT_STATES.CANT_BE_PICKED_UP)
 
 func setState(argNewState):
 	currState = argNewState
 	match(currState):
-		OBJECT_STATES.NOT_PICKED_UP:
-			angular_damp = 100
-			linear_damp = 100
+		OBJECT_STATES.CANT_BE_PICKED_UP:
+			#angular_damp = 100
+			#linear_damp = 100
+			freeze = true
+		OBJECT_STATES.CAN_BE_PICKED_UP:
+			freeze = false
 		OBJECT_STATES.PICKED_UP:
-			angular_damp = 0
-			linear_damp = 0
-			mass = 0.001
 			#turn collision detection for player ball OFF
 			set_collision_mask_value(2, false)
 			#turn off collision detection for floor (TEMPORARY?)
@@ -40,9 +41,10 @@ func setState(argNewState):
 			glue.node_a = self.get_path()
 			glue.node_b = playerBall.get_path()
 			SIGNAL_BUS.emit_signal("ADD_OBJECT_TO_PLAYER_BALL", self)
+			mass = 0.001
 
 func _on_body_entered(body):
-	if(body.is_in_group("player_ball") && currState == OBJECT_STATES.NOT_PICKED_UP):
+	if(body.is_in_group("player_ball") && currState == OBJECT_STATES.CAN_BE_PICKED_UP):
 		processBallCollision(body)
 
 func processBallCollision(argPlayer):
@@ -58,3 +60,8 @@ func processBallCollision(argPlayer):
 		setState(OBJECT_STATES.PICKED_UP)
 	else:
 		print("Object too heavy. Threshold: " + str(pickupThreshold))
+
+func canBePickedUp(argSize):
+	if(pickupThreshold <= argSize):
+		return true
+	return false

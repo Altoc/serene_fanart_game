@@ -48,6 +48,7 @@ player = NodePath("../PlayerBall")
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("2_2r78r")]
 process_mode = 1
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.5, 1.8983, -125.634)
+torqueFactor = 200
 myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("3_4jqyy")]
@@ -219,13 +220,34 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -131.5)
 
 [node name="Object1cm6" parent="Objects" instance=ExtResource("7_75jws")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -130.5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -130.25)
 
 [node name="Object1cm7" parent="Objects" instance=ExtResource("7_75jws")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -129.25)
 
 [node name="Object1cm8" parent="Objects" instance=ExtResource("7_75jws")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 6, -128)
+
+[node name="Object1cm9" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -127.25)
+
+[node name="Object1cm10" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -126)
+
+[node name="Object1cm11" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -124.75)
+
+[node name="Object1cm12" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -123.5)
+
+[node name="Object1cm14" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -131)
+
+[node name="Object1cm15" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -129.818)
+
+[node name="Object1cm16" parent="Objects" instance=ExtResource("7_75jws")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.75, 7, -128.591)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 process_mode = 1
