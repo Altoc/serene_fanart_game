@@ -2,13 +2,15 @@ extends RigidBody3D
 
 @onready
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
+@onready
+var audio = get_node("AudioStreamPlayer3D")
 
 var input = Vector3()
 var inputReceived = false
 var torque = Vector3()
 #previous mouse position. used for camera panning kbm
 var mousePrevPos = Vector2(0,0)
-enum playerStates {IDLE=0,TURN=1,FALLING=2,LANDING=3,RUN=4}
+enum PlayerStates {IDLE=0,OOB=1}
 var currPlayerState
 var prevPlayerState = null
 @export var torqueFactor = 200
@@ -19,6 +21,7 @@ var size = 1
 
 func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
+	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	torqueIncreaseRate = torqueFactor / mass
 
 func getSize():
@@ -26,6 +29,9 @@ func getSize():
 
 func calculateTorque(argMass, argIncreaseRate):
 	return argMass * argIncreaseRate
+
+func onPlayerOutOfBounds():
+	setPlayerState(PlayerStates.OOB)
 
 #increase ball size and mass
 func onAddObjectToPlayerBall(argObject):
@@ -54,7 +60,7 @@ func handleInput(argInput):
 		input.x += 1
 		SIGNAL_BUS.emit_signal("PLAYER_MOVEMENT_DIRECTION_UPDATE", argInput)
 	if(!inputReceived):
-		setPlayerState(playerStates.IDLE)
+		setPlayerState(PlayerStates.IDLE)
 
 func _input(argInput):
 	if(argInput is InputEventMouseMotion):
@@ -69,14 +75,8 @@ func setPlayerState(argState):
 	if(argState != null):
 		currPlayerState = argState
 	match currPlayerState:
-		playerStates.IDLE:
+		PlayerStates.IDLE:
 			#constant_torque = Vector3(0, 0, 0)
 			pass
-		playerStates.RUN:
-			pass
-		playerStates.TURN:
-			pass
-		playerStates.FALLING:
-			pass
-		playerStates.LANDING:
-			pass
+		PlayerStates.OOB:
+			audio.play()

@@ -8,3 +8,5 @@ signal SET_MOUSE_MODE
 signal SET_UI_MODE
 
 signal LOAD_LEVEL
+
+signal PLAYER_OUT_OF_BOUNDS

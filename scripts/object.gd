@@ -21,9 +21,12 @@ func setState(argNewState):
 	currState = argNewState
 	match(currState):
 		OBJECT_STATES.NOT_PICKED_UP:
-			pass
+			angular_damp = 100
+			linear_damp = 100
 		OBJECT_STATES.PICKED_UP:
-			sleeping = false
+			angular_damp = 0
+			linear_damp = 0
+			mass = 0.001
 			#turn collision detection for player ball OFF
 			set_collision_mask_value(2, false)
 			#turn off collision detection for floor (TEMPORARY?)
@@ -34,7 +37,6 @@ func setState(argNewState):
 			glue.node_a = self.get_path()
 			glue.node_b = playerBall.get_path()
 			SIGNAL_BUS.emit_signal("ADD_OBJECT_TO_PLAYER_BALL", self)
-			mass = 0.001
 
 func _on_body_entered(body):
 	if(body.is_in_group("player_ball") && currState == OBJECT_STATES.NOT_PICKED_UP):
@@ -42,6 +44,7 @@ func _on_body_entered(body):
 
 func processBallCollision(argPlayer):
 	if(pickupThreshold <= argPlayer.getSize()):
+		print("Object picked up.")
 		playerBall = argPlayer
 		setState(OBJECT_STATES.PICKED_UP)
 	else:

@@ -27,6 +27,8 @@ events = [SubResource("InputEventMouseButton_n0g0r"), SubResource("InputEventKey
 process_mode = 3
 script = ExtResource("1_r0f8h")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="SignalBus" type="Node" parent="."]
 script = ExtResource("1_f4a8i")
 
