@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=15 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
+[ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_pijkb"]
 [ext_resource type="Texture2D" uid="uid://dbke37kcnwa4f" path="res://images/bobomb_battlefield_skybox.png" id="1_ssjug"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="2_2r78r"]
 [ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="3_4jqyy"]
@@ -24,10 +25,15 @@ sky_rotation = Vector3(0, -6.28319, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6nlkw"]
 size = Vector3(10000, 100, 10000)
 
-[node name="LevelBombombBattlefield" type="Node3D"]
+[node name="LevelBombombBattlefield" type="Node3D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_pijkb")
+player = NodePath("PlayerBall")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_brvlw")
+
+[node name="RespawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.75, 10.25, -127.5)
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_fksdl")]
 process_mode = 1
@@ -223,7 +229,7 @@ transform = Transform3D(0.94506, 0.10053, 0.311056, -0.270866, -0.2919, 0.917293
 [node name="ModelBombombBattlefield" parent="." instance=ExtResource("7_ppc0x")]
 
 [node name="DeathBarrier" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -118, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56.5, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("9_nn060")

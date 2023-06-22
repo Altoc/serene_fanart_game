@@ -18,6 +18,7 @@ var torqueIncreaseRate
 @export
 var myCamera : Node3D
 var size = 1
+@onready var myMesh = get_node("Ball")
 
 func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
@@ -51,6 +52,13 @@ func _physics_process(delta):
 	if(input.x > 0):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque(torque)
+
+func _process(delta):
+	match(currPlayerState):
+		PlayerStates.IDLE:
+			pass
+		PlayerStates.OOB:
+			myMesh.scale -= delta * 1
 
 func handleInput(argInput):
 	inputReceived = false
