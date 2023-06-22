@@ -16,6 +16,7 @@ max_contacts_reported = 7
 contact_monitor = true
 can_sleep = false
 script = ExtResource("1_tnmfq")
+goal = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_dg0g7")

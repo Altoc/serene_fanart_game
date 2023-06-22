@@ -5,6 +5,9 @@ extends RigidBody3D
 
 @onready var pickupThreshold = mass
 
+@export var goal = false
+@onready var cutscenePath = "res://scenes/level_outro.tscn"
+
 var playerBall
 
 enum OBJECT_STATES {
@@ -45,6 +48,12 @@ func _on_body_entered(body):
 func processBallCollision(argPlayer):
 	if(pickupThreshold <= argPlayer.getSize()):
 		print("Object picked up.")
+		if(goal):
+			#CAPTURED = 0
+			SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 0)
+			#IN_GAME = 2
+			SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
+			SIGNAL_BUS.emit_signal("LOAD_LEVEL", cutscenePath)
 		playerBall = argPlayer
 		setState(OBJECT_STATES.PICKED_UP)
 	else:

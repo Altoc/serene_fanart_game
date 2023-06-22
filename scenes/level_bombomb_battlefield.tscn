@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=16 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
 [ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_pijkb"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c7h23we2q16hj" path="res://scenes/objects/object_1_cm.tscn" id="7_75jws"]
 [ext_resource type="PackedScene" uid="uid://deocwqogkvuyo" path="res://scenes/terrain/model_bombomb_battlefield.tscn" id="7_ppc0x"]
 [ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="9_nn060"]
+[ext_resource type="Texture2D" uid="uid://dksq0no6ruj7x" path="res://images/serene.png" id="11_5hmfv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ky2v0"]
 panorama = ExtResource("1_ssjug")
@@ -28,6 +29,10 @@ size = Vector3(10000, 100, 10000)
 [node name="LevelBombombBattlefield" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_pijkb")
 player = NodePath("PlayerBall")
+
+[node name="SereneText" type="Sprite3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 0)
+texture = ExtResource("11_5hmfv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_brvlw")
