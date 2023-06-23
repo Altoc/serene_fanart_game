@@ -17,6 +17,8 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_a17pw")
+myName = "Chain Chomp"
+peachMessage = "Who's a good boy?!"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
