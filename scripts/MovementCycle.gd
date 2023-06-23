@@ -10,6 +10,9 @@ extends Node
 @onready var wobbleVelocity = 25
 @onready var RotationDegreesYOffset = 0
 
+@export var reverseCourse = false
+@onready var destNodeIdxFactor = 1
+
 #Timer which determines how long the movement mod will wait before moving again
 @export var restTimer = 3
 #Tracker variable to determine if restTimer has been reached
@@ -93,11 +96,14 @@ func setState(argNewState):
 #Called when the npc has reached their current node destination
 func onDestinationReached():
 	setState(MOVEMENT_STATES.IDLE)
-	#go to the next dest node
-	currDestNode += 1
 	#make sure we arent out of bounds
-	if(currDestNode > destNodes.size() - 1):
-		currDestNode = 0
+	if(currDestNode + destNodeIdxFactor > destNodes.size() - 1 || currDestNode + destNodeIdxFactor < 0):
+		if(reverseCourse):
+			destNodeIdxFactor *= -1
+		else:
+			currDestNode = 0
+	#go to the next dest node
+	currDestNode += destNodeIdxFactor
 
 func onRestTimerTimeout():
 	restTime = 0

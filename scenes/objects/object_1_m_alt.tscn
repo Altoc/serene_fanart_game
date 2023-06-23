@@ -17,8 +17,8 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_thq0v")
-myName = "Mips"
-peachMessage = "What a disturbing little bunny..."
+myName = "Koopa Troopa"
+peachMessage = "They look cute, but they've done horrible things."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 1.5, -0.265639)
