@@ -3,7 +3,6 @@
 todo:
 	- Actually write intro dialogue
 	- SFX for enemies
-	- controls on ui
 	- outro scene
 
 credits:

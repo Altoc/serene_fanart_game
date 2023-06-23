@@ -16,6 +16,8 @@ signal SET_MOUSE_MODE
 signal SET_UI_MODE
 signal SET_PP_MODE
 
+signal DIALOGUE_DONE
+
 signal GAME_PAUSED
 signal LOAD_LEVEL
 

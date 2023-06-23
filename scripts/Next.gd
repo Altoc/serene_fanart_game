@@ -7,7 +7,11 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	SIGNAL_BUS.DIALOGUE_DONE.connect(onDialogueDone)
+	visible = false
+
+func onDialogueDone():
+	visible = true
 
 func _on_pressed():
 	#CAPTURED = 0
