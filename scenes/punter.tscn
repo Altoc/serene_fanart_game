@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://u3hj3024lik6"]
+
+[ext_resource type="Script" path="res://scripts/punter.gd" id="1_71yte"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2o7hb"]
+size = Vector3(4, 2, 4)
+
+[node name="Punter" type="Area3D" groups=["punter"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_71yte")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2o7hb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
