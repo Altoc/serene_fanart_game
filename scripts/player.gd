@@ -46,21 +46,27 @@ func onPlayerOutOfBounds():
 
 #increase ball size and mass
 func onAddObjectToPlayerBall(argObject):
-	var sizeIncreaseFactor = (argObject.mass * 0.1) 
-	var scaleIncreaseFactor = 1 + (argObject.pickupThreshold * 0.0005)
+	var sizeIncreaseFactor = (argObject.mass * 0.15) 
+	var scaleIncreaseFactor = 1 + (argObject.pickupThreshold * 0.005)
 	size += sizeIncreaseFactor
 	mass += argObject.mass
 	torqueFactor = calculateTorque(mass, torqueIncreaseRate)
 	#ballMesh.scale *= scaleIncreaseFactor
 	get_node("CollisionShape3D").scale *= scaleIncreaseFactor
+	get_node("Area3D/CollisionShape3D").scale *= scaleIncreaseFactor
 	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)
 
 func _physics_process(_delta):
 	input = Vector3()
 	handleInput(Input)
 	input = input.normalized()
+	#forward roll
 	if(input.x > 0):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
+		apply_torque(torque)
+	#break
+	elif(input.x < 0):
+		torque = myCamera.get_global_transform().basis.x * (torqueFactor)
 		apply_torque(torque)
 
 func _process(_delta):
@@ -72,11 +78,21 @@ func _process(_delta):
 
 func handleInput(argInput):
 	inputReceived = false
-	if(argInput.is_action_pressed("forward_roll") 
-	|| argInput.is_action_pressed("super_spin")):
+	if(argInput.is_action_pressed("forward_roll")):
 		inputReceived = true
 		input.x += 1
 		SIGNAL_BUS.emit_signal("PLAYER_MOVEMENT_DIRECTION_UPDATE", argInput)
+	if(argInput.is_action_pressed("break")):
+		inputReceived = true
+		input.x -= 1
+		SIGNAL_BUS.emit_signal("PLAYER_MOVEMENT_DIRECTION_UPDATE", argInput)
+	if(argInput.is_action_pressed("super_spin")):
+		inputReceived = true
+		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1 * 2)
+		apply_torque(torque)
+		print("play super spin sound")
+	if(argInput.is_action_just_released("super_spin")):
+		getBlasted(mass, myCamera.get_global_transform().basis.z * -1)
 	if(!inputReceived):
 		setPlayerState(PlayerStates.IDLE)
 
@@ -96,7 +112,6 @@ func setPlayerState(argState):
 		PlayerStates.IDLE:
 			pass
 		PlayerStates.OOB:
-			print("mama mia")
 			audio.play()
 		PlayerStates.BACK_IN_BOUNDS:
 			sleeping = true
@@ -113,6 +128,7 @@ func _on_area_3d_body_entered(body):
 				SIGNAL_BUS.emit_signal("OBJECT_PUNTED_BALL", body)
 
 func getBlasted(blastPower, blastDirection):
+	blastPowerLimit = mass * 5
 	if(abs(blastPower) > blastPowerLimit):
 		blastPower = blastPowerLimit
 	print("blasting player with " + str(blastPower))

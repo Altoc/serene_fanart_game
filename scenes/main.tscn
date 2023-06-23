@@ -77,7 +77,7 @@ text = "Ball Size: "
 
 [node name="BallSizeValue" type="Label" parent="UI/HUD/HBoxContainer"]
 layout_mode = 2
-text = "1mm"
+text = "0 mario units"
 script = ExtResource("3_4avfj")
 
 [node name="PeachPopup" type="HBoxContainer" parent="UI/HUD"]

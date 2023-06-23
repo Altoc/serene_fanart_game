@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=41 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
 [ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_pijkb"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://bvet7e5ig3yu3" path="res://scenes/objects/object_1_dam_alt.tscn" id="27_hohwt"]
 [ext_resource type="PackedScene" uid="uid://b75ihekgi3w22" path="res://scenes/objects/object_1_dm_alt.tscn" id="28_nvn81"]
 [ext_resource type="PackedScene" uid="uid://upmop1gu76tj" path="res://scenes/objects/object_5_cm_alt.tscn" id="29_ykv7v"]
+[ext_resource type="PackedScene" uid="uid://c052nfm1sx7kx" path="res://scenes/objects/object_5m_alt.tscn" id="30_qipey"]
+[ext_resource type="PackedScene" uid="uid://dsny488ayc6uj" path="res://scenes/objects/object_5_mm_alt.tscn" id="31_k8uqc"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ky2v0"]
 panorama = ExtResource("1_ssjug")
@@ -100,7 +102,7 @@ player = NodePath("../PlayerBall")
 
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("2_2r78r")]
 process_mode = 1
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 78.25, -23.8517, -131.134)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 108.75, 2.3983, -126.884)
 myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("3_4jqyy")]
@@ -959,5 +961,65 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0.25, -96)
 walkSpeed = 10.0
 restTimer = 0
 destNodes = Array[Vector3]([Vector3(59.5, 0.25, -90), Vector3(48.25, 0.25, -75), Vector3(28.75, 0.25, -83.5), Vector3(28.75, 0.25, -97.75), Vector3(44.75, 0.25, -105.25)])
+
+[node name="Object5m_alt" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -22.5, 17.5, -145)
+
+[node name="MovementRotate" parent="Object5m_alt" instance=ExtResource("25_4w8bx")]
+
+[node name="Object5m_alt2" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 130.5, 17.75, -58.25)
+
+[node name="Object5m_alt5" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, 147.5, 22.75, 52.75)
+
+[node name="Object5m_alt6" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 137, 22.75, 90.75)
+
+[node name="Object5m_alt3" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 121.5, 17.75, -55.5)
+
+[node name="Object5m_alt4" parent="." instance=ExtResource("30_qipey")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 123.5, 17.75, -63.5)
+
+[node name="Object5mm_alt" parent="." instance=ExtResource("31_k8uqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.75, 8, -133.5)
+
+[node name="MovementCycle" parent="Object5mm_alt" instance=ExtResource("8_7psm7")]
+walkSpeed = 10.0
+restTimer = 0
+destNodes = Array[Vector3]([Vector3(17.75, 13.25, -133.5), Vector3(17.75, 13.25, -119.5), Vector3(17.75, 8, -119.5), Vector3(17.75, 8, -133.5)])
+
+[node name="Object5mm_alt2" parent="." instance=ExtResource("31_k8uqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.25, 13.75, -133.5)
+
+[node name="MovementCycle" parent="Object5mm_alt2" instance=ExtResource("8_7psm7")]
+walkSpeed = 10.0
+restTimer = 0
+destNodes = Array[Vector3]([Vector3(14.25, 14.25, -133.5), Vector3(14.25, 14.25, -119.5), Vector3(14.25, 8, -119.5), Vector3(14.25, 8, -133.5)])
+
+[node name="Object5mm_alt3" parent="." instance=ExtResource("31_k8uqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, 15, -133.5)
+
+[node name="MovementCycle" parent="Object5mm_alt3" instance=ExtResource("8_7psm7")]
+walkSpeed = 10.0
+restTimer = 0
+destNodes = Array[Vector3]([Vector3(11.25, 15, -133.5), Vector3(11.25, 15, -119.5), Vector3(11.25, 9, -119.5), Vector3(11.25, 9, -133.5)])
+
+[node name="Object5mm_alt4" parent="." instance=ExtResource("31_k8uqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 16.25, -133.5)
+
+[node name="MovementCycle" parent="Object5mm_alt4" instance=ExtResource("8_7psm7")]
+walkSpeed = 10.0
+restTimer = 0
+destNodes = Array[Vector3]([Vector3(8, 16.25, -133.5), Vector3(8, 16.25, -119.5), Vector3(8, 10, -119.5), Vector3(8, 10, -133.5)])
+
+[node name="Object5mm_alt5" parent="." instance=ExtResource("31_k8uqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 8, -133.5)
+
+[node name="MovementCycle" parent="Object5mm_alt5" instance=ExtResource("8_7psm7")]
+walkSpeed = 10.0
+restTimer = 0
+destNodes = Array[Vector3]([Vector3(20.75, 13.25, -133.5), Vector3(20.75, 13.25, -119.5), Vector3(20.75, 8, -119.5), Vector3(20.75, 8, -133.5)])
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered"]

@@ -1,14 +1,10 @@
 # serene_fanart_game
  
 todo:
-	- speed lines when ball torque greater than a value
-	- make all the object sizes
-	- map the object sizes to models
-	- size ui in top left
-	- dancing mario ui in bottom right
-	- last picked up ui in bottom left
-	- fix rotations on picked up objects
-	- outro
+	- Actually write intro dialogue
+	- SFX for enemies
+	- controls on ui
+	- outro scene
 
 credits:
 	- booscaster for ripping the 2d mario 64 textures
@@ -17,7 +13,7 @@ credits:
 		- name other guys from the readme.txt files
 	- SFX: https://themushroomkingdom.net/media/sm64/wav
 
-I rigged the peach model
+I rigged some of the models (peach was the most interesting)
 Imported / rigged / exported / resized 3d models (Used Blender 3.4)
 The level geometry itself proved difficult, as Mario 64's collision detection is pretty different from a standard 3d game today.
 	long and short, mario 64 calculates the angle of a surface to determine if it is a wall / ceiling / floor, modern games just use collision meshes

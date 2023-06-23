@@ -482,7 +482,7 @@ shadow_mesh = SubResource("ArrayMesh_natsb")
 [sub_resource type="SphereShape3D" id="SphereShape3D_faqop"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3yd24"]
-radius = 1.0
+radius = 0.75
 
 [node name="PlayerBall" type="RigidBody3D" groups=["player_ball"]]
 collision_layer = 2
