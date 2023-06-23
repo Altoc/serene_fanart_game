@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=20 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cudo336ny5o3h" path="res://images/peach_portrait_bg.png" id="9_07dun"]
 [ext_resource type="Texture2D" uid="uid://b76yjpdeoa0xt" path="res://images/peach_portrait.png" id="10_e1rq7"]
 [ext_resource type="Script" path="res://scripts/spinny_ui.gd" id="10_sxu6m"]
+[ext_resource type="Script" path="res://scripts/peachLabel.gd" id="12_cpqhp"]
 
 [sub_resource type="InputEventMouseButton" id="InputEventMouseButton_n0g0r"]
 button_index = 1
@@ -113,9 +114,17 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="UI/HUD/PeachText"]
+[node name="Panel" type="PanelContainer" parent="UI/HUD/PeachText"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/HUD/PeachText/Panel"]
 layout_mode = 2
 text = "This is a message to you, Mario."
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+script = ExtResource("12_cpqhp")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/HUD/PeachText"]
 layout_mode = 2

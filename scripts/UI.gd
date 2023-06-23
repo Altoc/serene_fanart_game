@@ -25,20 +25,26 @@ enum PEACH_POPUP_STATES {
 @onready var mainMenu = get_node("MainMenu")
 @onready var peachPopup = get_node("HUD/PeachPopup")
 @onready var peachTextContainer = get_node("HUD/PeachText")
-@onready var peachTextLabel = get_node("HUD/PeachText/Label")
+@onready var peachTextLabel = get_node("HUD/PeachText/Panel/Label")
+
+@onready var messageReadyForRemoval = false
 
 func _ready():
 	SIGNAL_BUS.SET_UI_MODE.connect(setUiState)
 	SIGNAL_BUS.SET_PP_MODE.connect(setPPState)
 	SIGNAL_BUS.ADD_PEACH_MESSAGE_TO_QUEUE.connect(addPeachMessage)
+	SIGNAL_BUS.REMOVE_PEACH_MESSAGE.connect(removePeachMessage)
 	setUiState(UI_STATES.MAIN_MENU)
 	setPPState(PEACH_POPUP_STATES.NO_POPUP)
 
 func addPeachMessage(argStr):
 	peachMessageQueue.push_front(argStr)
 
+func removePeachMessage():
+	messageReadyForRemoval = true
+
 func _process(delta):
-	if(currPPState == PEACH_POPUP_STATES.YES_POPUP):
+	if(currPPState == PEACH_POPUP_STATES.YES_POPUP && messageReadyForRemoval):
 		peachPopupTimer += delta
 		if(peachPopupTimer >= peachPopupTime):
 			peachPopupTimer = 0
@@ -72,8 +78,11 @@ func setPPState(argNewState):
 	currPPState = argNewState
 	match(currPPState):
 		PEACH_POPUP_STATES.NO_POPUP:
+			SIGNAL_BUS.emit_signal("PEACH_MESSAGE_REMOVED")
+			messageReadyForRemoval = false
 			peachPopup.visible = false
 			peachTextContainer.visible = false
 		PEACH_POPUP_STATES.YES_POPUP:
+			SIGNAL_BUS.emit_signal("DISPLAY_PEACH_MESSAGE")
 			peachPopup.visible = true
 			peachTextContainer.visible = true
