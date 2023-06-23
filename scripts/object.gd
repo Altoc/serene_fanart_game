@@ -10,7 +10,7 @@ extends RigidBody3D
 @export var peachMessage = ""
 @onready var cutscenePath = "res://scenes/level_outro.tscn"
 
-var movementMod
+@onready var movementMod = null
 
 var playerBall
 
@@ -27,6 +27,13 @@ func _ready():
 	for child in get_children():
 		if(child.is_in_group("movement_mod")):
 			movementMod = child
+
+func hasMovementMod():
+	return movementMod != null
+
+func getMovementModSpeed():
+	if(hasMovementMod()):
+		return movementMod.walkSpeed
 
 func setState(argNewState):
 	currState = argNewState

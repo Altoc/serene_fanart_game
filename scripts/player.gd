@@ -61,13 +61,12 @@ func _physics_process(_delta):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque(torque)
 
-func _process(delta):
+func _process(_delta):
 	match(currPlayerState):
 		PlayerStates.IDLE:
 			pass
 		PlayerStates.OOB:
 			pass
-			#myMesh.scale -= delta * 1
 
 func handleInput(argInput):
 	inputReceived = false
@@ -93,13 +92,11 @@ func setPlayerState(argState):
 		currPlayerState = argState
 	match currPlayerState:
 		PlayerStates.IDLE:
-			#constant_torque = Vector3(0, 0, 0)
 			pass
 		PlayerStates.OOB:
 			audio.play()
 		PlayerStates.BACK_IN_BOUNDS:
 			sleeping = true
-			#myMesh.scale = Vector3.ONE
 			sleeping = false
 			setPlayerState(PlayerStates.IDLE)
 
@@ -107,9 +104,10 @@ func _on_area_3d_body_entered(body):
 	if(body.is_in_group("object")):
 		if(body.canBePickedUp(size)):
 			body.setState(1)
-		else:
+		elif(body.hasMovementMod()):
 			getBlasted(body)
 
 func getBlasted(body):
 	print("blasting player")
 	apply_central_force(body.transform.basis.z * -1000 * body.mass)
+	SIGNAL_BUS.emit_signal("OBJECT_PUNTED_BALL", body)

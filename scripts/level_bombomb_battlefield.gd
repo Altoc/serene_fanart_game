@@ -11,10 +11,13 @@ extends Node3D
 
 @onready var firstGrabs = []
 
+@onready var anouncePunting = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onObjectAddedToPlayerBall)
+	SIGNAL_BUS.OBJECT_PUNTED_BALL.connect(onObjectPuntedBall)
 	SIGNAL_BUS.emit_signal("PLAY_BGM", "bgmBobomb")
 
 func _process(delta):
@@ -22,6 +25,10 @@ func _process(delta):
 		respawnTimer += delta
 		if(respawnTimer >= respawnTimeDelaySecs):
 			respawnPlayer()
+
+func onObjectPuntedBall(rigidBody):
+	if(anouncePunting):
+		SIGNAL_BUS.emit_signal("ADD_PEACH_MESSAGE_TO_QUEUE", "PUNTED!!! By a " + rigidBody.myName + " no less...")
 
 func onObjectAddedToPlayerBall(rigidBody):
 	if(rigidBody.myName not in firstGrabs):
