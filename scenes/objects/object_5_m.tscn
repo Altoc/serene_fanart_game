@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://df1bkek1e4epy"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_q4o8y"]
+[ext_resource type="PackedScene" uid="uid://co52lb65avak" path="res://models/model_import/yoshi.glb" id="2_rilhh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0e2p"]
+resource_local_to_scene = true
+size = Vector3(2.67123, 6.27898, 5.66664)
+
+[node name="Object5m" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 64.0
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_q4o8y")
+myName = "Mips"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11444, -0.361431)
+shape = SubResource("BoxShape3D_r0e2p")
+
+[node name="Model" parent="." instance=ExtResource("2_rilhh")]
+transform = Transform3D(-1.4, 0, -2.11394e-07, 0, 1.4, 0, 2.11394e-07, 0, -1.4, 0, 2, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

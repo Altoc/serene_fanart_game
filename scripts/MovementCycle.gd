@@ -38,7 +38,8 @@ func getPosition():
 
 #Turn NPC towards target Vec3
 func setRotation(argTargetVec3):
-	if(parent.transform.origin.y != argTargetVec3.y):
+	#look_at() C++ bug relating to difference between target and current being approx 0
+	if(abs(parent.global_transform.origin.y - argTargetVec3.y) < 0.125):
 		parent.look_at(argTargetVec3, Vector3.UP)
 
 func _process(delta):

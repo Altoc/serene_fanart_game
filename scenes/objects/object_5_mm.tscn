@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkqx44u0fbrnj"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_7j1go"]
+[ext_resource type="PackedScene" uid="uid://dlsuowsykknkn" path="res://models/model_sign.tscn" id="2_tpyx1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g0ehs"]
+resource_local_to_scene = true
+size = Vector3(0.5, 0.75, 0.25)
+
+[node name="Object5mm" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_7j1go")
+myName = "Goomba"
+peachMessage = "Wow.. A Goomba. You got a long way to go."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_g0ehs")
+
+[node name="Model" parent="." instance=ExtResource("2_tpyx1")]
+transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, 0, -0.5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

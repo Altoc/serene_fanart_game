@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://gqfjtaj371sv" path="res://models/model_thwomp.tscn" id="2_da46w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6ils"]
-radius = 2.5
-height = 6.5
+radius = 3.25
+height = 7.5
 
 [node name="Object1dam" type="RigidBody3D" groups=["object"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 0, 0.5, 0)
 collision_layer = 4
 collision_mask = 3
-mass = 5.0
+mass = 128.0
 max_contacts_reported = 7
 contact_monitor = true
 sleeping = true
@@ -21,10 +21,10 @@ myName = "Thwomp"
 peachMessage = "Not bad. Thwomps are pretty heavy."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 8.35189e-23, 0, 1, 0, 8.35188e-23, 0, 1, 0, 2, 1.77636e-15)
 shape = SubResource("CapsuleShape3D_n6ils")
 
 [node name="ModelThwomp" parent="." instance=ExtResource("2_da46w")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 0, -1, 0)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

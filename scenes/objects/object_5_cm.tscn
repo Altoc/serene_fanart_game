@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://xuyfc2ntk4qf"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_ipb00"]
+[ext_resource type="PackedScene" uid="uid://dvumsf48pqcr8" path="res://models/model_chest.tscn" id="2_fb3ua"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yq2xx"]
+resource_local_to_scene = true
+size = Vector3(1.75, 1.25, 1.5)
+
+[node name="Object5cm" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 4.0
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_ipb00")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_yq2xx")
+
+[node name="Model" parent="." instance=ExtResource("2_fb3ua")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.25, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

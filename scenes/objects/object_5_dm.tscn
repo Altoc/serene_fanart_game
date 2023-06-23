@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkf6f0gdr1uya"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_ddumk"]
+[ext_resource type="PackedScene" uid="uid://du51cm26kvmno" path="res://models/model_import/boo.glb" id="3_id5br"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2imit"]
+resource_local_to_scene = true
+size = Vector3(4.25, 3.5, 3.5)
+
+[node name="Object5dm" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 16.0
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_ddumk")
+myName = "Monty Mole"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2imit")
+
+[node name="Model" parent="." instance=ExtResource("3_id5br")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
