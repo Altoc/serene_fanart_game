@@ -43,6 +43,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0.5, -10.25)
 [node name="Object1dam" parent="Objects" instance=ExtResource("9_vesv5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.5, 1.25, -2.5)
 
+[node name="Object1dam5" parent="Objects/Object1dam" instance=ExtResource("9_vesv5")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 40, 23.06, -45)
+
+[node name="MovementCycle" parent="Objects/Object1dam/Object1dam5" instance=ExtResource("15_nhiv0")]
+walkSpeed = 10.0
+restTimer = 2
+destNodes = Array[Vector3]([Vector3(52.75, 16.06, -45), Vector3(52.75, 23.06, -45)])
+
 [node name="Object1km" parent="Objects" instance=ExtResource("10_kwx1l")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 31.75, 2.5, -27)
 

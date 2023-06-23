@@ -7,5 +7,5 @@ func _ready():
 	SIGNAL_BUS.PLAYER_BALL_SIZE_CHANGED.connect(updateBallSize)
 
 func updateBallSize(argBallSize):
-	custom_minimum_size.x = argBallSize * 10
-	custom_minimum_size.y = argBallSize * 10
+	custom_minimum_size.x = argBallSize * 2
+	custom_minimum_size.y = argBallSize * 2

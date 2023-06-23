@@ -7,4 +7,6 @@ func _ready():
 	SIGNAL_BUS.PLAYER_BALL_SIZE_CHANGED.connect(updateBallSizeLabel)
 
 func updateBallSizeLabel(argBallSize):
-	text = str(argBallSize)
+	var str = str(argBallSize)
+	var trimmedStr = str.substr(0, str.find(".", 0)) + str.substr(str.find(".", 0), 2)
+	text = trimmedStr + " mario units"

@@ -12,6 +12,7 @@ extends Node3D
 @onready var firstGrabs = []
 
 @onready var anouncePunting = true
+@onready var anounceFallingOffStage = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,7 +29,9 @@ func _process(delta):
 
 func onObjectPuntedBall(rigidBody):
 	if(anouncePunting):
+		anouncePunting = false
 		SIGNAL_BUS.emit_signal("ADD_PEACH_MESSAGE_TO_QUEUE", "PUNTED!!! By a " + rigidBody.myName + " no less...")
+	#anouncePunting = !anouncePunting
 
 func onObjectAddedToPlayerBall(rigidBody):
 	if(rigidBody.myName not in firstGrabs):
@@ -37,6 +40,9 @@ func onObjectAddedToPlayerBall(rigidBody):
 
 func onPlayerOutOfBounds():
 	respawnFlag = true
+	if(anounceFallingOffStage):
+		anounceFallingOffStage = false
+		SIGNAL_BUS.emit_signal("ADD_PEACH_MESSAGE_TO_QUEUE", "Hahahaha... You fell!")
 
 func respawnPlayer():
 	respawnFlag = false

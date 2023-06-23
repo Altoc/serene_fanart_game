@@ -5,6 +5,8 @@ var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 @onready
 var audio = get_node("AudioStreamPlayer3D")
 
+@onready var blastPowerLimit = mass * 5
+
 var input = Vector3()
 var inputReceived = false
 var torque = Vector3()
@@ -111,7 +113,7 @@ func _on_area_3d_body_entered(body):
 				SIGNAL_BUS.emit_signal("OBJECT_PUNTED_BALL", body)
 
 func getBlasted(blastPower, blastDirection):
-	print("blasting player")
-	if(abs(blastPower) > 500):
-		blastPower = 500
+	if(abs(blastPower) > blastPowerLimit):
+		blastPower = blastPowerLimit
+	print("blasting player with " + str(blastPower))
 	apply_central_force(blastDirection * 1000 * blastPower)

@@ -101,7 +101,7 @@ func onDestinationReached():
 		if(reverseCourse):
 			destNodeIdxFactor *= -1
 		else:
-			currDestNode = 0
+			currDestNode = -1
 	#go to the next dest node
 	currDestNode += destNodeIdxFactor
 

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b75ihekgi3w22"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_5ut2s"]
+[ext_resource type="PackedScene" uid="uid://b4vihr6vny1o5" path="res://models/model_pipe.tscn" id="2_rgkai"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43dgj"]
+resource_local_to_scene = true
+size = Vector3(2.25, 2, 2.25)
+
+[node name="Object1dm_alt" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 8.0
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_5ut2s")
+myName = "Pipe"
+peachMessage = "This pipe connects to my toilet."
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_43dgj")
+
+[node name="Model" parent="." instance=ExtResource("2_rgkai")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
