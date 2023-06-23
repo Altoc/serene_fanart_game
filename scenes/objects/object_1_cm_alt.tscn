@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://drjvkmcsejq5i"]
+
+[ext_resource type="Script" path="res://scripts/object.gd" id="1_a2ir4"]
+[ext_resource type="PackedScene" uid="uid://bdmrie5nq3vdb" path="res://models/model_bowser_key.tscn" id="2_urtnr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2xe3"]
+resource_local_to_scene = true
+size = Vector3(0.75, 1, 0.25)
+
+[node name="Object1cm_alt" type="RigidBody3D" groups=["object"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+collision_layer = 4
+collision_mask = 3
+mass = 2.0
+max_contacts_reported = 7
+contact_monitor = true
+sleeping = true
+can_sleep = false
+script = ExtResource("1_a2ir4")
+myName = "Bowser Key"
+peachMessage = "Did Bowser change the locks on my doors? What locksmith allowed him to do that??"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_f2xe3")
+
+[node name="Model" parent="." instance=ExtResource("2_urtnr")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, -0.5, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

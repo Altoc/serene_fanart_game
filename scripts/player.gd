@@ -106,8 +106,9 @@ func _on_area_3d_body_entered(body):
 		if(body.canBePickedUp(size)):
 			body.setState(1)
 		elif(body.hasMovementMod()):
-			getBlasted(body.mass, body.transform.basis.z * -1)
-			SIGNAL_BUS.emit_signal("OBJECT_PUNTED_BALL", body)
+			if(body.movementMod.movementType == "CYCLE"):
+				getBlasted(body.mass, body.transform.basis.z * -1)
+				SIGNAL_BUS.emit_signal("OBJECT_PUNTED_BALL", body)
 
 func getBlasted(blastPower, blastDirection):
 	print("blasting player")

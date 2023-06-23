@@ -2,11 +2,13 @@ extends Node
 
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
-@onready var velocity = Vector3.ZERO
-@onready var gravity = 50
 @export var walkSpeed : float = 5
-
 @onready var parent = get_parent()
+@onready var movementType = "CYCLE"
+
+@onready var wobbleToleranceLimitDegrees = 15
+@onready var wobbleVelocity = 25
+@onready var RotationDegreesYOffset = 0
 
 #Timer which determines how long the movement mod will wait before moving again
 @export var restTimer = 3
@@ -37,12 +39,19 @@ func getPosition():
 	return parent.transform.origin
 
 #Turn NPC towards target Vec3
-func setRotation(argTargetVec3):
+func setRotation():
+	if(!isPistonMovement()):
+		parent.look_at(destNodes[currDestNode], Vector3.UP)
+		RotationDegreesYOffset = 0
+		parent.myMesh.rotation_degrees.y = parent.baselineRotationDegreesY
+
+func isPistonMovement():
 	#look_at() C++ bug relating to difference between target and current being approx 0
-	var diffX = abs(parent.transform.origin.x - argTargetVec3.x)
-	var diffZ = abs(parent.transform.origin.z - argTargetVec3.z)
+	var diffX = abs(parent.transform.origin.x - destNodes[currDestNode].x)
+	var diffZ = abs(parent.transform.origin.z - destNodes[currDestNode].z)
 	if(diffX + diffZ > 0.125):
-		parent.look_at(argTargetVec3, Vector3.UP)
+		return false
+	return true
 
 func _process(delta):
 	if(!gamePaused):
@@ -55,12 +64,22 @@ func movementAction(delta):
 			if(restTime >= restTimer):
 				onRestTimerTimeout()
 		MOVEMENT_STATES.WALKING:
+			if(!isPistonMovement()):
+				wobbleMesh(delta)
 			var currNode = destNodes[currDestNode]
 			if (getPosition().x > currNode.x - 0.1 && getPosition().x < currNode.x + 0.1
 			&& getPosition().y > currNode.y - 0.1 && getPosition().y < currNode.y + 0.1
 			&& getPosition().z > currNode.z - 0.1 && getPosition().z < currNode.z + 0.1):
 				onDestinationReached()
 			parent.transform.origin = getPosition().move_toward(currNode, delta * walkSpeed)
+
+func wobbleMesh(delta):
+	var wobbleFactor = delta * wobbleVelocity * walkSpeed
+	if(abs(RotationDegreesYOffset + wobbleFactor) < wobbleToleranceLimitDegrees):
+		RotationDegreesYOffset += wobbleFactor
+		parent.myMesh.rotation_degrees.y += wobbleFactor
+	else:
+		wobbleVelocity *= -1
 
 #Set NPC set in regards to movement
 func setState(argNewState):
@@ -69,8 +88,7 @@ func setState(argNewState):
 		MOVEMENT_STATES.IDLE:
 			pass
 		MOVEMENT_STATES.WALKING:
-			var currNode = destNodes[currDestNode]
-			setRotation(currNode)
+			setRotation()
 
 #Called when the npc has reached their current node destination
 func onDestinationReached():

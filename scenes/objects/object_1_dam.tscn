@@ -24,7 +24,7 @@ peachMessage = "Not bad. Thwomps are pretty heavy."
 transform = Transform3D(1, 0, 8.35189e-23, 0, 1, 0, 8.35188e-23, 0, 1, 0, 2, 1.77636e-15)
 shape = SubResource("CapsuleShape3D_n6ils")
 
-[node name="ModelThwomp" parent="." instance=ExtResource("2_da46w")]
+[node name="Model" parent="." instance=ExtResource("2_da46w")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

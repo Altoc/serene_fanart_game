@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b8av2aav4c1xw"]
 
-[ext_resource type="Texture2D" uid="uid://c12ysew234o82" path="res://models/model_import/boo_boo_grp.png" id="1_fj80p"]
+[ext_resource type="Texture2D" uid="uid://c12ysew234o82" path="res://boo_boo_grp.png" id="1_fj80p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldr7q"]
 resource_name = "Material.033_boo_grp.png"

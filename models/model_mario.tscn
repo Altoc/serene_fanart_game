@@ -1,10 +1,10 @@
 [gd_scene load_steps=23 format=3 uid="uid://bcdg7xbymdktk"]
 
-[ext_resource type="Texture2D" uid="uid://sdkiimoq2cud" path="res://models/mario_mario_overalls_button.png" id="1_c8hxn"]
-[ext_resource type="Texture2D" uid="uid://bmtqh5dxut7xw" path="res://models/mario_eyes_center_edit.png" id="2_ir6ct"]
-[ext_resource type="Texture2D" uid="uid://dovbrk2qopskk" path="res://models/mario_mustache_edit.png" id="3_l8h2r"]
-[ext_resource type="Texture2D" uid="uid://086ie3bugu5v" path="res://models/mario_sideburn_edit.png" id="4_jdyql"]
-[ext_resource type="Texture2D" uid="uid://cxgbatvf7rdc6" path="res://models/mario_logo_edit.png" id="5_f6ks2"]
+[ext_resource type="Texture2D" uid="uid://sdkiimoq2cud" path="res://materials/mario_mario_overalls_button.png" id="1_c8hxn"]
+[ext_resource type="Texture2D" uid="uid://bmtqh5dxut7xw" path="res://materials/mario_eyes_center_edit.png" id="2_ir6ct"]
+[ext_resource type="Texture2D" uid="uid://dovbrk2qopskk" path="res://materials/mario_mustache_edit.png" id="3_l8h2r"]
+[ext_resource type="Texture2D" uid="uid://086ie3bugu5v" path="res://materials/mario_sideburn_edit.png" id="4_jdyql"]
+[ext_resource type="Texture2D" uid="uid://cxgbatvf7rdc6" path="res://materials/mario_logo_edit.png" id="5_f6ks2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpjil"]
 resource_name = "mario_overalls"

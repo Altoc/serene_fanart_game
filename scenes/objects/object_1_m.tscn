@@ -24,7 +24,7 @@ peachMessage = "What a disturbing little bunny..."
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_m3a14")
 
-[node name="ModelMips" parent="." instance=ExtResource("2_c2syc")]
+[node name="Model" parent="." instance=ExtResource("2_c2syc")]
 transform = Transform3D(-0.3, 0, -2.23517e-08, 0, 0.3, 0, 2.23517e-08, 0, -0.3, 0, -1, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

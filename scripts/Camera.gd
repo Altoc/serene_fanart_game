@@ -45,3 +45,9 @@ func _process(_delta):
 			rotation.x = rotationX
 		CameraStates.OOB:
 			look_at(player.transform.origin)
+
+#Used for KBM
+func panCamera(argVec2Pos):
+	rotationY += argVec2Pos.x
+	if(rotationX + argVec2Pos.y > -0.55 && rotationX + argVec2Pos.y < 1.26):
+		rotationX += argVec2Pos.y

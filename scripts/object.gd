@@ -10,6 +10,9 @@ extends RigidBody3D
 @export var peachMessage = ""
 @onready var cutscenePath = "res://scenes/level_outro.tscn"
 
+@onready var myMesh = get_node("Model")
+@onready var baselineRotationDegreesY = myMesh.rotation_degrees.y
+
 @onready var movementMod = null
 
 var playerBall
