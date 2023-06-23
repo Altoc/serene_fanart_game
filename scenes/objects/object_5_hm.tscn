@@ -16,13 +16,14 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_lq0mt")
-myName = "Dorrie"
+myName = "Whomp"
+peachMessage = "I dated Whomp in High School. I bet you didn't know that."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4.5, 0)
 shape = SubResource("BoxShape3D_ndi2h")
 
 [node name="ModelWhomp" parent="." instance=ExtResource("2_ogfkd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4.5, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

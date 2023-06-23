@@ -17,6 +17,8 @@ contact_monitor = true
 can_sleep = false
 script = ExtResource("1_tnmfq")
 goal = true
+myName = "Bowser"
+peachMessage = "Jerk!!!"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 2)

@@ -17,6 +17,8 @@ contact_monitor = true
 sleeping = true
 can_sleep = false
 script = ExtResource("1_ipb00")
+myName = "Treasure Chest"
+peachMessage = "I don't trust banks."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

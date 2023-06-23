@@ -94,6 +94,7 @@ func setPlayerState(argState):
 		PlayerStates.IDLE:
 			pass
 		PlayerStates.OOB:
+			print("mama mia")
 			audio.play()
 		PlayerStates.BACK_IN_BOUNDS:
 			sleeping = true
@@ -110,4 +111,6 @@ func _on_area_3d_body_entered(body):
 
 func getBlasted(blastPower, blastDirection):
 	print("blasting player")
+	if(abs(blastPower) > 500):
+		blastPower = 500
 	apply_central_force(blastDirection * 1000 * blastPower)
