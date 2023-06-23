@@ -455,28 +455,28 @@ restTimer = 0
 destNodes = Array[Vector3]([Vector3(-6.25, 16.25, -32.75), Vector3(-13.25, 16.25, -54.25), Vector3(0.75, 16.25, -78.25), Vector3(15.5, 16.25, -63), Vector3(44.25, 16.25, -51.25)])
 
 [node name="Object1m2" parent="." instance=ExtResource("19_qrxjv")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 86.25, 3.25, -153.75)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 76, 3.25, -153.75)
 
 [node name="MovementCycle" parent="Object1m2" instance=ExtResource("8_7psm7")]
 walkSpeed = 30.0
 restTimer = 0
-destNodes = Array[Vector3]([Vector3(106.25, 1.25, -155.5), Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
+destNodes = Array[Vector3]([Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
 
 [node name="Object1m3" parent="." instance=ExtResource("19_qrxjv")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 92, 3.25, -153.75)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 85.25, 3.25, -153.75)
 
 [node name="MovementCycle" parent="Object1m3" instance=ExtResource("8_7psm7")]
 walkSpeed = 30.0
 restTimer = 0
-destNodes = Array[Vector3]([Vector3(106.25, 1.25, -155.5), Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
+destNodes = Array[Vector3]([Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
 
 [node name="Object1m4" parent="." instance=ExtResource("19_qrxjv")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 98, 3.25, -153.75)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 94.5, 3.25, -153.75)
 
 [node name="MovementCycle" parent="Object1m4" instance=ExtResource("8_7psm7")]
 walkSpeed = 30.0
 restTimer = 0
-destNodes = Array[Vector3]([Vector3(106.25, 1.25, -155.5), Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
+destNodes = Array[Vector3]([Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
 
 [node name="Object1m5" parent="." instance=ExtResource("19_qrxjv")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 104, 3.25, -153.75)
@@ -484,14 +484,14 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 104, 3.2
 [node name="MovementCycle" parent="Object1m5" instance=ExtResource("8_7psm7")]
 walkSpeed = 30.0
 restTimer = 0
-destNodes = Array[Vector3]([Vector3(106.25, 1.25, -155.5), Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
+destNodes = Array[Vector3]([Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
 
 [node name="Object1m6" parent="." instance=ExtResource("19_qrxjv")]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 110, 3.25, -153.75)
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 113.5, 3.25, -153.75)
 
 [node name="MovementCycle" parent="Object1m6" instance=ExtResource("8_7psm7")]
 walkSpeed = 30.0
 restTimer = 0
-destNodes = Array[Vector3]([Vector3(106.25, 1.25, -155.5), Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
+destNodes = Array[Vector3]([Vector3(115.75, 1.25, -147.5), Vector3(123.75, 1.25, -155.5), Vector3(154.5, 1.25, -126.25), Vector3(139.25, 1.25, -99.25), Vector3(117.25, 1.25, -107.25), Vector3(85.25, 2.5, -107.25), Vector3(72.75, 3.25, -140.25)])
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered"]

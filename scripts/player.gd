@@ -10,7 +10,11 @@ var inputReceived = false
 var torque = Vector3()
 #previous mouse position. used for camera panning kbm
 var mousePrevPos = Vector2(0,0)
-enum PlayerStates {IDLE=0,OOB=1}
+enum PlayerStates {
+		IDLE=0,
+		OOB=1,
+		BACK_IN_BOUNDS=2
+	}
 var currPlayerState
 var prevPlayerState = null
 @export var torqueFactor = 200
@@ -23,6 +27,7 @@ var size = 1
 func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
+	SIGNAL_BUS.PLAYER_RESPAWNED.connect(onPlayerRespawned)
 	torqueIncreaseRate = torqueFactor / mass
 
 func getSize():
@@ -30,6 +35,9 @@ func getSize():
 
 func calculateTorque(argMass, argIncreaseRate):
 	return argMass * argIncreaseRate
+
+func onPlayerRespawned():
+	setPlayerState(PlayerStates.BACK_IN_BOUNDS)
 
 func onPlayerOutOfBounds():
 	setPlayerState(PlayerStates.OOB)
@@ -58,7 +66,8 @@ func _process(delta):
 		PlayerStates.IDLE:
 			pass
 		PlayerStates.OOB:
-			myMesh.scale -= delta * 1
+			pass
+			#myMesh.scale -= delta * 1
 
 func handleInput(argInput):
 	inputReceived = false
@@ -88,8 +97,19 @@ func setPlayerState(argState):
 			pass
 		PlayerStates.OOB:
 			audio.play()
+		PlayerStates.BACK_IN_BOUNDS:
+			sleeping = true
+			#myMesh.scale = Vector3.ONE
+			sleeping = false
+			setPlayerState(PlayerStates.IDLE)
 
 func _on_area_3d_body_entered(body):
 	if(body.is_in_group("object")):
 		if(body.canBePickedUp(size)):
 			body.setState(1)
+		else:
+			getBlasted(body)
+
+func getBlasted(body):
+	print("blasting player")
+	apply_central_force(body.transform.basis.z * -1000 * body.mass)

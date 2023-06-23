@@ -32,7 +32,7 @@ func onPlayerOutOfBounds():
 	respawnFlag = true
 
 func respawnPlayer():
-	SIGNAL_BUS.emit_signal("PLAYER_RESPAWNED")
 	respawnFlag = false
 	respawnTimer = 0
 	player.transform.origin = respawnPoint.transform.origin
+	SIGNAL_BUS.emit_signal("PLAYER_RESPAWNED")
