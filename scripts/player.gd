@@ -3,11 +3,13 @@ extends RigidBody3D
 @onready
 var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 @onready
-var audio = get_node("AudioStreamPlayer3D")
+var audio = get_node("sfx_mama_mia")
 
 @onready var blastPowerLimit = mass * 5
 
 @onready var fakeMass = mass
+
+@onready var sfx_oof = get_node("sfx_oof")
 
 var input = Vector3()
 var inputReceived = false
@@ -142,3 +144,4 @@ func getBlasted(blastPower, blastDirection):
 		blastPower = blastPowerLimit
 	print("blasting player with " + str(blastPower))
 	apply_central_impulse(blastDirection * 25 * blastPower)
+	sfx_oof.play()

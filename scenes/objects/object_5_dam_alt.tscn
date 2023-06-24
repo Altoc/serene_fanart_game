@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bitqhfbljckp7"]
+[gd_scene load_steps=5 format=3 uid="uid://bitqhfbljckp7"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_hi383"]
 [ext_resource type="PackedScene" uid="uid://b463dk1mnqbe6" path="res://models/model_spooky_piano.tscn" id="2_88wnf"]
+[ext_resource type="AudioStream" uid="uid://mv7dfo4llkwg" path="res://sounds/sfx/sm64_boo.wav" id="3_tp84r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rk4cg"]
 resource_local_to_scene = true
@@ -26,5 +27,9 @@ shape = SubResource("BoxShape3D_rk4cg")
 
 [node name="Model" parent="." instance=ExtResource("2_88wnf")]
 transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tp84r")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

@@ -2,8 +2,9 @@ extends BoxContainer
 
 enum UI_STATES {
 	MAIN_MENU=0,
-	IN_CUTSCENE=1,
-	IN_GAME=2
+	INTRO_CUTSCENE=1,
+	OUTRO_CUTSCENE=2,
+	IN_GAME=3
 }
 @onready var currUiState
 
@@ -65,9 +66,17 @@ func setUiState(argNewState):
 			hud.visible = false
 			cutScene.visible = false
 			mainMenu.visible = true
-		UI_STATES.IN_CUTSCENE:
+		UI_STATES.INTRO_CUTSCENE:
 			hud.visible = false
 			cutScene.visible = true
+			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = true
+			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = false
+			mainMenu.visible = false
+		UI_STATES.OUTRO_CUTSCENE:
+			hud.visible = false
+			cutScene.visible = true
+			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = false
+			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = true
 			mainMenu.visible = false
 		UI_STATES.IN_GAME:
 			hud.visible = true

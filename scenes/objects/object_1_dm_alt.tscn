@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b75ihekgi3w22"]
+[gd_scene load_steps=5 format=3 uid="uid://b75ihekgi3w22"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_5ut2s"]
 [ext_resource type="PackedScene" uid="uid://b4vihr6vny1o5" path="res://models/model_pipe.tscn" id="2_rgkai"]
+[ext_resource type="AudioStream" uid="uid://dmrafmq7pelt5" path="res://sounds/sfx/sm64_pipe.wav" id="3_ksqi2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_43dgj"]
 resource_local_to_scene = true
@@ -25,5 +26,9 @@ shape = SubResource("BoxShape3D_43dgj")
 
 [node name="Model" parent="." instance=ExtResource("2_rgkai")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ksqi2")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3sn32modvjkr"]
+[gd_scene load_steps=5 format=3 uid="uid://d3sn32modvjkr"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_tnmfq"]
 [ext_resource type="PackedScene" uid="uid://dpmi4jpqdp7yc" path="res://models/model_bowser.tscn" id="2_6nix6"]
+[ext_resource type="AudioStream" uid="uid://xw2cekpieyq2" path="res://sounds/sfx/sm64_bowser_defeat1.wav" id="3_biygp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dg0g7"]
 resource_local_to_scene = true
@@ -26,5 +27,9 @@ shape = SubResource("BoxShape3D_dg0g7")
 
 [node name="Model" parent="." instance=ExtResource("2_6nix6")]
 transform = Transform3D(-5, 0, -5.96046e-07, 0, 5, 0, 5.96046e-07, 0, -5, 0, -2, 5)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_biygp")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

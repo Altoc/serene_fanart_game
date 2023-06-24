@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cehj1bih32m3"]
+[gd_scene load_steps=5 format=3 uid="uid://cehj1bih32m3"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_oybj1"]
 [ext_resource type="PackedScene" uid="uid://bk50bbnoscxii" path="res://models/model_goomba.tscn" id="2_1b8wl"]
+[ext_resource type="AudioStream" uid="uid://3b0pkxfhd33o" path="res://sounds/sfx/sm64_goomba_flattened.wav" id="3_18x1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q1unh"]
 resource_local_to_scene = true
@@ -25,5 +26,9 @@ shape = SubResource("BoxShape3D_q1unh")
 
 [node name="Model" parent="." instance=ExtResource("2_1b8wl")]
 transform = Transform3D(-1.04907e-09, 0, 0.024, 0, 0.024, 0, -0.024, 0, -1.04907e-09, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_18x1m")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

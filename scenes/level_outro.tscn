@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://byq7v352jsyel"]
+[gd_scene load_steps=12 format=3 uid="uid://byq7v352jsyel"]
 
 [ext_resource type="Texture2D" uid="uid://c13jkc0mt8dr8" path="res://images/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="1_b0cod"]
+[ext_resource type="Script" path="res://scripts/level_outro.gd" id="1_xhqn6"]
 [ext_resource type="PackedScene" uid="uid://j8tmtd8jlug7" path="res://models/model_peach.tscn" id="2_dkfhy"]
 [ext_resource type="PackedScene" uid="uid://bcdg7xbymdktk" path="res://models/model_mario.tscn" id="3_o8xb5"]
+[ext_resource type="Texture2D" uid="uid://btmj4il5ejs73" path="res://images/ball.png" id="4_jniop"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_erdvs"]
 panorama = ExtResource("1_b0cod")
@@ -16,7 +18,86 @@ background_mode = 2
 sky = SubResource("Sky_ei1v2")
 sky_rotation = Vector3(0, 2.39983, 0)
 
-[node name="level_intro" type="Node3D"]
+[sub_resource type="Animation" id="Animation_qojix"]
+resource_name = "moon_up"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(92.785, -0.25, 0, 0.25, 0, 92.785, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-599, -0.25, 0, 0.25, 0, 429, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-533.75, -0.25, 0, 0.25, 0, -533.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_k7ov7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(92.785, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-533.75, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vpt0f"]
+_data = {
+"RESET": SubResource("Animation_k7ov7"),
+"moon_up": SubResource("Animation_qojix")
+}
+
+[node name="level_outro" type="Node3D"]
+script = ExtResource("1_xhqn6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5aw04")
@@ -27,4 +108,13 @@ environment = SubResource("Environment_5aw04")
 transform = Transform3D(-0.0433013, 0, 0.025, 0, 0.05, 0, -0.025, 0, -0.0433013, -46, 123.75, 51)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.906554, -0.354906, -0.228479, 0.336425, 0.934455, -0.116671, 0.25491, 0.0289024, 0.966533, -42.578, 128.683, 71.421)
+transform = Transform3D(0.973307, -0.0217442, -0.228479, -0.00520021, 0.993157, -0.116671, 0.229452, 0.114744, 0.966533, -42.578, 128.683, 71.421)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(96.5926, 0, -25.8819, 0, 100, 0, 25.8819, 0, 96.5926, 92.785, -599, -533.75)
+texture = ExtResource("4_jniop")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vpt0f")
+}

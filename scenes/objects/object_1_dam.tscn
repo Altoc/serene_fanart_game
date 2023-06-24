@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bef0esnvcs1mp"]
+[gd_scene load_steps=5 format=3 uid="uid://bef0esnvcs1mp"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_r2mc2"]
 [ext_resource type="PackedScene" uid="uid://gqfjtaj371sv" path="res://models/model_thwomp.tscn" id="2_da46w"]
+[ext_resource type="AudioStream" uid="uid://wgg8fef4ov18" path="res://sounds/sfx/sm64_thwomp.wav" id="3_kn1t2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6ils"]
 radius = 3.25
@@ -26,5 +27,9 @@ shape = SubResource("CapsuleShape3D_n6ils")
 
 [node name="Model" parent="." instance=ExtResource("2_da46w")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kn1t2")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]

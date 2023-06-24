@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=25 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="AudioStream" uid="uid://cttccqk65lnhp" path="res://sounds/sfx/sm64_pause.wav" id="2_eint3"]
+[ext_resource type="AudioStream" uid="uid://bjbn6g1w44hva" path="res://sounds/sfx/sm64_mario_so_long_bowser.wav" id="2_rl24p"]
 [ext_resource type="AudioStream" uid="uid://bhf0aes5c62we" path="res://sounds/bgm/bobomb_battlefield.mp3" id="2_wouhk"]
 [ext_resource type="AudioStream" uid="uid://c8bic6q5ajskv" path="res://sounds/bgm/katamari_intro.mp3" id="3_1spxn"]
 [ext_resource type="Script" path="res://scripts/BallSizeValue.gd" id="3_4avfj"]
@@ -18,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/spinny_ui.gd" id="10_sxu6m"]
 [ext_resource type="Script" path="res://scripts/peachLabel.gd" id="12_cpqhp"]
 [ext_resource type="Script" path="res://scripts/dialogue_label.gd" id="15_p03yx"]
+[ext_resource type="Script" path="res://scripts/QuitGame.gd" id="16_mndc1"]
 
 [sub_resource type="InputEventMouseButton" id="InputEventMouseButton_n0g0r"]
 button_index = 1
@@ -37,6 +39,9 @@ events = [SubResource("InputEventMouseButton_n0g0r"), SubResource("InputEventKey
 [node name="Main" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_r0f8h")
+
+[node name="sfx_solongbowser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rl24p")
 
 [node name="bgm_bobomb_battlefield" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wouhk")
@@ -63,6 +68,7 @@ size_flags_vertical = 3
 script = ExtResource("3_kfjfd")
 
 [node name="HUD" type="VBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -202,6 +208,7 @@ script = ExtResource("5_xw1bk")
 [node name="QuitGame" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit Game"
+script = ExtResource("16_mndc1")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
@@ -213,7 +220,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DialogueHUD" type="HBoxContainer" parent="UI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -237,17 +243,40 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.88
 
-[node name="Label" type="Label" parent="UI/DialogueHUD/VBoxContainer2/Panel"]
+[node name="LabelIntro" type="Label" parent="UI/DialogueHUD/VBoxContainer2/Panel"]
 layout_mode = 2
 offset_top = 4.0
 offset_right = 875.0
 offset_bottom = 195.0
 size_flags_vertical = 3
+text = "Hello Mario.
+
+Long story short: I screwed up. Bad.
+
+I blew up the moon and I need your help to make another one. Let's kill two Cheep Cheeps with one Whomp here, and make the new moon out of the bodies of my enemies."
 horizontal_alignment = 1
 autowrap_mode = 2
 clip_text = true
 visible_characters = 0
-visible_ratio = -0.00462963
+visible_ratio = 0.0
+script = ExtResource("15_p03yx")
+
+[node name="LabelOutro" type="Label" parent="UI/DialogueHUD/VBoxContainer2/Panel"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 875.0
+offset_bottom = 195.0
+size_flags_vertical = 3
+text = "Well Mario, we did it. 
+
+I should say, I did it. Sometimes what needs to be done, needs to be done, do you know what I am saying Mario?
+
+No? No matter. Lets get this moon up there so things can go back to normal."
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+visible_characters = 0
+visible_ratio = 0.0
 script = ExtResource("15_p03yx")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer2"]
@@ -276,14 +305,6 @@ shortcut = SubResource("Shortcut_hh0xx")
 text = "Let's a-go!"
 script = ExtResource("6_j4i1s")
 
-[node name="Next2" type="Button" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-shortcut = SubResource("Shortcut_hh0xx")
-text = "DEV"
-script = ExtResource("6_j4i1s")
-levelToLoad = "res://scenes/level_dev.tscn"
-
 [node name="MarginContainer2" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -299,6 +320,7 @@ size_flags_vertical = 3
 [node name="MainMenu" parent="LevelSlot" instance=ExtResource("4_new0g")]
 
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" method="_on_button_up"]
-[connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/Label" to="UI/DialogueHUD/VBoxContainer2/Panel/Label" method="_on_visibility_changed"]
+[connection signal="pressed" from="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" method="_on_pressed"]
+[connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelOutro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelOutro" method="_on_visibility_changed"]
 [connection signal="pressed" from="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next" to="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next" method="_on_pressed"]
-[connection signal="pressed" from="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next2" to="UI/DialogueHUD/VBoxContainer/VBoxContainer/Next2" method="_on_pressed"]
