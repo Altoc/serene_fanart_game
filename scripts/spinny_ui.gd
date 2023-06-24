@@ -1,7 +1,7 @@
 extends TextureRect
 
 func _ready():
-	pivot_offset = Vector2(125, 125)
+	pivot_offset = Vector2(87.5, 87.5)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

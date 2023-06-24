@@ -3,10 +3,12 @@ extends Node3D
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
+@onready var bgm_intro = get_node("bgm_intro")
 @onready var sfxPause = get_node("sfx_pause")
 
 @onready var bgmMap = {
-	"bgmBobomb": bgmBobomb
+	"bgmBobomb": bgmBobomb,
+	"bgm_intro": bgm_intro
 }
 
 var currBgmKey
@@ -25,6 +27,8 @@ func _ready():
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
 	bgmBobomb.finished.connect(onBgmFinished)
+	bgm_intro.finished.connect(onBgmFinished)
+	playBgm("bgm_intro")
 	setMouseMode(MOUSE_MODES.VISIBLE)
 
 func onBgmFinished():
@@ -53,9 +57,7 @@ func loadLevel(argLevelPath):
 
 func playBgm(argKey):
 	currBgmKey = argKey
-	match(argKey):
-		"bgmBobomb":
-			bgmMap.get(argKey).play()
+	bgmMap.get(currBgmKey).play()
 
 #argFlag - true = pause game, false = unpause game
 func togglePauseGame(argFlag):

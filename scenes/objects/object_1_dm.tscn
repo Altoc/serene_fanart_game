@@ -18,6 +18,7 @@ sleeping = true
 can_sleep = false
 script = ExtResource("1_na3p1")
 myName = "Monty Mole"
+peachMessage = "A mole? Purge him."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_fq0ur")

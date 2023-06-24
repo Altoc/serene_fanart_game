@@ -43,6 +43,7 @@ func _process(_delta):
 			transform.origin.y = player.transform.origin.y + posYOffset
 			rotation.y = rotationY
 			rotation.x = rotationX
+			get_node("SpringArm3D").spring_length = 10 + (player.size * 0.5)
 		CameraStates.OOB:
 			look_at(player.transform.origin)
 

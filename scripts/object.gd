@@ -52,11 +52,17 @@ func setState(argNewState):
 			set_collision_mask_value(2, false)
 			#turn off collision detection for floor (TEMPORARY?)
 			set_collision_mask_value(1, false)
+			#contact_monitor = false
+			#max_contacts_reported = 0
+			angular_damp = 100
 			var glue = PinJoint3D.new()
 			add_child(glue)
 			glue.set_owner(self)
 			glue.node_a = self.get_path()
 			glue.node_b = playerBall.get_path()
+			#glue.set_param(glue.PARAM_BIAS, 999)
+			glue.set_param(glue.PARAM_BIAS, 1)
+			glue.set_param(glue.PARAM_DAMPING, 1)
 			SIGNAL_BUS.emit_signal("ADD_OBJECT_TO_PLAYER_BALL", self)
 			mass = 0.001
 

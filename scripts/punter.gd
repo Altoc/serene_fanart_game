@@ -16,8 +16,8 @@ extends Area3D
 func _ready():
 	SIGNAL_BUS.GAME_PAUSED.connect(onGamePause)
 
-func onGamePause():
-	gamePaused = !gamePaused
+func onGamePause(pauseFlag):
+	gamePaused = pauseFlag
 
 func _on_body_entered(body):
 	if(body.is_in_group("player_ball")):

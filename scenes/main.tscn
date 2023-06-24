@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=23 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="AudioStream" uid="uid://cttccqk65lnhp" path="res://sounds/sfx/sm64_pause.wav" id="2_eint3"]
 [ext_resource type="AudioStream" uid="uid://bhf0aes5c62we" path="res://sounds/bgm/bobomb_battlefield.mp3" id="2_wouhk"]
+[ext_resource type="AudioStream" uid="uid://c8bic6q5ajskv" path="res://sounds/bgm/katamari_intro.mp3" id="3_1spxn"]
 [ext_resource type="Script" path="res://scripts/BallSizeValue.gd" id="3_4avfj"]
 [ext_resource type="Script" path="res://scripts/UI.gd" id="3_kfjfd"]
 [ext_resource type="AudioStream" uid="uid://debnxqh1t1nf8" path="res://sounds/sfx/hello_mario.wav" id="4_aexib"]
@@ -40,6 +41,9 @@ script = ExtResource("1_r0f8h")
 [node name="bgm_bobomb_battlefield" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wouhk")
 
+[node name="bgm_intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1spxn")
+
 [node name="sfx_pause" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_eint3")
 bus = &"SFX"
@@ -59,7 +63,6 @@ size_flags_vertical = 3
 script = ExtResource("3_kfjfd")
 
 [node name="HUD" type="VBoxContainer" parent="UI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -98,14 +101,14 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="UI/HUD/PeachPopup/CenterContainer"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(175, 175)
 layout_mode = 2
 texture = ExtResource("9_07dun")
 expand_mode = 1
 script = ExtResource("10_sxu6m")
 
 [node name="TextureRect" type="TextureRect" parent="UI/HUD/PeachPopup/CenterContainer"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(175, 175)
 layout_mode = 2
 texture = ExtResource("10_e1rq7")
 expand_mode = 1
@@ -163,6 +166,11 @@ text = "RMB: Backward"
 layout_mode = 2
 text = "Space: Super Spin"
 
+[node name="MarginContainer2" type="MarginContainer" parent="UI/HUD"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
 [node name="MainMenu" type="HBoxContainer" parent="UI"]
 visible = false
 layout_mode = 2
@@ -205,6 +213,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="DialogueHUD" type="HBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -226,41 +235,45 @@ size_flags_stretch_ratio = 4.0
 [node name="Panel" type="Panel" parent="UI/DialogueHUD/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.88
 
 [node name="Label" type="Label" parent="UI/DialogueHUD/VBoxContainer2/Panel"]
 layout_mode = 2
 offset_top = 4.0
-offset_right = 912.0
-offset_bottom = 110.0
+offset_right = 875.0
+offset_bottom = 195.0
 size_flags_vertical = 3
-text = "Hello Mario."
 horizontal_alignment = 1
 autowrap_mode = 2
 clip_text = true
 visible_characters = 0
-visible_ratio = 0.0
+visible_ratio = -0.00462963
 script = ExtResource("15_p03yx")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.23
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/DialogueHUD"]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/DialogueHUD/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 10.0
+size_flags_stretch_ratio = 15.82
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/DialogueHUD/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.21
 
 [node name="Next" type="Button" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 shortcut = SubResource("Shortcut_hh0xx")
-text = "Next"
+text = "Let's a-go!"
 script = ExtResource("6_j4i1s")
 
 [node name="Next2" type="Button" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
