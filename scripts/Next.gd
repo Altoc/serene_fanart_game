@@ -6,6 +6,8 @@ extends Button
 
 var currUiMode
 
+@onready var moonUp = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SIGNAL_BUS.DIALOGUE_DONE.connect(onDialogueDone)
@@ -14,6 +16,8 @@ func _ready():
 
 func onUiModeChange(argMode):
 	currUiMode = argMode
+	visible = false
+	moonUp = false
 	match(currUiMode):
 		1:
 			text = "Let's a-go!"
@@ -30,4 +34,6 @@ func _on_pressed():
 			SIGNAL_BUS.emit_signal("SET_UI_MODE", 3)
 			SIGNAL_BUS.emit_signal("LOAD_LEVEL", levelToLoad)
 		2:
-			SIGNAL_BUS.emit_signal("UP_MOON")
+			if(moonUp == false):
+				moonUp = true
+				SIGNAL_BUS.emit_signal("UP_MOON")

@@ -2,12 +2,15 @@ extends Node3D
 
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
+@onready var DEBUG_MODE = true
+
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
 @onready var bgm_intro = get_node("bgm_intro")
 @onready var sfxPause = get_node("sfx_pause")
 @onready var sfxSoLongBowser = get_node("sfx_solongbowser")
 
 @onready var outroCutscenePath = "res://scenes/level_outro.tscn"
+@export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
 
 @onready var bgmMap = {
 	"bgmBobomb": bgmBobomb,
@@ -25,7 +28,10 @@ var currentGameMode
 @onready
 var PAUSE_GAME = false
 
+@onready var currGameMode = 0
+
 func _ready():
+	SIGNAL_BUS.SET_UI_MODE.connect(setGameMode)
 	SIGNAL_BUS.SET_MOUSE_MODE.connect(setMouseMode)
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
@@ -38,9 +44,18 @@ func _ready():
 func onBgmFinished():
 	playBgm(currBgmKey)
 
+func setGameMode(gameModeIdx):
+	currGameMode = gameModeIdx
+
 func _input(event):
 	if(event.is_action_pressed("pause_game")):
-		PAUSE_GAME = !PAUSE_GAME
+		if(currGameMode == 3):
+			if(DEBUG_MODE):
+				SIGNAL_BUS.emit_signal("GOAL")
+			else:
+				togglePauseGame(!PAUSE_GAME)
+		elif(currGameMode == 1 || currGameMode == 2):
+			SIGNAL_BUS.emit_signal("DIALOGUE_DONE")
 
 func onBowserGot():
 	sfxSoLongBowser.play()

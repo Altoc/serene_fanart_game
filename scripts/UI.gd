@@ -4,7 +4,8 @@ enum UI_STATES {
 	MAIN_MENU=0,
 	INTRO_CUTSCENE=1,
 	OUTRO_CUTSCENE=2,
-	IN_GAME=3
+	IN_GAME=3,
+	CREDITS=4
 }
 @onready var currUiState
 
@@ -23,6 +24,7 @@ enum PEACH_POPUP_STATES {
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 @onready var hud = get_node("HUD")
 @onready var cutScene = get_node("DialogueHUD")
+@onready var credits = get_node("Credits")
 @onready var mainMenu = get_node("MainMenu")
 @onready var peachPopup = get_node("HUD/PeachPopup")
 @onready var peachTextContainer = get_node("HUD/PeachText")
@@ -66,20 +68,29 @@ func setUiState(argNewState):
 			hud.visible = false
 			cutScene.visible = false
 			mainMenu.visible = true
+			credits.visible = false
 		UI_STATES.INTRO_CUTSCENE:
 			hud.visible = false
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = false
 			mainMenu.visible = false
+			credits.visible = false
 		UI_STATES.OUTRO_CUTSCENE:
 			hud.visible = false
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = false
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = true
 			mainMenu.visible = false
+			credits.visible = false
 		UI_STATES.IN_GAME:
 			hud.visible = true
+			cutScene.visible = false
+			mainMenu.visible = false
+			credits.visible = false
+		UI_STATES.CREDITS:
+			hud.visible = false
+			credits.visible = true
 			cutScene.visible = false
 			mainMenu.visible = false
 

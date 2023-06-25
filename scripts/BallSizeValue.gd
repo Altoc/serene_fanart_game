@@ -4,7 +4,12 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	updateBallSizeLabel(1)
 	SIGNAL_BUS.PLAYER_BALL_SIZE_CHANGED.connect(updateBallSizeLabel)
+	SIGNAL_BUS.GOAL.connect(onBowserGot)
+
+func onBowserGot():
+	updateBallSizeLabel(1)
 
 func updateBallSizeLabel(argBallSize):
 	var stringy = str(argBallSize)

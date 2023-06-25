@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://7dyulx6vvems"]
+
+[ext_resource type="Texture2D" uid="uid://c13jkc0mt8dr8" path="res://images/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="1_1p6g0"]
+[ext_resource type="Script" path="res://scripts/level_credits.gd" id="1_gr7qr"]
+[ext_resource type="PackedScene" uid="uid://j8tmtd8jlug7" path="res://models/model_peach.tscn" id="2_8v3ws"]
+[ext_resource type="PackedScene" uid="uid://bcdg7xbymdktk" path="res://models/model_mario.tscn" id="3_5thkh"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0711v"]
+panorama = ExtResource("1_1p6g0")
+
+[sub_resource type="Sky" id="Sky_ei1v2"]
+sky_material = SubResource("PanoramaSkyMaterial_0711v")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_f5xeq"]
+background_mode = 2
+sky = SubResource("Sky_ei1v2")
+sky_rotation = Vector3(0, 2.39983, 0)
+
+[node name="level_credits" type="Node3D"]
+script = ExtResource("1_gr7qr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f5xeq")
+
+[node name="ModelPeach" parent="." instance=ExtResource("2_8v3ws")]
+
+[node name="ModelMario" parent="ModelPeach" instance=ExtResource("3_5thkh")]
+transform = Transform3D(-0.0257519, 0, 0.0428584, 0, 0.05, 0, -0.0428584, 0, -0.0257519, -46, 123.75, 51)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.426709, -0.518897, 0.74072, -0.0186972, 0.823914, 0.566406, -0.904196, 0.227841, -0.361273, -10.5604, 154.183, 30.1957)
