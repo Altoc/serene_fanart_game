@@ -74,6 +74,7 @@ func setUiState(argNewState):
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = false
+			cutScene.get_node("VBoxContainer2/HBoxContainer/PanelContainer/Label").visible = false
 			mainMenu.visible = false
 			credits.visible = false
 		UI_STATES.OUTRO_CUTSCENE:
@@ -81,6 +82,7 @@ func setUiState(argNewState):
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = false
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = true
+			cutScene.get_node("VBoxContainer2/HBoxContainer/PanelContainer/Label").visible = true
 			mainMenu.visible = false
 			credits.visible = false
 		UI_STATES.IN_GAME:

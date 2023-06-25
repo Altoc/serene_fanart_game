@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
-@onready var DEBUG_MODE = true
+@onready var DEBUG_MODE = false
 
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
 @onready var bgm_intro = get_node("bgm_intro")

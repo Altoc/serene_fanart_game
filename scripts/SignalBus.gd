@@ -23,6 +23,8 @@ signal LOAD_LEVEL
 
 signal PLAY_BGM
 
+signal FINAL_TIME
+
 signal GOAL
 
 signal UP_MOON
