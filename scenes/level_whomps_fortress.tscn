@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://boecaqp23n3xw"]
+
+[ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_kacpb"]
+[ext_resource type="Texture2D" uid="uid://dksq0no6ruj7x" path="res://images/serene.png" id="2_gkka1"]
+[ext_resource type="Texture2D" uid="uid://dbke37kcnwa4f" path="res://images/bobomb_battlefield_skybox.png" id="3_xehn5"]
+[ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="4_60131"]
+[ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="5_qf3jj"]
+[ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="6_gdlnw"]
+[ext_resource type="PackedScene" uid="uid://cfypwkhpgm86h" path="res://scenes/whomp_fortress.tscn" id="8_lmsbq"]
+[ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="8_omcxw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ky2v0"]
+panorama = ExtResource("3_xehn5")
+
+[sub_resource type="Sky" id="Sky_2pmgv"]
+sky_material = SubResource("PanoramaSkyMaterial_ky2v0")
+
+[sub_resource type="Environment" id="Environment_brvlw"]
+background_mode = 2
+sky = SubResource("Sky_2pmgv")
+sky_rotation = Vector3(0, -6.28319, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6nlkw"]
+size = Vector3(10000, 100, 10000)
+
+[node name="LevelWhompsFortress" type="Node3D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_kacpb")
+player = NodePath("PlayerBall")
+
+[node name="SereneText" type="Sprite3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 125)
+texture = ExtResource("2_gkka1")
+
+[node name="SereneText2" type="Sprite3D" parent="."]
+transform = Transform3D(10.6066, -10.6066, -4.63629e-07, 2.32941e-21, -6.55671e-07, 15, -10.6066, -10.6066, -4.63629e-07, 188, -886.75, 35.5)
+texture = ExtResource("2_gkka1")
+
+[node name="SereneText3" type="Sprite3D" parent="."]
+transform = Transform3D(10.6066, 10.6066, 4.63629e-07, 2.32941e-21, -6.55671e-07, 15, 10.6066, -10.6066, -4.63629e-07, -202.75, -886.75, 47.25)
+texture = ExtResource("2_gkka1")
+
+[node name="SereneText4" type="Sprite3D" parent="."]
+transform = Transform3D(-10.6066, 10.6066, 4.63629e-07, 2.32941e-21, -6.55671e-07, 15, 10.6066, 10.6066, 4.63629e-07, -207.75, -886.75, -156)
+texture = ExtResource("2_gkka1")
+
+[node name="SereneText5" type="Sprite3D" parent="."]
+transform = Transform3D(-10.6066, -10.6066, -4.63629e-07, 2.32941e-21, -6.55671e-07, 15, -10.6066, 10.6066, 4.63629e-07, 167.25, -886.75, -176.75)
+texture = ExtResource("2_gkka1")
+
+[node name="SereneText6" type="Sprite3D" parent="."]
+transform = Transform3D(-15, 0, -2.27374e-13, 2.32941e-21, -6.55671e-07, 15, 0, 15, 6.55671e-07, -1.75, -886.75, -233)
+texture = ExtResource("2_gkka1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_brvlw")
+
+[node name="RespawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.75, 10.25, -127.5)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_60131")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14829, 4.36548)
+player = NodePath("../PlayerBall")
+
+[node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("5_qf3jj")]
+process_mode = 1
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 162.25, 41.8983, 340.116)
+myCamera = NodePath("../Camera")
+
+[node name="PlayerBody" parent="PlayerBall" instance=ExtResource("6_gdlnw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+process_mode = 1
+transform = Transform3D(-0.299425, 0.840486, 0.451583, -0.385255, -0.539503, 0.748676, 0.872882, 0.0501977, 0.485342, 171.75, 453.676, 320.752)
+
+[node name="DeathBarrier" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56.5, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_omcxw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathBarrier"]
+shape = SubResource("BoxShape3D_6nlkw")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="DeathBarrier"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1255.75, 0)
+shape = SubResource("BoxShape3D_6nlkw")
+
+[node name="whomp_fortress" parent="." instance=ExtResource("8_lmsbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162, 0, 389.5)
+
+[connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered" flags=18]

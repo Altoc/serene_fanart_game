@@ -1,0 +1,125 @@
+[gd_scene load_steps=19 format=3 uid="uid://d2dv6qkmjnjva"]
+
+[ext_resource type="Texture2D" uid="uid://c13jkc0mt8dr8" path="res://images/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="1_6bsg8"]
+[ext_resource type="Script" path="res://scripts/LevelNub.gd" id="1_7loaq"]
+[ext_resource type="Script" path="res://scripts/level_hub.gd" id="1_qhokg"]
+[ext_resource type="AudioStream" uid="uid://cyu6qx7hhrub5" path="res://sounds/sfx/sm64_mario_waha.wav" id="2_hiemr"]
+[ext_resource type="PackedScene" uid="uid://cb2kcu1gar15r" path="res://models/model_import/bobomb_battlefield.glb" id="2_u4gwe"]
+[ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="4_0i18y"]
+[ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="5_7jsdk"]
+[ext_resource type="PackedScene" uid="uid://cdu2frll7gixg" path="res://scenes/whomp_fortress_nub.tscn" id="5_pa2de"]
+[ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="6_myut4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alv1b"]
+albedo_color = Color(0.278431, 0.698039, 0.0901961, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qq5mo"]
+material = SubResource("StandardMaterial3D_alv1b")
+size = Vector2(100, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nd6p1"]
+data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_awwjo"]
+size = Vector3(17, 4.25, 16.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ve741"]
+size = Vector3(12.75, 4.25, 14)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qs8kt"]
+panorama = ExtResource("1_6bsg8")
+
+[sub_resource type="Sky" id="Sky_ei1v2"]
+sky_material = SubResource("PanoramaSkyMaterial_qs8kt")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_g7qpk"]
+background_mode = 2
+sky = SubResource("Sky_ei1v2")
+sky_rotation = Vector3(0, 2.39983, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shim6"]
+size = Vector3(10000, 100, 10000)
+
+[node name="level_hub" type="Node3D"]
+script = ExtResource("1_qhokg")
+
+[node name="sfx_lets_a_go" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hiemr")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_qq5mo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nd6p1")
+
+[node name="LevelNub" type="Area3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -34.5, 0, 32.5)
+collision_mask = 2
+script = ExtResource("1_7loaq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelNub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_awwjo")
+
+[node name="ModelBombombBattlefield2" parent="LevelNub" instance=ExtResource("2_u4gwe")]
+
+[node name="Label3D" type="Label3D" parent="LevelNub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 2
+text = "LEVEL TEXT HERE"
+font_size = 256
+
+[node name="LevelNub2" type="Area3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -34.5, 0, -1)
+collision_mask = 2
+script = ExtResource("1_7loaq")
+levelToLoad = "res://scenes/level_whomps_fortress.tscn"
+levelName = "Whomps Fortress"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelNub2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ve741")
+
+[node name="Label3D" type="Label3D" parent="LevelNub2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 2
+text = "LEVEL TEXT HERE"
+font_size = 256
+
+[node name="whomp_fortress_nub" parent="LevelNub2" instance=ExtResource("5_pa2de")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 3.53553, 0, 7.77817)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g7qpk")
+
+[node name="RespawnPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.75, 10.25, -127.5)
+
+[node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("4_0i18y")]
+process_mode = 1
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.25, 2.3983, -1.134)
+myCamera = NodePath("../Camera")
+
+[node name="DeathBarrier" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -56.5, 0)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("5_7jsdk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathBarrier"]
+shape = SubResource("BoxShape3D_shim6")
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_myut4")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14829, 4.36548)
+player = NodePath("../PlayerBall")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.183013, 0.707107, 0.683013, 0.183013, -0.707107, 0.683013, 0.965926, 1.54268e-08, -0.258819, 51.75, 44.25, 0)
+
+[connection signal="body_entered" from="LevelNub" to="LevelNub" method="_on_body_entered"]
+[connection signal="body_entered" from="LevelNub2" to="LevelNub2" method="_on_body_entered"]
+[connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered"]

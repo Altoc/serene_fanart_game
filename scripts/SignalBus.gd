@@ -21,7 +21,11 @@ signal DIALOGUE_DONE
 signal GAME_PAUSED
 signal LOAD_LEVEL
 
+signal LEVEL_NUB_SELECTED
+
 signal PLAY_BGM
+
+signal BLAST_PLAYER
 
 signal FINAL_TIME
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdu2frll7gixg"]
+
+[ext_resource type="PackedScene" uid="uid://bv58lhyhhw54y" path="res://models/model_import/whomp_fortress.glb" id="1_odpyp"]
+
+[node name="whomp_fortress_nub" instance=ExtResource("1_odpyp")]
+
+[node name="WF" parent="." index="0"]
+transform = Transform3D(0.02, 0, 0, 0, -8.74228e-10, -0.02, 0, 0.02, -8.74228e-10, 0, 0, 0)

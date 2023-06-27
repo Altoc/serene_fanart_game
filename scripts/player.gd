@@ -34,6 +34,7 @@ func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	SIGNAL_BUS.PLAYER_RESPAWNED.connect(onPlayerRespawned)
+	SIGNAL_BUS.BLAST_PLAYER.connect(getBlasted)
 	torqueIncreaseRate = (torqueFactor / fakeMass)
 
 func getSize():
@@ -58,9 +59,6 @@ func onAddObjectToPlayerBall(argObject):
 	fakeMass += massToIncrBy * 0.15
 	torqueFactor = torqueIncreaseRate * fakeMass
 	print("torque: " + str(torqueFactor))
-	#ballMesh.scale *= scaleIncreaseFactor
-	#get_node("CollisionShape3D").scale *= scaleIncreaseFactor
-	#get_node("Area3D/CollisionShape3D").scale *= scaleIncreaseFactor
 	get_node("CollisionShape3D").shape.radius *= scaleIncreaseFactor
 	get_node("Area3D/CollisionShape3D").shape.radius *= scaleIncreaseFactor
 	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)

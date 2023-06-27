@@ -5,7 +5,8 @@ enum UI_STATES {
 	INTRO_CUTSCENE=1,
 	OUTRO_CUTSCENE=2,
 	IN_GAME=3,
-	CREDITS=4
+	CREDITS=4,
+	LEVEL_HUB=5
 }
 @onready var currUiState
 
@@ -93,6 +94,11 @@ func setUiState(argNewState):
 		UI_STATES.CREDITS:
 			hud.visible = false
 			credits.visible = true
+			cutScene.visible = false
+			mainMenu.visible = false
+		UI_STATES.LEVEL_HUB:
+			hud.visible = false
+			credits.visible = false
 			cutScene.visible = false
 			mainMenu.visible = false
 

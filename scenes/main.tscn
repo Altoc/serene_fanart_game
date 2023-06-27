@@ -408,6 +408,7 @@ size_flags_vertical = 3
 shortcut = SubResource("Shortcut_hh0xx")
 text = "Let's a-go!"
 script = ExtResource("6_j4i1s")
+levelToLoad = "res://scenes/level_hub.tscn"
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/DialogueHUD/VBoxContainer/VBoxContainer"]
 layout_mode = 2
