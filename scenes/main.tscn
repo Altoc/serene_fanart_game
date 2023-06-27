@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=31 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -21,6 +21,8 @@
 [ext_resource type="Script" path="res://scripts/peachLabel.gd" id="12_cpqhp"]
 [ext_resource type="Script" path="res://scripts/dialogue_label.gd" id="15_p03yx"]
 [ext_resource type="Script" path="res://scripts/QuitGame.gd" id="16_mndc1"]
+[ext_resource type="Script" path="res://scripts/BtnLoadLevel.gd" id="17_cg4uu"]
+[ext_resource type="Script" path="res://scripts/BtnRestart.gd" id="17_si5u1"]
 [ext_resource type="Script" path="res://scripts/BackBtn.gd" id="18_0fq3e"]
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="18_s2g4h"]
 [ext_resource type="Script" path="res://scripts/finalTimeLabel.gd" id="21_m8yfk"]
@@ -164,6 +166,31 @@ visible_ratio = 0.0
 script = ExtResource("12_cpqhp")
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/HUD/PeachText"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HUD"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/HBoxContainer3"]
+layout_mode = 2
+
+[node name="BtnRestart" type="Button" parent="UI/HUD/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+script = ExtResource("17_si5u1")
+
+[node name="BtnHub" type="Button" parent="UI/HUD/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Back to The Hub"
+script = ExtResource("17_cg4uu")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/HUD/HBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 3
 

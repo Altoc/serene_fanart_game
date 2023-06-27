@@ -17,5 +17,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if(body.is_in_group("player_ball")):
-		SIGNAL_BUS.emit_signal("LEVEL_NUB_SELECTED", levelToLoad)
+		SIGNAL_BUS.emit_signal("NOTIFY_LEVEL_NUB_SELECTED", levelToLoad)
 		SIGNAL_BUS.emit_signal("BLAST_PLAYER", 500, Vector3.UP)

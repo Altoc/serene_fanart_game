@@ -13,9 +13,9 @@ enum States {
 }
 @onready var currState = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	SIGNAL_BUS.LEVEL_NUB_SELECTED.connect(onLevelNubCollision)
+	super._ready()
+	SIGNAL_BUS.NOTIFY_LEVEL_NUB_SELECTED.connect(onLevelNubCollision)
 	setState(States.IDLE)
 
 func setState(argNewState):
@@ -23,6 +23,7 @@ func setState(argNewState):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	super._process(delta)
 	match(currState):
 		States.IDLE:
 			pass

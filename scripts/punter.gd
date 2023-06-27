@@ -14,7 +14,7 @@ extends Area3D
 @onready var gamePaused = false
 
 func _ready():
-	SIGNAL_BUS.GAME_PAUSED.connect(onGamePause)
+	SIGNAL_BUS.PAUSE_GAME.connect(onGamePause)
 
 func onGamePause(pauseFlag):
 	gamePaused = pauseFlag

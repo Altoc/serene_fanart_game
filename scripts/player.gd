@@ -97,7 +97,7 @@ func handleInput(argInput):
 		SIGNAL_BUS.emit_signal("PLAYER_MOVEMENT_DIRECTION_UPDATE", argInput)
 	if(argInput.is_action_pressed("super_spin")):
 		inputReceived = true
-		print("play super spin sound")
+		#print("play super spin sound")
 	if(argInput.is_action_just_released("super_spin")):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque_impulse(torque)

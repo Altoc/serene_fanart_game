@@ -11,10 +11,14 @@ enum CameraStates {
 
 @export
 var player : Node3D
-var tiltLimit = 45
 var rotationY = rotation.y
 var rotationX = rotation.x
 var posYOffset = 5
+
+#@onready var cameraPanLimitLower = -0.55
+#@onready var cameraPanLimitUpper = 1.26
+@onready var cameraPanLimitLower = -1
+@onready var cameraPanLimitUpper = 1.5
 
 func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
@@ -50,5 +54,7 @@ func _process(_delta):
 #Used for KBM
 func panCamera(argVec2Pos):
 	rotationY += argVec2Pos.x
-	if(rotationX + argVec2Pos.y > -0.55 && rotationX + argVec2Pos.y < 1.26):
+	if(rotationX + argVec2Pos.y > cameraPanLimitLower && rotationX + argVec2Pos.y < cameraPanLimitUpper):
 		rotationX += argVec2Pos.y
+	#else:
+	#	print("past the limit")

@@ -19,7 +19,6 @@ func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onObjectAddedToPlayerBall)
 	SIGNAL_BUS.OBJECT_PUNTED_BALL.connect(onObjectPuntedBall)
-	#SIGNAL_BUS.emit_signal("PLAY_BGM", "bgmBobomb")
 
 func _process(delta):
 	if(respawnFlag):

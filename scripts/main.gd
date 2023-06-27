@@ -36,6 +36,7 @@ func _ready():
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
 	SIGNAL_BUS.GOAL.connect(onBowserGot)
+	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
 	bgmBobomb.finished.connect(onBgmFinished)
 	bgm_intro.finished.connect(onBgmFinished)
 	playBgm("bgm_intro")
@@ -49,13 +50,7 @@ func setGameMode(gameModeIdx):
 
 func _input(event):
 	if(event.is_action_pressed("pause_game")):
-		if(currGameMode == 3):
-			if(DEBUG_MODE):
-				SIGNAL_BUS.emit_signal("GOAL")
-			else:
-				togglePauseGame(!PAUSE_GAME)
-		elif(currGameMode == 1 || currGameMode == 2):
-			SIGNAL_BUS.emit_signal("DIALOGUE_DONE")
+		SIGNAL_BUS.emit_signal("PAUSE_GAME", !PAUSE_GAME)
 
 func onBowserGot():
 	sfxSoLongBowser.play()
@@ -75,22 +70,29 @@ func setMouseMode(argMouseMode):
 
 func loadLevel(argLevelPath):
 	var levelSlot = get_node("LevelSlot")
-	levelSlot.get_children()[0].queue_free()
 	var levelTscn = load(argLevelPath).instantiate()
 	levelSlot.add_child(levelTscn)
 	levelTscn.set_owner(levelSlot)
+	levelSlot.move_child(levelTscn, 0)
+	levelSlot.get_children()[1].queue_free()
+	SIGNAL_BUS.emit_signal("NOTIFY_LEVEL_LOADED")
 
 func playBgm(argKey):
 	currBgmKey = argKey
 	bgmMap.get(currBgmKey).play()
 
-#argFlag - true = pause game, false = unpause game
-func togglePauseGame(argFlag):
-	sfxPause.play()
-	get_tree().paused = argFlag
-	PAUSE_GAME = !PAUSE_GAME
-	SIGNAL_BUS.emit_signal("GAME_PAUSED", PAUSE_GAME)
-	if(argFlag):
-		setMouseMode(MOUSE_MODES.VISIBLE)
-	else:
-		setMouseMode(MOUSE_MODES.CAPTURED)
+func onPauseGame(argFlag):
+	if(currGameMode == 3):
+		if(DEBUG_MODE):
+			SIGNAL_BUS.emit_signal("GOAL")
+		else:
+			sfxPause.play()
+			get_tree().paused = argFlag
+			PAUSE_GAME = !PAUSE_GAME
+			#SIGNAL_BUS.emit_signal("GAME_PAUSED", PAUSE_GAME)
+			if(argFlag):
+				setMouseMode(MOUSE_MODES.VISIBLE)
+			else:
+				setMouseMode(MOUSE_MODES.CAPTURED)
+	elif(currGameMode == 1 || currGameMode == 2):
+		SIGNAL_BUS.emit_signal("DIALOGUE_DONE")

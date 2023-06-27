@@ -14,6 +14,7 @@ SFX: https://themushroomkingdom.net/media/sm64/wav
 \n
 Superb Speedrunners:\n
 KODO - Discord: 48#1825 (first to break the 4:30 minute barrier)
+INTY - Really friggin' good fr
 "
 
 
