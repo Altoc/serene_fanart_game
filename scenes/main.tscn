@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=33 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scripts/Next.gd" id="6_j4i1s"]
 [ext_resource type="Texture2D" uid="uid://btmj4il5ejs73" path="res://images/ball.png" id="6_j7n2p"]
 [ext_resource type="Script" path="res://scripts/ui_ball.gd" id="7_8ugnl"]
+[ext_resource type="Theme" uid="uid://bvydmxvl5rnki" path="res://main_theme.tres" id="8_ab24x"]
 [ext_resource type="Texture2D" uid="uid://cudo336ny5o3h" path="res://images/peach_portrait_bg.png" id="9_07dun"]
 [ext_resource type="Texture2D" uid="uid://b76yjpdeoa0xt" path="res://images/peach_portrait.png" id="10_e1rq7"]
 [ext_resource type="Script" path="res://scripts/spinny_ui.gd" id="10_sxu6m"]
@@ -25,6 +26,7 @@
 [ext_resource type="Script" path="res://scripts/BtnRestart.gd" id="17_si5u1"]
 [ext_resource type="Script" path="res://scripts/BackBtn.gd" id="18_0fq3e"]
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="18_s2g4h"]
+[ext_resource type="Script" path="res://scripts/BtnOptions.gd" id="20_h4ill"]
 [ext_resource type="Script" path="res://scripts/finalTimeLabel.gd" id="21_m8yfk"]
 
 [sub_resource type="InputEventMouseButton" id="InputEventMouseButton_n0g0r"]
@@ -71,9 +73,11 @@ offset_right = 1154.0
 offset_bottom = 649.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("8_ab24x")
 script = ExtResource("3_kfjfd")
 
 [node name="HUD" type="VBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -169,28 +173,30 @@ script = ExtResource("12_cpqhp")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HUD"]
+[node name="PauseMenu" type="HBoxContainer" parent="UI/HUD"]
+process_mode = 3
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/HBoxContainer3"]
+[node name="MarginContainer" type="MarginContainer" parent="UI/HUD/PauseMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/HBoxContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/PauseMenu"]
 layout_mode = 2
 
-[node name="BtnRestart" type="Button" parent="UI/HUD/HBoxContainer3/VBoxContainer"]
+[node name="BtnRestart" type="Button" parent="UI/HUD/PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Restart Level"
 script = ExtResource("17_si5u1")
 
-[node name="BtnHub" type="Button" parent="UI/HUD/HBoxContainer3/VBoxContainer"]
+[node name="BtnHub" type="Button" parent="UI/HUD/PauseMenu/VBoxContainer"]
 layout_mode = 2
 text = "Back to The Hub"
 script = ExtResource("17_cg4uu")
 
-[node name="MarginContainer2" type="MarginContainer" parent="UI/HUD/HBoxContainer3"]
+[node name="MarginContainer2" type="MarginContainer" parent="UI/HUD/PauseMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -226,7 +232,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
 [node name="MainMenu" type="HBoxContainer" parent="UI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -259,6 +264,12 @@ text = "Credits"
 script = ExtResource("5_xw1bk")
 uiMode = 4
 levelToLoad = "res://scenes/level_credits.tscn"
+
+[node name="Options" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Please Peach Shut Up (jk ilu but fr)"
+script = ExtResource("20_h4ill")
 
 [node name="QuitGame" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -460,6 +471,7 @@ size_flags_vertical = 3
 
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" method="_on_button_up"]
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/Credits" to="UI/MainMenu/VBoxContainer/VBoxContainer/Credits" method="_on_button_up"]
+[connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/Options" to="UI/MainMenu/VBoxContainer/VBoxContainer/Options" method="_on_toggled"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" method="_on_pressed"]
 [connection signal="pressed" from="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" to="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" method="_on_pressed"]
 [connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" method="_on_visibility_changed"]

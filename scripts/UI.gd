@@ -21,6 +21,8 @@ enum PEACH_POPUP_STATES {
 @onready var peachPopupTime = 5
 @onready var peachPopupTimer = 0
 
+@onready var mutePeachFlag = false
+
 #Refs 
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 @onready var hud = get_node("HUD")
@@ -28,6 +30,7 @@ enum PEACH_POPUP_STATES {
 @onready var credits = get_node("Credits")
 @onready var mainMenu = get_node("MainMenu")
 @onready var peachPopup = get_node("HUD/PeachPopup")
+@onready var pauseMenu = get_node("HUD/PauseMenu")
 @onready var peachTextContainer = get_node("HUD/PeachText")
 @onready var peachTextLabel = get_node("HUD/PeachText/Panel/Label")
 
@@ -36,13 +39,22 @@ enum PEACH_POPUP_STATES {
 func _ready():
 	SIGNAL_BUS.SET_UI_MODE.connect(setUiState)
 	SIGNAL_BUS.SET_PP_MODE.connect(setPPState)
+	SIGNAL_BUS.MUTE_PEACH.connect(onMutePeach)
 	SIGNAL_BUS.ADD_PEACH_MESSAGE_TO_QUEUE.connect(addPeachMessage)
 	SIGNAL_BUS.REMOVE_PEACH_MESSAGE.connect(removePeachMessage)
+	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
 	setUiState(UI_STATES.MAIN_MENU)
 	setPPState(PEACH_POPUP_STATES.NO_POPUP)
 
+func onMutePeach():
+	mutePeachFlag = !mutePeachFlag
+
+func onPauseGame(argPauseFlag):
+	pauseMenu.visible = argPauseFlag
+
 func addPeachMessage(argStr):
-	peachMessageQueue.push_front(argStr)
+	if(!mutePeachFlag):
+		peachMessageQueue.push_front(argStr)
 
 func removePeachMessage():
 	messageReadyForRemoval = true
@@ -67,11 +79,13 @@ func setUiState(argNewState):
 	match(currUiState):
 		UI_STATES.MAIN_MENU:
 			hud.visible = false
+			pauseMenu.visible = false
 			cutScene.visible = false
 			mainMenu.visible = true
 			credits.visible = false
 		UI_STATES.INTRO_CUTSCENE:
 			hud.visible = false
+			pauseMenu.visible = false
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = false
@@ -80,6 +94,7 @@ func setUiState(argNewState):
 			credits.visible = false
 		UI_STATES.OUTRO_CUTSCENE:
 			hud.visible = false
+			pauseMenu.visible = false
 			cutScene.visible = true
 			cutScene.get_node("VBoxContainer2/Panel/LabelIntro").visible = false
 			cutScene.get_node("VBoxContainer2/Panel/LabelOutro").visible = true
@@ -88,16 +103,19 @@ func setUiState(argNewState):
 			credits.visible = false
 		UI_STATES.IN_GAME:
 			hud.visible = true
+			pauseMenu.visible = false
 			cutScene.visible = false
 			mainMenu.visible = false
 			credits.visible = false
 		UI_STATES.CREDITS:
 			hud.visible = false
+			pauseMenu.visible = false
 			credits.visible = true
 			cutScene.visible = false
 			mainMenu.visible = false
 		UI_STATES.LEVEL_HUB:
 			hud.visible = false
+			pauseMenu.visible = false
 			credits.visible = false
 			cutScene.visible = false
 			mainMenu.visible = false

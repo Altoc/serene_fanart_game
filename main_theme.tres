@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bvydmxvl5rnki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24pf6"]
+bg_color = Color(0.737255, 0.737255, 0.737255, 1)
+
+[resource]
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/pressed = SubResource("StyleBoxFlat_24pf6")
