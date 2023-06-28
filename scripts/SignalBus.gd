@@ -25,6 +25,7 @@ signal NOTIFY_LEVEL_NUB_SELECTED
 signal PAUSE_GAME
 signal LOAD_LEVEL
 
+signal TOGGLE_BGM
 signal PLAY_BGM
 
 signal BLAST_PLAYER

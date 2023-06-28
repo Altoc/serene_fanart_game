@@ -66,13 +66,19 @@ script = ExtResource("1_7loaq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_awwjo")
 
-[node name="ModelBombombBattlefield2" parent="LevelNub" instance=ExtResource("2_u4gwe")]
-
 [node name="Label3D" type="Label3D" parent="LevelNub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
 billboard = 2
 text = "LEVEL TEXT HERE"
 font_size = 256
+
+[node name="Label3D2" type="Label3D" parent="LevelNub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 2
+text = "BEST TIME: N/A"
+font_size = 256
+
+[node name="ModelBombombBattlefield2" parent="LevelNub" instance=ExtResource("2_u4gwe")]
 
 [node name="LevelNub2" type="Area3D" parent="."]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -34.5, 0, -1)
@@ -86,9 +92,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_ve741")
 
 [node name="Label3D" type="Label3D" parent="LevelNub2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
 billboard = 2
 text = "LEVEL TEXT HERE"
+font_size = 256
+
+[node name="Label3D2" type="Label3D" parent="LevelNub2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 2
+text = "BEST TIME: N/A"
 font_size = 256
 
 [node name="whomp_fortress_nub" parent="LevelNub2" instance=ExtResource("5_pa2de")]

@@ -16,8 +16,8 @@ extends Node3D
 	"bgmBobomb": bgmBobomb,
 	"bgm_intro": bgm_intro
 }
-
 var currBgmKey
+@onready var bgmMuted = false
 
 #godot mouse modes: 0=VISIBLE, 1=HIDDEN, 2=CAPTURED, 3=CONFINED
 # Then why did I make 1 CONFINED...? Probably because I only use 0 and 2...
@@ -34,6 +34,7 @@ func _ready():
 	SIGNAL_BUS.SET_UI_MODE.connect(setGameMode)
 	SIGNAL_BUS.SET_MOUSE_MODE.connect(setMouseMode)
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
+	SIGNAL_BUS.TOGGLE_BGM.connect(onMuteBgm)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
 	SIGNAL_BUS.GOAL.connect(onBowserGot)
 	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
@@ -42,8 +43,16 @@ func _ready():
 	playBgm("bgm_intro")
 	setMouseMode(MOUSE_MODES.VISIBLE)
 
+func onMuteBgm():
+	bgmMuted = !bgmMuted
+	if(bgmMuted):
+		bgmMap.get(currBgmKey).stop()
+	else:
+		bgmMap.get(currBgmKey).play()
+
 func onBgmFinished():
-	playBgm(currBgmKey)
+	if(!bgmMuted):
+		playBgm(currBgmKey)
 
 func setGameMode(gameModeIdx):
 	currGameMode = gameModeIdx
@@ -78,8 +87,9 @@ func loadLevel(argLevelPath):
 	SIGNAL_BUS.emit_signal("NOTIFY_LEVEL_LOADED")
 
 func playBgm(argKey):
-	currBgmKey = argKey
-	bgmMap.get(currBgmKey).play()
+	if(!bgmMuted):
+		currBgmKey = argKey
+		bgmMap.get(currBgmKey).play()
 
 func onPauseGame(argFlag):
 	if(currGameMode == 3):

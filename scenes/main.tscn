@@ -265,11 +265,22 @@ script = ExtResource("5_xw1bk")
 uiMode = 4
 levelToLoad = "res://scenes/level_credits.tscn"
 
-[node name="Options" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
+[node name="PeachShutUp" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 toggle_mode = true
 text = "Please Peach Shut Up (jk ilu but fr)"
 script = ExtResource("20_h4ill")
+onText = "Peach PLEASE say the funny things again"
+offText = "Please Peach Shut Up (jk ilu but fr)"
+
+[node name="MusicToggle" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Music: ON"
+script = ExtResource("20_h4ill")
+onText = "Music: OFF"
+offText = "Music: ON"
+signalToNotify = "TOGGLE_BGM"
 
 [node name="QuitGame" type="Button" parent="UI/MainMenu/VBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -471,7 +482,8 @@ size_flags_vertical = 3
 
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/StartGame" method="_on_button_up"]
 [connection signal="button_up" from="UI/MainMenu/VBoxContainer/VBoxContainer/Credits" to="UI/MainMenu/VBoxContainer/VBoxContainer/Credits" method="_on_button_up"]
-[connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/Options" to="UI/MainMenu/VBoxContainer/VBoxContainer/Options" method="_on_toggled"]
+[connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/PeachShutUp" to="UI/MainMenu/VBoxContainer/VBoxContainer/PeachShutUp" method="_on_toggled"]
+[connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/MusicToggle" to="UI/MainMenu/VBoxContainer/VBoxContainer/MusicToggle" method="_on_toggled"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" method="_on_pressed"]
 [connection signal="pressed" from="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" to="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" method="_on_pressed"]
 [connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" method="_on_visibility_changed"]

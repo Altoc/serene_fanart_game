@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c052nfm1sx7kx"]
+[gd_scene load_steps=6 format=3 uid="uid://c052nfm1sx7kx"]
 
 [ext_resource type="Script" path="res://scripts/object.gd" id="1_rk1tu"]
 [ext_resource type="PackedScene" uid="uid://ce67m3gehrktg" path="res://models/model_piranah_plant.tscn" id="2_4y5dd"]
@@ -7,6 +7,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_paquf"]
 resource_local_to_scene = true
 size = Vector3(4, 3.75, 3.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tkhj"]
+resource_local_to_scene = true
+size = Vector3(5.25, 1.75, 3.5)
 
 [node name="Object5m_alt" type="RigidBody3D" groups=["object"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -22,8 +26,12 @@ myName = "Piranha Plant"
 peachMessage = "Worse than poison ivy."
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36444, -1.11143)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.86444, -1.61143)
 shape = SubResource("BoxShape3D_paquf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.63556, 1.38857)
+shape = SubResource("BoxShape3D_8tkhj")
 
 [node name="Model" parent="." instance=ExtResource("2_4y5dd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
