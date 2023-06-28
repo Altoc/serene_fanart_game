@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="serene_july_2023_fanart"
+config/name="Katamario"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://images/serene.png"
-config/icon="res://images/serene.png"
+config/icon="res://images/peach_portrait.png"
+boot_splash/minimum_display_time=500
 
 [display]
 

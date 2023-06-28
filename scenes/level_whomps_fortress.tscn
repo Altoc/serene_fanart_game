@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="4_60131"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="5_qf3jj"]
 [ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="6_gdlnw"]
-[ext_resource type="PackedScene" uid="uid://cfypwkhpgm86h" path="res://scenes/whomp_fortress.tscn" id="8_lmsbq"]
+[ext_resource type="PackedScene" uid="uid://joy54ja7xrci" path="res://models/whomp_fortress.tscn" id="8_og1xm"]
 [ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="8_omcxw"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ky2v0"]
@@ -55,7 +55,7 @@ texture = ExtResource("2_gkka1")
 environment = SubResource("Environment_brvlw")
 
 [node name="RespawnPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.75, 10.25, -127.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.5, 50, 352)
 
 [node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_60131")]
 process_mode = 1
@@ -88,7 +88,7 @@ shape = SubResource("BoxShape3D_6nlkw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1255.75, 0)
 shape = SubResource("BoxShape3D_6nlkw")
 
-[node name="whomp_fortress" parent="." instance=ExtResource("8_lmsbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162, 0, 389.5)
+[node name="whomp_fortress" parent="." instance=ExtResource("8_og1xm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.25, 0, 420.75)
 
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered" flags=18]
