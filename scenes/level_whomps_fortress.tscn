@@ -65,6 +65,7 @@ player = NodePath("../PlayerBall")
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("5_qf3jj")]
 process_mode = 1
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 162.25, 41.8983, 340.116)
+continuous_cd = true
 myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("6_gdlnw")]
