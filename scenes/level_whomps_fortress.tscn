@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://boecaqp23n3xw"]
+[gd_scene load_steps=14 format=3 uid="uid://boecaqp23n3xw"]
 
 [ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_kacpb"]
 [ext_resource type="Texture2D" uid="uid://dksq0no6ruj7x" path="res://images/serene.png" id="2_gkka1"]
+[ext_resource type="AudioStream" uid="uid://bjbn6g1w44hva" path="res://sounds/sfx/sm64_mario_so_long_bowser.wav" id="2_vtt5x"]
 [ext_resource type="Texture2D" uid="uid://dbke37kcnwa4f" path="res://images/bobomb_battlefield_skybox.png" id="3_xehn5"]
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="4_60131"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="5_qf3jj"]
@@ -26,6 +27,10 @@ size = Vector3(10000, 100, 10000)
 [node name="LevelWhompsFortress" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_kacpb")
 player = NodePath("PlayerBall")
+myLevelId = 1
+
+[node name="sfx_solongbowser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vtt5x")
 
 [node name="SereneText" type="Sprite3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 125)
@@ -65,7 +70,6 @@ player = NodePath("../PlayerBall")
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("5_qf3jj")]
 process_mode = 1
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 162.25, 41.8983, 340.116)
-continuous_cd = true
 myCamera = NodePath("../Camera")
 
 [node name="PlayerBody" parent="PlayerBall" instance=ExtResource("6_gdlnw")]

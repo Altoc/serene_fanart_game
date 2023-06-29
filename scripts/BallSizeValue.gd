@@ -6,7 +6,7 @@ extends Label
 func _ready():
 	updateBallSizeLabel(1)
 	SIGNAL_BUS.PLAYER_BALL_SIZE_CHANGED.connect(updateBallSizeLabel)
-	SIGNAL_BUS.GOAL.connect(onBowserGot)
+	SIGNAL_BUS.LEVEL_COMPLETE.connect(onBowserGot)
 
 func onBowserGot():
 	updateBallSizeLabel(1)

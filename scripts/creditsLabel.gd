@@ -12,9 +12,10 @@ https://www.models-resource.com/nintendo_64/supermario64/ for 3d models,
 alec pike for ripping the mario head model, ripping the peach model,
 SFX: https://themushroomkingdom.net/media/sm64/wav
 \n
-Superb Speedrunners:\n
-KODO - Discord: 48#1825 (first to break the 4:30 minute barrier)
+Superb Speedrunners (In order of obtaining 4:30 on Bobomb Battlefield):\n
+KODO - Discord: 48#1825
 INTY - Really friggin' good fr
+MountainOstrich - Kind of like a big deal
 "
 
 

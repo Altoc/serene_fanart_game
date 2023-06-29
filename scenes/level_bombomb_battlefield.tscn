@@ -1,8 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://tmeto6qaqqv3"]
+[gd_scene load_steps=39 format=3 uid="uid://tmeto6qaqqv3"]
 
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="1_fksdl"]
 [ext_resource type="Script" path="res://scripts/level_bombomb_battlefield.gd" id="1_pijkb"]
 [ext_resource type="Texture2D" uid="uid://dbke37kcnwa4f" path="res://images/bobomb_battlefield_skybox.png" id="1_ssjug"]
+[ext_resource type="AudioStream" uid="uid://bjbn6g1w44hva" path="res://sounds/sfx/sm64_mario_so_long_bowser.wav" id="2_2j3wc"]
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="2_2r78r"]
 [ext_resource type="PackedScene" uid="uid://c4lkpgs5n4ah" path="res://scenes/player_body.tscn" id="3_4jqyy"]
 [ext_resource type="PackedScene" uid="uid://cehj1bih32m3" path="res://scenes/objects/object_1_mm.tscn" id="5_wfce1"]
@@ -53,6 +54,9 @@ size = Vector3(4.75, 0.75, 3.5)
 [node name="LevelBombombBattlefield" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_pijkb")
 player = NodePath("PlayerBall")
+
+[node name="sfx_solongbowser" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2j3wc")
 
 [node name="SereneText" type="Sprite3D" parent="."]
 transform = Transform3D(15, 0, 0, 0, -6.55671e-07, 15, 0, -15, -6.55671e-07, 0, -886.75, 125)

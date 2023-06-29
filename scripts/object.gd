@@ -72,7 +72,7 @@ func _on_body_entered(body):
 func processBallCollision(argPlayer):
 	if(pickupThreshold <= argPlayer.getSize()):
 		if(goal):
-			SIGNAL_BUS.emit_signal("GOAL")
+			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
 		playerBall = argPlayer
 		setState(OBJECT_STATES.PICKED_UP)
 	#else:

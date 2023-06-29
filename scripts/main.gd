@@ -7,10 +7,11 @@ extends Node3D
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
 @onready var bgm_intro = get_node("bgm_intro")
 @onready var sfxPause = get_node("sfx_pause")
-@onready var sfxSoLongBowser = get_node("sfx_solongbowser")
 
 @onready var outroCutscenePath = "res://scenes/level_outro.tscn"
 @export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
+
+@onready var levelsCompleted = []
 
 @onready var bgmMap = {
 	"bgmBobomb": bgmBobomb,
@@ -36,7 +37,7 @@ func _ready():
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
 	SIGNAL_BUS.TOGGLE_BGM.connect(onMuteBgm)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
-	SIGNAL_BUS.GOAL.connect(onBowserGot)
+	SIGNAL_BUS.LEVEL_COMPLETE.connect(onLevelCompleted)
 	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
 	bgmBobomb.finished.connect(onBgmFinished)
 	bgm_intro.finished.connect(onBgmFinished)
@@ -61,8 +62,8 @@ func _input(event):
 	if(event.is_action_pressed("pause_game")):
 		SIGNAL_BUS.emit_signal("PAUSE_GAME", !PAUSE_GAME)
 
-func onBowserGot():
-	sfxSoLongBowser.play()
+func onLevelCompleted(argLevelId):
+	levelsCompleted.push_back(argLevelId)
 	SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
 	SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
 	SIGNAL_BUS.emit_signal("LOAD_LEVEL", outroCutscenePath)

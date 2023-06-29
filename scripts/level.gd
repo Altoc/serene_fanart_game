@@ -3,6 +3,9 @@ extends Node3D
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
 
 @export var player : Node3D
+@export var myLevelId = 0
+
+@onready var sfxSoLongBowser = get_node("sfx_solongbowser")
 
 @onready var respawnPoint = get_node("RespawnPoint")
 @onready var respawnFlag = false
@@ -19,6 +22,11 @@ func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onObjectAddedToPlayerBall)
 	SIGNAL_BUS.OBJECT_PUNTED_BALL.connect(onObjectPuntedBall)
+	SIGNAL_BUS.NOTIFY_BOWSER_COLLECTED.connect(onBowserGot)
+
+func onBowserGot():
+	sfxSoLongBowser.play()
+	emit_signal("LEVEL_COMPLETE", myLevelId)
 
 func _process(delta):
 	if(respawnFlag):

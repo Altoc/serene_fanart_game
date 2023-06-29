@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=32 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
 [ext_resource type="AudioStream" uid="uid://cttccqk65lnhp" path="res://sounds/sfx/sm64_pause.wav" id="2_eint3"]
-[ext_resource type="AudioStream" uid="uid://bjbn6g1w44hva" path="res://sounds/sfx/sm64_mario_so_long_bowser.wav" id="2_rl24p"]
 [ext_resource type="AudioStream" uid="uid://bhf0aes5c62we" path="res://sounds/bgm/bobomb_battlefield.mp3" id="2_wouhk"]
 [ext_resource type="AudioStream" uid="uid://c8bic6q5ajskv" path="res://sounds/bgm/katamari_intro.mp3" id="3_1spxn"]
 [ext_resource type="Script" path="res://scripts/BallSizeValue.gd" id="3_4avfj"]
@@ -47,9 +46,6 @@ events = [SubResource("InputEventMouseButton_n0g0r"), SubResource("InputEventKey
 [node name="Main" type="Node3D"]
 process_mode = 3
 script = ExtResource("1_r0f8h")
-
-[node name="sfx_solongbowser" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_rl24p")
 
 [node name="bgm_bobomb_battlefield" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wouhk")

@@ -32,6 +32,9 @@ signal BLAST_PLAYER
 
 signal FINAL_TIME
 
-signal GOAL
+#When bowser is collected
+signal NOTIFY_BOWSER_COLLECTED
+#whenthe level is complete (essentially after GOAL is emitted, but this includes level info
+signal LEVEL_COMPLETE
 
 signal UP_MOON
