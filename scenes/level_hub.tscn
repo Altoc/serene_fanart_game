@@ -86,6 +86,7 @@ collision_mask = 2
 script = ExtResource("1_7loaq")
 levelToLoad = "res://scenes/level_whomps_fortress.tscn"
 levelName = "Whomps Fortress"
+myLevelId = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelNub2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

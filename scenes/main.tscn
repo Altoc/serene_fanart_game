@@ -228,6 +228,7 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
 [node name="MainMenu" type="HBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -351,7 +352,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="DialogueHUD" type="HBoxContainer" parent="UI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 

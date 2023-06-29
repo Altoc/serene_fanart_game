@@ -26,7 +26,7 @@ func _ready():
 
 func onBowserGot():
 	sfxSoLongBowser.play()
-	emit_signal("LEVEL_COMPLETE", myLevelId)
+	SIGNAL_BUS.emit_signal("LEVEL_COMPLETE", myLevelId)
 
 func _process(delta):
 	if(respawnFlag):

@@ -7,16 +7,15 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SIGNAL_BUS.SET_UI_MODE.connect(onUiModeChange)
+	SIGNAL_BUS.LEVEL_COMPLETE.connect(onLevelComplete)
 	SIGNAL_BUS.LOAD_LEVEL.connect(onLoadLevel)
 
 func onLoadLevel(_argLevel):
-	onUiModeChange(0)
-
-func onUiModeChange(argMode):
 	timer = 0
-	if(argMode == 2):
-		SIGNAL_BUS.emit_signal("FINAL_TIME", timeStr)
+
+func onLevelComplete(argLevelId):
+	timer = 0
+	SIGNAL_BUS.emit_signal("FINAL_TIME", argLevelId, timeStr)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

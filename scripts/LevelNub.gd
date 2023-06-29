@@ -1,19 +1,28 @@
 extends Area3D
 
 @onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
-@export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
 
-@onready var label = get_node("Label3D")
+@onready var labelName = get_node("Label3D")
+@onready var labelTime = get_node("Label3D2")
+
+@export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
 @export var levelName = "Bobomb Battlefield"
+@export var myLevelId = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = levelName
+	labelName.text = levelName
+	print("TODO retrieve saved times here on level nubs")
+	#SIGNAL_BUS.FINAL_TIME.connect(onLevelComplete)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotation_degrees.y += delta * 4
+
+func loadLevelNubTime(argLevelId, argFinalTime):
+	if(argLevelId == myLevelId):
+		labelTime.text = argFinalTime
 
 func _on_body_entered(body):
 	if(body.is_in_group("player_ball")):

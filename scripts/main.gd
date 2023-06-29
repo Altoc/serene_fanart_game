@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
-@onready var DEBUG_MODE = false
+@onready var DEBUG_MODE = true
 
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
 @onready var bgm_intro = get_node("bgm_intro")
@@ -11,7 +11,8 @@ extends Node3D
 @onready var outroCutscenePath = "res://scenes/level_outro.tscn"
 @export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
 
-@onready var levelsCompleted = []
+var levelData
+@onready var dataFilePath = "res://data/data.json"
 
 @onready var bgmMap = {
 	"bgmBobomb": bgmBobomb,
@@ -32,6 +33,7 @@ var PAUSE_GAME = false
 @onready var currGameMode = 0
 
 func _ready():
+	loadLevelData()
 	SIGNAL_BUS.SET_UI_MODE.connect(setGameMode)
 	SIGNAL_BUS.SET_MOUSE_MODE.connect(setMouseMode)
 	SIGNAL_BUS.LOAD_LEVEL.connect(loadLevel)
@@ -43,6 +45,14 @@ func _ready():
 	bgm_intro.finished.connect(onBgmFinished)
 	playBgm("bgm_intro")
 	setMouseMode(MOUSE_MODES.VISIBLE)
+
+func loadLevelData():
+	var jsonStr = FileAccess.get_file_as_string(dataFilePath)
+	levelData = JSON.parse_string(jsonStr)
+	if(levelData):
+		print("Successfully loaded data.")
+	else:
+		print("Problem loading save data.")
 
 func onMuteBgm():
 	bgmMuted = !bgmMuted
@@ -63,7 +73,6 @@ func _input(event):
 		SIGNAL_BUS.emit_signal("PAUSE_GAME", !PAUSE_GAME)
 
 func onLevelCompleted(argLevelId):
-	levelsCompleted.push_back(argLevelId)
 	SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
 	SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
 	SIGNAL_BUS.emit_signal("LOAD_LEVEL", outroCutscenePath)
@@ -95,12 +104,11 @@ func playBgm(argKey):
 func onPauseGame(argFlag):
 	if(currGameMode == 3):
 		if(DEBUG_MODE):
-			SIGNAL_BUS.emit_signal("GOAL")
+			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
 		else:
 			sfxPause.play()
 			get_tree().paused = argFlag
 			PAUSE_GAME = !PAUSE_GAME
-			#SIGNAL_BUS.emit_signal("GAME_PAUSED", PAUSE_GAME)
 			if(argFlag):
 				setMouseMode(MOUSE_MODES.VISIBLE)
 			else:
