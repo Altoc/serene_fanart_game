@@ -6,9 +6,9 @@ extends Button
 @export var offText = "Peach PLEASE say the funny things again"
 @export var signalToNotify = "MUTE_PEACH"
 
-func _on_toggled(button_pressed):
+func _on_toggled(argButtonPressed):
 	SIGNAL_BUS.emit_signal(signalToNotify)
-	if(button_pressed):
+	if(argButtonPressed):
 		text = onText
 	else:
 		text = offText

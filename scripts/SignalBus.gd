@@ -30,11 +30,16 @@ signal PLAY_BGM
 
 signal BLAST_PLAYER
 
+signal DRAW_CURTAIN
+signal CURTAIN_DRAWN
+signal OPEN_CURTAIN
+signal CURTAIN_OPENED
+
 signal FINAL_TIME
 
 #When bowser is collected
 signal NOTIFY_BOWSER_COLLECTED
-#whenthe level is complete (essentially after GOAL is emitted, but this includes level info
+#whenthe level is complete (essentially after GOAL is emitted, but this includes level info)
 signal LEVEL_COMPLETE
 
 signal UP_MOON

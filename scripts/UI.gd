@@ -43,8 +43,16 @@ func _ready():
 	SIGNAL_BUS.ADD_PEACH_MESSAGE_TO_QUEUE.connect(addPeachMessage)
 	SIGNAL_BUS.REMOVE_PEACH_MESSAGE.connect(removePeachMessage)
 	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
+	SIGNAL_BUS.DRAW_CURTAIN.connect(onDrawCurtain)
+	SIGNAL_BUS.CURTAIN_OPENED.connect(onCurtainOpened)
 	setUiState(UI_STATES.MAIN_MENU)
 	setPPState(PEACH_POPUP_STATES.NO_POPUP)
+
+func onCurtainOpened():
+	visible = true
+
+func onDrawCurtain():
+	visible = false
 
 func onMutePeach():
 	mutePeachFlag = !mutePeachFlag

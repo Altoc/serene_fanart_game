@@ -115,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
 
 [node name="PlayerBall" parent="." node_paths=PackedStringArray("myCamera") instance=ExtResource("4_0i18y")]
 process_mode = 1
-transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0.25, 2.3983, -0.134)
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0.25, 16.6483, -0.134)
 myCamera = NodePath("../Camera")
 
 [node name="DeathBarrier" type="Area3D" parent="."]

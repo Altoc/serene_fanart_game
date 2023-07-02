@@ -15,6 +15,7 @@ func onLoadLevel(_argLevel):
 
 func onLevelComplete(argLevelId):
 	timer = 0
+	print("Generating FINAL TIME in label: " + str(timeStr))
 	SIGNAL_BUS.emit_signal("FINAL_TIME", argLevelId, timeStr)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,5 +24,5 @@ func _process(delta):
 	var mils = fmod(timer, 1) * 1000
 	var secs = fmod(timer, 60)
 	var mins = fmod(timer, 60*60) / 60
-	timeStr = "%02d : %02d: %03d" % [mins, secs, mils]
+	timeStr = "%02d:%02d:%03d" % [mins, secs, mils]
 	text = timeStr

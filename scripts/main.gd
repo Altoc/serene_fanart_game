@@ -4,12 +4,14 @@ extends Node3D
 
 @onready var DEBUG_MODE = true
 
+var file : FileAccess
+
 @onready var bgmBobomb = get_node("bgm_bobomb_battlefield")
 @onready var bgm_intro = get_node("bgm_intro")
 @onready var sfxPause = get_node("sfx_pause")
 
 @onready var outroCutscenePath = "res://scenes/level_outro.tscn"
-@export var levelToLoad = "res://scenes/level_bombomb_battlefield.tscn"
+@onready var levlHubPath = "res://scenes/level_hub.tscn"
 
 var levelData
 @onready var dataFilePath = "res://data/data.json"
@@ -40,11 +42,41 @@ func _ready():
 	SIGNAL_BUS.TOGGLE_BGM.connect(onMuteBgm)
 	SIGNAL_BUS.PLAY_BGM.connect(playBgm)
 	SIGNAL_BUS.LEVEL_COMPLETE.connect(onLevelCompleted)
+	SIGNAL_BUS.FINAL_TIME.connect(onFinalTimeGenerated)
 	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
 	bgmBobomb.finished.connect(onBgmFinished)
 	bgm_intro.finished.connect(onBgmFinished)
 	playBgm("bgm_intro")
 	setMouseMode(MOUSE_MODES.VISIBLE)
+
+func onFinalTimeGenerated(argLevelId, argTimeStr):
+	if(isNewRecord(argTimeStr, levelData[str(argLevelId)].bestTime)):
+		levelData[str(argLevelId)].bestTime = argTimeStr
+	levelData[str(argLevelId)].completed = true
+	saveLevelData()
+
+func isNewRecord(argNewTime, argRecord):
+	var newTimeArr = argNewTime.split(":", false, 0)
+	var newMins = newTimeArr[0]
+	var newSecs = newTimeArr[1]
+	var newMils = newTimeArr[2]
+	var recordArr = argRecord.split(":", false, 0)
+	if(newMins <= recordArr[0]):
+		if(newSecs <= recordArr[1]):
+			if(newMils <= recordArr[2]):
+				return true
+	return false
+
+func getLevelTime(argLevelId):
+	var level = levelData[str(argLevelId)]
+	return level.bestTime
+
+func saveLevelData():
+	print("saving data...")
+	#file = FileAccess.open_encrypted_with_pass(dataFilePath, FileAccess.WRITE, "secret");
+	file = FileAccess.open(dataFilePath, FileAccess.WRITE)
+	file.store_line(JSON.stringify(levelData))
+	file.close()
 
 func loadLevelData():
 	var jsonStr = FileAccess.get_file_as_string(dataFilePath)
@@ -73,9 +105,11 @@ func _input(event):
 		SIGNAL_BUS.emit_signal("PAUSE_GAME", !PAUSE_GAME)
 
 func onLevelCompleted(argLevelId):
-	SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
-	SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
-	SIGNAL_BUS.emit_signal("LOAD_LEVEL", outroCutscenePath)
+	SIGNAL_BUS.emit_signal("LOAD_LEVEL", levlHubPath)
+	SIGNAL_BUS.emit_signal("OPEN_CURTAIN")
+	#SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
+	#SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
+	#SIGNAL_BUS.emit_signal("LOAD_LEVEL", outroCutscenePath)
 
 func setMouseMode(argMouseMode):
 	currentGameMode=argMouseMode

@@ -12,6 +12,11 @@ extends Node3D
 @onready var respawnTimeDelaySecs = 3
 @onready var respawnTimer = 0
 
+@onready var fadeOutTime = 4
+@onready var fadeOutTimer = 0
+@onready var drawCurtainFlag = true
+@onready var fadeOutFlag = false
+
 @onready var firstGrabs = []
 
 @onready var anouncePunting = true
@@ -25,20 +30,27 @@ func _ready():
 	SIGNAL_BUS.NOTIFY_BOWSER_COLLECTED.connect(onBowserGot)
 
 func onBowserGot():
+	fadeOutFlag = true
 	sfxSoLongBowser.play()
-	SIGNAL_BUS.emit_signal("LEVEL_COMPLETE", myLevelId)
 
 func _process(delta):
 	if(respawnFlag):
 		respawnTimer += delta
 		if(respawnTimer >= respawnTimeDelaySecs):
 			respawnPlayer()
+	if(fadeOutFlag):
+		fadeOutTimer += delta
+		if(fadeOutTimer >= 2 && drawCurtainFlag):
+			drawCurtainFlag = false
+			SIGNAL_BUS.emit_signal("DRAW_CURTAIN")
+		if(fadeOutTimer >= fadeOutTime):
+			SIGNAL_BUS.emit_signal("LEVEL_COMPLETE", myLevelId)
+			fadeOutFlag = false
 
 func onObjectPuntedBall(rigidBody):
 	if(anouncePunting):
 		anouncePunting = false
 		SIGNAL_BUS.emit_signal("ADD_PEACH_MESSAGE_TO_QUEUE", "PUNTED!!! By a " + rigidBody.myName + " no less...")
-	#anouncePunting = !anouncePunting
 
 func onObjectAddedToPlayerBall(rigidBody):
 	if(rigidBody.myName not in firstGrabs):

@@ -1,6 +1,122 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxkahlktkuwn8"]
+[gd_scene load_steps=7 format=3 uid="uid://bxkahlktkuwn8"]
 
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="1_rbdgw"]
+[ext_resource type="Texture2D" uid="uid://5u4e5657esls" path="res://images/curtain.jpg" id="2_mv7eu"]
+
+[sub_resource type="Animation" id="Animation_n7omd"]
+resource_name = "DRAW_CURTAIN"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.432, -0.25, 0, 0.25, 0, 0.178, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.112, -0.25, 0, 0.25, 0, -2.112, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_kk3q2"]
+resource_name = "OPEN_CURTAIN"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.178, -0.25, 0, 0.25, 0, 3.272, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.112, -0.25, 0, 0.25, 0, -1.916, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_byo1k"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.178, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpringArm3D/Camera3D/Sprite3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-2.112, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xk3mp"]
+_data = {
+"DRAW_CURTAIN": SubResource("Animation_n7omd"),
+"OPEN_CURTAIN": SubResource("Animation_kk3q2"),
+"RESET": SubResource("Animation_byo1k")
+}
 
 [node name="Camera" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_rbdgw")
@@ -12,3 +128,16 @@ spring_length = 10.0
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 0.906042, 0.423188, 0, -0.423188, 0.906042, 0, 3.52924, 5.99457)
 current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.906042, -0.423188, 0, 0.423188, 0.906042, 0, 0.178, -2.112)
+visible = false
+billboard = 1
+texture = ExtResource("2_mv7eu")
+region_enabled = true
+region_rect = Rect2(29, -1.5, 583, 360)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xk3mp")
+}

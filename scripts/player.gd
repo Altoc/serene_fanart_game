@@ -19,7 +19,8 @@ var mousePrevPos = Vector2(0,0)
 enum PlayerStates {
 		IDLE=0,
 		OOB=1,
-		BACK_IN_BOUNDS=2
+		BACK_IN_BOUNDS=2,
+		FREEZE=3
 	}
 var currPlayerState
 var prevPlayerState = null
@@ -35,7 +36,11 @@ func _ready():
 	SIGNAL_BUS.PLAYER_OUT_OF_BOUNDS.connect(onPlayerOutOfBounds)
 	SIGNAL_BUS.PLAYER_RESPAWNED.connect(onPlayerRespawned)
 	SIGNAL_BUS.BLAST_PLAYER.connect(getBlasted)
+	SIGNAL_BUS.NOTIFY_BOWSER_COLLECTED.connect(onBowserCollected)
 	torqueIncreaseRate = (torqueFactor / fakeMass)
+
+func onBowserCollected():
+	setPlayerState(PlayerStates.FREEZE)
 
 func getSize():
 	return size
@@ -126,6 +131,9 @@ func setPlayerState(argState):
 			sleeping = true
 			sleeping = false
 			setPlayerState(PlayerStates.IDLE)
+		PlayerStates.FREEZE:
+			sleeping = true
+			freeze = true
 
 func _on_area_3d_body_entered(body):
 	if(body.is_in_group("object")):
