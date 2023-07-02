@@ -5,18 +5,25 @@ extends Label
 @onready var timer = 0
 @onready var timeStr = ""
 
+@onready var finalTime = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SIGNAL_BUS.LEVEL_COMPLETE.connect(onLevelComplete)
+	SIGNAL_BUS.NOTIFY_BOWSER_COLLECTED.connect(onBowserCollected)
 	SIGNAL_BUS.LOAD_LEVEL.connect(onLoadLevel)
 
 func onLoadLevel(_argLevel):
 	timer = 0
 
+func onBowserCollected():
+	finalTime = timeStr
+	print("Generating FINAL TIME in label: " + str(finalTime))
+
 func onLevelComplete(argLevelId):
 	timer = 0
-	print("Generating FINAL TIME in label: " + str(timeStr))
-	SIGNAL_BUS.emit_signal("FINAL_TIME", argLevelId, timeStr)
+	SIGNAL_BUS.emit_signal("FINAL_TIME", argLevelId, finalTime)
+	finalTime = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

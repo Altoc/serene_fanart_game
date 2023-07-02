@@ -61,10 +61,12 @@ func isNewRecord(argNewTime, argRecord):
 	var newSecs = newTimeArr[1]
 	var newMils = newTimeArr[2]
 	var recordArr = argRecord.split(":", false, 0)
-	if(newMins <= recordArr[0]):
-		if(newSecs <= recordArr[1]):
-			if(newMils <= recordArr[2]):
-				return true
+	if(newMins < recordArr[0]):
+		return true
+	elif(newSecs < recordArr[1]):
+		return true
+	elif(newMils <= recordArr[2]):
+		return true
 	return false
 
 func getLevelTime(argLevelId):
