@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=37 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -28,6 +28,10 @@
 [ext_resource type="Script" path="res://scripts/debugLabel.gd" id="19_s7q2n"]
 [ext_resource type="Script" path="res://scripts/BtnOptions.gd" id="20_h4ill"]
 [ext_resource type="Script" path="res://scripts/finalTimeLabel.gd" id="21_m8yfk"]
+[ext_resource type="LabelSettings" uid="uid://cf8cxhvualc5b" path="res://level_complete_label_settings.tres" id="23_mtc32"]
+[ext_resource type="Script" path="res://scripts/TimeValue.gd" id="24_6bjng"]
+[ext_resource type="Script" path="res://scripts/NextBtn.gd" id="24_7xye8"]
+[ext_resource type="Script" path="res://scripts/RecordValue.gd" id="25_5xhnp"]
 
 [sub_resource type="InputEventMouseButton" id="InputEventMouseButton_n0g0r"]
 button_index = 1
@@ -300,6 +304,81 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="LevelRecapContainer" type="HBoxContainer" parent="UI"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="UI/LevelRecapContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelRecapContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/LevelRecapContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.74
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LevelRecapContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TimeHeader" type="Label" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TIME:"
+label_settings = ExtResource("23_mtc32")
+horizontal_alignment = 1
+
+[node name="TimeValue" type="Label" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+label_settings = ExtResource("23_mtc32")
+horizontal_alignment = 1
+script = ExtResource("24_6bjng")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="RecordHeader" type="Label" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RECORD:"
+label_settings = ExtResource("23_mtc32")
+horizontal_alignment = 1
+
+[node name="RecordValue" type="Label" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+label_settings = ExtResource("23_mtc32")
+horizontal_alignment = 1
+script = ExtResource("25_5xhnp")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NextBtn" type="Button" parent="UI/LevelRecapContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Next"
+script = ExtResource("24_7xye8")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/LevelRecapContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="UI/LevelRecapContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="Credits" type="HBoxContainer" parent="UI"]
 visible = false
 layout_mode = 2
@@ -489,6 +568,7 @@ size_flags_vertical = 3
 [connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/PeachShutUp" to="UI/MainMenu/VBoxContainer/VBoxContainer/PeachShutUp" method="_on_toggled"]
 [connection signal="toggled" from="UI/MainMenu/VBoxContainer/VBoxContainer/MusicToggle" to="UI/MainMenu/VBoxContainer/VBoxContainer/MusicToggle" method="_on_toggled"]
 [connection signal="pressed" from="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" to="UI/MainMenu/VBoxContainer/VBoxContainer/QuitGame" method="_on_pressed"]
+[connection signal="pressed" from="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/NextBtn" to="UI/LevelRecapContainer/VBoxContainer/VBoxContainer/NextBtn" method="_on_pressed"]
 [connection signal="pressed" from="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" to="UI/Credits/VBoxContainer/VBoxContainer/HBoxContainer/QuitGame" method="_on_pressed"]
 [connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelIntro" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="UI/DialogueHUD/VBoxContainer2/Panel/LabelOutro" to="UI/DialogueHUD/VBoxContainer2/Panel/LabelOutro" method="_on_visibility_changed"]

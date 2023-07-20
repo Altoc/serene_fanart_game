@@ -31,6 +31,7 @@ func _process(delta):
 			loadLevelTimer += delta
 			if(loadLevelTimer >= loadLevelTime):
 				loadLevelTimer = 0
+				SIGNAL_BUS.emit_signal("SET_UI_MODE", 3)
 				SIGNAL_BUS.emit_signal("LOAD_LEVEL", levelToLoad)
 				setState(States.IDLE)
 

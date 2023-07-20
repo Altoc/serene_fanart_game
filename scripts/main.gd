@@ -44,13 +44,17 @@ func _ready():
 	SIGNAL_BUS.LEVEL_COMPLETE.connect(onLevelCompleted)
 	SIGNAL_BUS.FINAL_TIME.connect(onFinalTimeGenerated)
 	SIGNAL_BUS.PAUSE_GAME.connect(onPauseGame)
+	SIGNAL_BUS.USER_SELECTED_NEXT_LEVEL_RECAP.connect(onLoadLevelHub)
 	bgmBobomb.finished.connect(onBgmFinished)
 	bgm_intro.finished.connect(onBgmFinished)
 	playBgm("bgm_intro")
 	setMouseMode(MOUSE_MODES.VISIBLE)
 
+func getLevelTime(argLevelId):
+	return levelData[str(argLevelId)].bestTime
+
 func onFinalTimeGenerated(argLevelId, argTimeStr):
-	if(isNewRecord(argTimeStr, levelData[str(argLevelId)].bestTime)):
+	if(isNewRecord(argTimeStr, getLevelTime(argLevelId))):
 		levelData[str(argLevelId)].bestTime = argTimeStr
 	levelData[str(argLevelId)].completed = true
 	saveLevelData()
@@ -62,7 +66,6 @@ func isNewRecord(argNewTime, argRecord):
 	var newSecs = int(newTimeArr[1])
 	var newMils = int(newTimeArr[2])
 	var newTimeMils = (newMins * 60000) + (newSecs * 1000) + newMils
-	
 	var recordArr = argRecord.split(":", false, 0)
 	var recordMins = int(recordArr[0])
 	var recordSecs = int(recordArr[1])
@@ -71,10 +74,6 @@ func isNewRecord(argNewTime, argRecord):
 	if(newTimeMils < recordMils):
 		return true
 	return false
-
-func getLevelTime(argLevelId):
-	var level = levelData[str(argLevelId)]
-	return level.bestTime
 
 func saveLevelData():
 	print("saving data...")
@@ -112,11 +111,17 @@ func _input(event):
 			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
 
 func onLevelCompleted(argLevelId):
+	#show level complete ui with time vs record
+	#wait for player to press button
+	SIGNAL_BUS.emit_signal("SET_UI_MODE", 6)
+	SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
+	#SIGNAL_BUS.emit_signal("LOAD_LEVEL", levelToLoad)
+
+func onLoadLevelHub():
 	SIGNAL_BUS.emit_signal("LOAD_LEVEL", levlHubPath)
+	SIGNAL_BUS.emit_signal("SET_UI_MODE", 5)
+	SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 0)
 	SIGNAL_BUS.emit_signal("OPEN_CURTAIN")
-	#SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 2)
-	#SIGNAL_BUS.emit_signal("SET_UI_MODE", 2)
-	#SIGNAL_BUS.emit_signal("LOAD_LEVEL", outroCutscenePath)
 
 func setMouseMode(argMouseMode):
 	currentGameMode=argMouseMode

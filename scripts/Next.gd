@@ -31,7 +31,7 @@ func _on_pressed():
 	match(currUiMode):
 		1:
 			SIGNAL_BUS.emit_signal("SET_MOUSE_MODE", 0)
-			SIGNAL_BUS.emit_signal("SET_UI_MODE", 3)
+			SIGNAL_BUS.emit_signal("SET_UI_MODE", 5)
 			SIGNAL_BUS.emit_signal("LOAD_LEVEL", levelToLoad)
 		2:
 			if(moonUp == false):

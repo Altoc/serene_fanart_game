@@ -6,7 +6,8 @@ enum UI_STATES {
 	OUTRO_CUTSCENE=2,
 	IN_GAME=3,
 	CREDITS=4,
-	LEVEL_HUB=5
+	LEVEL_HUB=5,
+	LEVEL_RESULTS=6
 }
 @onready var currUiState
 
@@ -32,6 +33,7 @@ enum PEACH_POPUP_STATES {
 @onready var peachPopup = get_node("HUD/PeachPopup")
 @onready var pauseMenu = get_node("HUD/PauseMenu")
 @onready var peachTextContainer = get_node("HUD/PeachText")
+@onready var levelRecapContainer = get_node("LevelRecapContainer")
 @onready var peachTextLabel = get_node("HUD/PeachText/Panel/Label")
 
 @onready var messageReadyForRemoval = false
@@ -49,6 +51,9 @@ func _ready():
 	setPPState(PEACH_POPUP_STATES.NO_POPUP)
 
 func onCurtainOpened():
+	visible = true
+
+func onCurtainDrawn():
 	visible = true
 
 func onDrawCurtain():
@@ -91,6 +96,7 @@ func setUiState(argNewState):
 			cutScene.visible = false
 			mainMenu.visible = true
 			credits.visible = false
+			levelRecapContainer.visible = false
 		UI_STATES.INTRO_CUTSCENE:
 			hud.visible = false
 			pauseMenu.visible = false
@@ -100,6 +106,7 @@ func setUiState(argNewState):
 			cutScene.get_node("VBoxContainer2/HBoxContainer/PanelContainer/Label").visible = false
 			mainMenu.visible = false
 			credits.visible = false
+			levelRecapContainer.visible = false
 		UI_STATES.OUTRO_CUTSCENE:
 			hud.visible = false
 			pauseMenu.visible = false
@@ -109,24 +116,36 @@ func setUiState(argNewState):
 			cutScene.get_node("VBoxContainer2/HBoxContainer/PanelContainer/Label").visible = true
 			mainMenu.visible = false
 			credits.visible = false
+			levelRecapContainer.visible = false
 		UI_STATES.IN_GAME:
 			hud.visible = true
 			pauseMenu.visible = false
 			cutScene.visible = false
 			mainMenu.visible = false
 			credits.visible = false
+			levelRecapContainer.visible = false
 		UI_STATES.CREDITS:
 			hud.visible = false
 			pauseMenu.visible = false
 			credits.visible = true
 			cutScene.visible = false
 			mainMenu.visible = false
+			levelRecapContainer.visible = false
 		UI_STATES.LEVEL_HUB:
 			hud.visible = false
 			pauseMenu.visible = false
 			credits.visible = false
 			cutScene.visible = false
 			mainMenu.visible = false
+			levelRecapContainer.visible = false
+		UI_STATES.LEVEL_RESULTS:
+			hud.visible = false
+			pauseMenu.visible = false
+			credits.visible = false
+			cutScene.visible = false
+			mainMenu.visible = false
+			levelRecapContainer.visible = true
+			onCurtainDrawn()
 
 func setPPState(argNewState):
 	currPPState = argNewState
