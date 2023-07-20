@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2dv6qkmjnjva"]
+[gd_scene load_steps=20 format=3 uid="uid://d2dv6qkmjnjva"]
 
 [ext_resource type="Texture2D" uid="uid://c13jkc0mt8dr8" path="res://images/AllSkyFree_Sky_AnotherPlanet_Equirect.png" id="1_6bsg8"]
 [ext_resource type="Script" path="res://scripts/LevelNub.gd" id="1_7loaq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dd5mdk6ah7gyy" path="res://scenes/player_ball.tscn" id="4_0i18y"]
 [ext_resource type="Script" path="res://scripts/DeathBarrier.gd" id="5_7jsdk"]
 [ext_resource type="PackedScene" uid="uid://cdu2frll7gixg" path="res://scenes/whomp_fortress_nub.tscn" id="5_pa2de"]
+[ext_resource type="PackedScene" uid="uid://bcdg7xbymdktk" path="res://models/model_mario.tscn" id="6_2s85t"]
 [ext_resource type="PackedScene" uid="uid://bxkahlktkuwn8" path="res://scenes/camera.tscn" id="6_myut4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alv1b"]
@@ -107,6 +108,32 @@ font_size = 256
 [node name="whomp_fortress_nub" parent="LevelNub2" instance=ExtResource("5_pa2de")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 3.53553, 0, 7.77817)
 
+[node name="LevelNubQuit" type="Area3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 37.5, 0, -1)
+collision_mask = 2
+script = ExtResource("1_7loaq")
+levelToLoad = ""
+levelName = "Quit Game"
+myLevelId = -1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelNubQuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_ve741")
+
+[node name="Label3D" type="Label3D" parent="LevelNubQuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5, 0)
+billboard = 2
+text = "LEVEL TEXT HERE"
+font_size = 256
+
+[node name="Label3D2" type="Label3D" parent="LevelNubQuit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+billboard = 2
+font_size = 256
+
+[node name="ModelMario" parent="LevelNubQuit" instance=ExtResource("6_2s85t")]
+transform = Transform3D(0.1, 0, 0, 0, 0.06, 0, 0, 0, 0.1, 0, 0, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g7qpk")
 
@@ -137,4 +164,5 @@ transform = Transform3D(0.709752, -0.207687, -0.673141, 0.195729, -0.859789, 0.4
 
 [connection signal="body_entered" from="LevelNub" to="LevelNub" method="_on_body_entered"]
 [connection signal="body_entered" from="LevelNub2" to="LevelNub2" method="_on_body_entered"]
+[connection signal="body_entered" from="LevelNubQuit" to="LevelNubQuit" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathBarrier" to="DeathBarrier" method="_on_body_entered"]

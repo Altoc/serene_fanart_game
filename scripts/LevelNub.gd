@@ -20,22 +20,25 @@ func onSaveDataUpdated():
 	refreshTime()
 
 func refreshTime():
-	var levelTimeStr = MAIN.getLevelTime(myLevelId)
-	if(levelTimeStr == "99:99:999"):
-		labelTime.visible = false
-	else:
-		labelTime.visible = true
-		labelTime.text = levelTimeStr
+	if(myLevelId != -1):
+		var levelTimeStr = MAIN.getLevelTime(myLevelId)
+		if(levelTimeStr == "99:99:999"):
+			labelTime.visible = false
+		else:
+			labelTime.visible = true
+			labelTime.text = levelTimeStr
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	rotation_degrees.y += delta * 4
 
 func loadLevelNubTime(argLevelId, argFinalTime):
-	if(argLevelId == myLevelId):
+	if(argLevelId == myLevelId && myLevelId != -1):
 		labelTime.text = argFinalTime
 
 func _on_body_entered(body):
 	if(body.is_in_group("player_ball")):
+		if(myLevelId == -1):
+			get_tree().quit()
 		SIGNAL_BUS.emit_signal("NOTIFY_LEVEL_NUB_SELECTED", levelToLoad)
 		SIGNAL_BUS.emit_signal("BLAST_PLAYER", 500, Vector3.UP)
