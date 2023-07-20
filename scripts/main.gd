@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var SIGNAL_BUS = get_node("SignalBus")
 
-@onready var DEBUG_MODE = false
+@onready var DEBUG_MODE = true
 
 var file : FileAccess
 
