@@ -12,19 +12,20 @@ extends Area3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	SIGNAL_BUS.FINAL_TIME.connect(onFinalTimeGenerated)
+	SIGNAL_BUS.NOTIFY_SAVE_DATA_UPDATED.connect(onSaveDataUpdated)
 	labelName.text = levelName
+	refreshTime()
+
+func onSaveDataUpdated():
+	refreshTime()
+
+func refreshTime():
 	var levelTimeStr = MAIN.getLevelTime(myLevelId)
 	if(levelTimeStr == "99:99:999"):
 		labelTime.visible = false
 	else:
-		onFinalTimeGenerated(myLevelId, levelTimeStr)
-
-func onFinalTimeGenerated(argLevelId, argTimeStr):
-	if(argLevelId == myLevelId):
-		if(MAIN.isNewRecord(argTimeStr, MAIN.getLevelTime(myLevelId))):
-			labelTime.visible = true
-			labelTime.text = argTimeStr
+		labelTime.visible = true
+		labelTime.text = levelTimeStr
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

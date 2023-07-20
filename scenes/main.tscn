@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=33 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" path="res://scripts/BtnRestart.gd" id="17_si5u1"]
 [ext_resource type="Script" path="res://scripts/BackBtn.gd" id="18_0fq3e"]
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="18_s2g4h"]
+[ext_resource type="Script" path="res://scripts/debugLabel.gd" id="19_s7q2n"]
 [ext_resource type="Script" path="res://scripts/BtnOptions.gd" id="20_h4ill"]
 [ext_resource type="Script" path="res://scripts/finalTimeLabel.gd" id="21_m8yfk"]
 
@@ -228,7 +229,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.05
 
 [node name="MainMenu" type="HBoxContainer" parent="UI"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -240,6 +240,13 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "DEBUG MODE IS ON!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("19_s7q2n")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/MainMenu/VBoxContainer"]
 layout_mode = 2
@@ -352,6 +359,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="DialogueHUD" type="HBoxContainer" parent="UI"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 

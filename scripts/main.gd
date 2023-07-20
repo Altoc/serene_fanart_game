@@ -54,18 +54,21 @@ func onFinalTimeGenerated(argLevelId, argTimeStr):
 		levelData[str(argLevelId)].bestTime = argTimeStr
 	levelData[str(argLevelId)].completed = true
 	saveLevelData()
+	SIGNAL_BUS.emit_signal("NOTIFY_SAVE_DATA_UPDATED")
 
 func isNewRecord(argNewTime, argRecord):
 	var newTimeArr = argNewTime.split(":", false, 0)
-	var newMins = newTimeArr[0]
-	var newSecs = newTimeArr[1]
-	var newMils = newTimeArr[2]
+	var newMins = int(newTimeArr[0])
+	var newSecs = int(newTimeArr[1])
+	var newMils = int(newTimeArr[2])
+	var newTimeMils = (newMins * 60000) + (newSecs * 1000) + newMils
+	
 	var recordArr = argRecord.split(":", false, 0)
-	if(newMins < recordArr[0]):
-		return true
-	elif(newSecs < recordArr[1]):
-		return true
-	elif(newMils <= recordArr[2]):
+	var recordMins = int(recordArr[0])
+	var recordSecs = int(recordArr[1])
+	var recordMilsRemainder = int(recordArr[2])
+	var recordMils = (recordMins * 60000) + (recordSecs * 1000) + recordMilsRemainder
+	if(newTimeMils < recordMils):
 		return true
 	return false
 
@@ -75,7 +78,6 @@ func getLevelTime(argLevelId):
 
 func saveLevelData():
 	print("saving data...")
-	#file = FileAccess.open_encrypted_with_pass(dataFilePath, FileAccess.WRITE, "secret");
 	file = FileAccess.open(dataFilePath, FileAccess.WRITE)
 	file.store_line(JSON.stringify(levelData))
 	file.close()
@@ -105,6 +107,9 @@ func setGameMode(gameModeIdx):
 func _input(event):
 	if(event.is_action_pressed("pause_game")):
 		SIGNAL_BUS.emit_signal("PAUSE_GAME", !PAUSE_GAME)
+	if(event.is_action_pressed("debug_complete_level")):
+		if(DEBUG_MODE):
+			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
 
 func onLevelCompleted(argLevelId):
 	SIGNAL_BUS.emit_signal("LOAD_LEVEL", levlHubPath)
@@ -139,15 +144,12 @@ func playBgm(argKey):
 
 func onPauseGame(argFlag):
 	if(currGameMode == 3):
-		if(DEBUG_MODE):
-			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
+		sfxPause.play()
+		get_tree().paused = argFlag
+		PAUSE_GAME = !PAUSE_GAME
+		if(argFlag):
+			setMouseMode(MOUSE_MODES.VISIBLE)
 		else:
-			sfxPause.play()
-			get_tree().paused = argFlag
-			PAUSE_GAME = !PAUSE_GAME
-			if(argFlag):
-				setMouseMode(MOUSE_MODES.VISIBLE)
-			else:
-				setMouseMode(MOUSE_MODES.CAPTURED)
+			setMouseMode(MOUSE_MODES.CAPTURED)
 	elif(currGameMode == 1 || currGameMode == 2):
 		SIGNAL_BUS.emit_signal("DIALOGUE_DONE")
