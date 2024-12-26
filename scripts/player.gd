@@ -75,12 +75,12 @@ func _physics_process(_delta):
 	if(input.x > 0):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque(torque)
-		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor * -1))
+		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor * -1.5))
 		apply_central_force(Vector3(0, -1, 0) * (torqueFactor))
 	elif(input.x < 0):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor)
 		apply_torque(torque)
-		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor))
+		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor * 1.5))
 		apply_central_force(Vector3(0, -1, 0) * (torqueFactor))
 
 func _process(delta):
