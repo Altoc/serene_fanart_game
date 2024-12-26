@@ -13,10 +13,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.3711
 collision_layer = 4
 collision_mask = 3
 mass = 128.0
-max_contacts_reported = 7
-contact_monitor = true
 sleeping = true
 can_sleep = false
+contact_monitor = true
+max_contacts_reported = 7
 script = ExtResource("1_r2mc2")
 myName = "Thwomp"
 peachMessage = "Not bad. Thwomps are pretty heavy."
@@ -32,4 +32,4 @@ transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1, 0)
 stream = ExtResource("3_kn1t2")
 bus = &"SFX"
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

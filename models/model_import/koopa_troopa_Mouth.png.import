@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://21yenmspkql"
+uid="uid://ep826iwq34pn"
 path.s3tc="res://.godot/imported/koopa_troopa_Mouth.png-f1921b3e8116fd8d1c3a64a66c13d7da.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

@@ -118,9 +118,8 @@ _data = {
 "RESET": SubResource("Animation_byo1k")
 }
 
-[node name="Camera" type="Node3D" node_paths=PackedStringArray("player")]
+[node name="Camera" type="Node3D"]
 script = ExtResource("1_rbdgw")
-player = NodePath("..")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 spring_length = 10.0

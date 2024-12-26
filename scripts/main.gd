@@ -110,7 +110,7 @@ func _input(event):
 		if(DEBUG_MODE):
 			SIGNAL_BUS.emit_signal("NOTIFY_BOWSER_COLLECTED")
 
-func onLevelCompleted(argLevelId):
+func onLevelCompleted(_argLevelId):
 	#show level complete ui with time vs record
 	#wait for player to press button
 	SIGNAL_BUS.emit_signal("SET_UI_MODE", 6)

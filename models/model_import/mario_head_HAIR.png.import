@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlg2emlsmq0h4"
+uid="uid://ckjb3nqy744ra"
 path.s3tc="res://.godot/imported/mario_head_HAIR.png-d12f9e0074ae252f4e3b3618a2277499.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

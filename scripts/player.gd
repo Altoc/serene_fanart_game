@@ -1,16 +1,10 @@
 extends RigidBody3D
 
-@onready
-var SIGNAL_BUS = get_node("/root/Main/SignalBus")
-@onready
-var audio = get_node("sfx_mama_mia")
-
+@onready var SIGNAL_BUS = get_node("/root/Main/SignalBus")
+@onready var audio = get_node("sfx_mama_mia")
 @onready var blastPowerLimit = mass * 5
-
 @onready var fakeMass = mass
-
 @onready var sfx_oof = get_node("sfx_oof")
-
 var input = Vector3()
 var inputReceived = false
 var torque = Vector3()
@@ -24,12 +18,15 @@ enum PlayerStates {
 	}
 var currPlayerState
 var prevPlayerState = null
-@export var torqueFactor = 50
+@export var torqueFactor = 75
 var torqueIncreaseRate
-@export
-var myCamera : Node3D
+@export var myCamera : Node3D
 var size = 1
 @onready var myMesh = get_node("Ball")
+
+@onready var superBlastTimer = 0
+@onready var superBlastTimeSecs = 3
+@onready var superBlastReady = true
 
 func _ready():
 	SIGNAL_BUS.ADD_OBJECT_TO_PLAYER_BALL.connect(onAddObjectToPlayerBall)
@@ -37,7 +34,7 @@ func _ready():
 	SIGNAL_BUS.PLAYER_RESPAWNED.connect(onPlayerRespawned)
 	SIGNAL_BUS.BLAST_PLAYER.connect(getBlasted)
 	SIGNAL_BUS.NOTIFY_BOWSER_COLLECTED.connect(onBowserCollected)
-	torqueIncreaseRate = (torqueFactor / fakeMass)
+	torqueIncreaseRate = 1.50
 
 func onBowserCollected():
 	setPlayerState(PlayerStates.FREEZE)
@@ -59,13 +56,15 @@ func onAddObjectToPlayerBall(argObject):
 	var sizeIncreaseFactor = (massToIncrBy * 0.15)
 	if(size > 150):
 		massToIncrBy *= 0.50
-	var scaleIncreaseFactor = 1 + (massToIncrBy * 0.0025)
+	var scaleIncreaseFactor = 1 + (massToIncrBy * 0.0020)
 	size += sizeIncreaseFactor
 	fakeMass += massToIncrBy * 0.15
-	torqueFactor = torqueIncreaseRate * fakeMass
-	print("torque: " + str(torqueFactor))
+	torqueFactor = 75 + (torqueIncreaseRate * size)
+	print("torque factor: " + str(torqueFactor))
 	get_node("CollisionShape3D").shape.radius *= scaleIncreaseFactor
 	get_node("Area3D/CollisionShape3D").shape.radius *= scaleIncreaseFactor
+	print("head radius: " + str(get_node("CollisionShape3D").shape.radius))
+	print("radius of grab: " + str(get_node("Area3D/CollisionShape3D").shape.radius))
 	SIGNAL_BUS.emit_signal("PLAYER_BALL_SIZE_CHANGED", size)
 
 func _physics_process(_delta):
@@ -77,13 +76,19 @@ func _physics_process(_delta):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
 		apply_torque(torque)
 		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor * -1))
-	#break
+		apply_central_force(Vector3(0, -1, 0) * (torqueFactor))
 	elif(input.x < 0):
 		torque = myCamera.get_global_transform().basis.x * (torqueFactor)
 		apply_torque(torque)
 		apply_central_force(myCamera.get_global_transform().basis.z * (torqueFactor))
+		apply_central_force(Vector3(0, -1, 0) * (torqueFactor))
 
-func _process(_delta):
+func _process(delta):
+	if(!superBlastReady && superBlastTimer < superBlastTimeSecs):
+		superBlastTimer += delta
+	else:
+		superBlastReady = true
+		superBlastTimer = 0
 	match(currPlayerState):
 		PlayerStates.IDLE:
 			pass
@@ -104,9 +109,12 @@ func handleInput(argInput):
 		inputReceived = true
 		#print("play super spin sound")
 	if(argInput.is_action_just_released("super_spin")):
-		torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
-		apply_torque_impulse(torque)
-		getBlasted(mass, myCamera.get_global_transform().basis.z * -1)
+		if(superBlastReady):
+			superBlastReady = false
+			inputReceived = true
+			torque = myCamera.get_global_transform().basis.x * (torqueFactor * -1)
+			apply_torque_impulse(torque)
+			getBlasted(mass, myCamera.get_global_transform().basis.z * -1)
 	if(!inputReceived):
 		setPlayerState(PlayerStates.IDLE)
 

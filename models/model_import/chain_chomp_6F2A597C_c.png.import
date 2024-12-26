@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d24y4i1ngfehr"
+uid="uid://ioimgrny3r3f"
 path.s3tc="res://.godot/imported/chain_chomp_6F2A597C_c.png-67ee5fd9c244b4bedf10dd89f6959980.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

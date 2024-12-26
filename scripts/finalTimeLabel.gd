@@ -6,5 +6,5 @@ extends Label
 func _ready():
 	SIGNAL_BUS.FINAL_TIME.connect(onFinalTimeReceived)
 
-func onFinalTimeReceived(argLevelId, argTimeStr):
+func onFinalTimeReceived(_argLevelId, argTimeStr):
 	text = argTimeStr

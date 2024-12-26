@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d0qym13j7824"]
+[gd_scene load_steps=19 format=4 uid="uid://d0qym13j7824"]
 
 [ext_resource type="Texture2D" uid="uid://bhqhqd18kmrmm" path="res://materials/bat_nose_texture.png" id="1_ar3qq"]
 [ext_resource type="Texture2D" uid="uid://wtxw2qiupng" path="res://materials/bat_eye_texture.png" id="2_fmkg7"]
@@ -27,31 +27,34 @@ albedo_texture = ExtResource("3_rxq7n")
 [sub_resource type="ArrayMesh" id="ArrayMesh_kbdmm"]
 _surfaces = [{
 "aabb": AABB(-0.088894, -0.491064, -0.65658, 0.441265, 0.978671, 0.77559),
-"format": 4097,
+"format": 34359742465,
 "index_count": 39,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 0, 0, 1, 0, 4, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 8, 0, 11, 0, 9, 0, 9, 0, 11, 0, 10, 0, 9, 0, 12, 0, 8, 0, 12, 0, 14, 0, 13, 0, 12, 0, 9, 0, 14, 0, 12, 0, 15, 0, 8, 0, 12, 0, 13, 0, 16, 0, 17, 0, 12, 0, 16, 0, 17, 0, 15, 0, 12, 0),
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAAGAAUABwAGAAQACAALAAkACQALAAoACQAMAAgADAAOAA0ADAAJAA4ADAAPAAgADAANABAAEQAMABAAEQAPAAwA"),
 "name": "Nose",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 18,
-"vertex_data": PackedByteArray(173, 162, 191, 60, 61, 125, 228, 62, 160, 21, 40, 191, 15, 14, 182, 189, 34, 139, 244, 61, 237, 153, 101, 190, 17, 144, 175, 61, 184, 148, 83, 62, 148, 251, 33, 191, 164, 85, 45, 61, 160, 167, 249, 62, 112, 177, 186, 190, 77, 106, 232, 60, 66, 91, 230, 190, 160, 21, 40, 191, 190, 76, 180, 61, 61, 158, 86, 190, 148, 251, 33, 191, 215, 75, 179, 189, 199, 161, 254, 189, 237, 153, 101, 190, 204, 155, 67, 61, 190, 108, 251, 190, 112, 177, 186, 190, 255, 94, 90, 62, 39, 136, 186, 61, 14, 74, 56, 190, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 166, 151, 40, 62, 115, 161, 50, 61, 220, 129, 138, 190, 249, 105, 180, 62, 146, 148, 244, 58, 185, 194, 187, 189, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 129, 177, 78, 62, 245, 44, 24, 190, 154, 91, 161, 189, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 111, 212, 26, 62, 178, 132, 213, 189, 132, 187, 243, 61, 206, 168, 25, 62, 69, 216, 208, 61, 132, 187, 243, 61)
+"vertex_data": PackedByteArray("raK/PD195D6gFSi/Dw62vSKL9D3tmWW+EZCvPbiUUz6U+yG/pFUtPaCn+T5wsbq+TWroPEJb5r6gFSi/vky0PT2eVr6U+yG/10uzvceh/r3tmWW+zJtDPb5s+75wsbq+/15aPieIuj0OSji+sWtbPg3Fvb0OSji+Hef2PbqiFDqTjLS+ppcoPnOhMj3cgYq++Wm0PpKU9Dq5wru9ZFdKPgnEK76TADW9gbFOPvUsGL6aW6G9YXFIPrb3KT6TADW9b9QaPrKE1b2Eu/M9zqgZPkXY0D2Eu/M9")
 }, {
 "aabb": AABB(-0.277091, -0.334574, -0.3528, 0.491369, 0.663695, 0.47181),
-"format": 4097,
+"format": 34359742465,
 "index_count": 129,
-"index_data": PackedByteArray(0, 0, 9, 0, 3, 0, 0, 0, 10, 0, 9, 0, 11, 0, 7, 0, 12, 0, 4, 0, 12, 0, 7, 0, 8, 0, 7, 0, 11, 0, 11, 0, 13, 0, 8, 0, 6, 0, 8, 0, 13, 0, 13, 0, 14, 0, 6, 0, 6, 0, 14, 0, 10, 0, 2, 0, 10, 0, 15, 0, 2, 0, 9, 0, 10, 0, 15, 0, 10, 0, 14, 0, 10, 0, 0, 0, 6, 0, 16, 0, 18, 0, 17, 0, 21, 0, 20, 0, 19, 0, 20, 0, 5, 0, 1, 0, 20, 0, 21, 0, 5, 0, 19, 0, 20, 0, 22, 0, 12, 0, 23, 0, 18, 0, 12, 0, 4, 0, 23, 0, 18, 0, 21, 0, 19, 0, 18, 0, 23, 0, 21, 0, 2, 0, 19, 0, 22, 0, 2, 0, 17, 0, 19, 0, 19, 0, 17, 0, 18, 0, 16, 0, 24, 0, 18, 0, 18, 0, 24, 0, 12, 0, 14, 0, 25, 0, 15, 0, 26, 0, 24, 0, 25, 0, 25, 0, 24, 0, 16, 0, 17, 0, 15, 0, 16, 0, 16, 0, 15, 0, 25, 0, 2, 0, 15, 0, 17, 0, 26, 0, 11, 0, 24, 0, 12, 0, 24, 0, 11, 0, 26, 0, 13, 0, 11, 0, 26, 0, 25, 0, 13, 0, 13, 0, 25, 0, 14, 0, 20, 0, 2, 0, 22, 0, 20, 0, 1, 0, 2, 0, 23, 0, 4, 0, 21, 0, 21, 0, 4, 0, 5, 0, 9, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AAAJAAMAAAAKAAkACwAHAAwABAAMAAcACAAHAAsACwANAAgABgAIAA0ADQAOAAYABgAOAAoAAgAKAA8AAgAJAAoADwAKAA4ACgAAAAYAEAASABEAFQAUABMAFAAFAAEAFAAVAAUAEwAUABYADAAXABIADAAEABcAEgAVABMAEgAXABUAAgATABYAAgARABMAEwARABIAEAAYABIAEgAYAAwADgAZAA8AGgAYABkAGQAYABAAEQAPABAAEAAPABkAAgAPABEAGgALABgADAAYAAsAGgANAAsAGgAZAA0ADQAZAA4AFAACABYAFAABAAIAFwAEABUAFQAEAAUACQACAAMA"),
 "name": "Eye",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 27,
-"vertex_data": PackedByteArray(255, 94, 90, 62, 39, 136, 186, 61, 14, 74, 56, 190, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 166, 151, 40, 62, 115, 161, 50, 61, 220, 129, 138, 190, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 129, 177, 78, 62, 245, 44, 24, 190, 154, 91, 161, 189, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 111, 212, 26, 62, 178, 132, 213, 189, 132, 187, 243, 61, 206, 168, 25, 62, 69, 216, 208, 61, 132, 187, 243, 61, 47, 190, 168, 61, 180, 173, 230, 61, 208, 241, 137, 190, 254, 11, 132, 61, 210, 55, 41, 62, 46, 226, 107, 190, 163, 147, 229, 189, 98, 190, 60, 186, 146, 34, 242, 61, 24, 91, 8, 190, 73, 77, 171, 190, 219, 133, 102, 60, 238, 34, 12, 190, 140, 130, 168, 62, 219, 133, 102, 60, 120, 207, 129, 189, 17, 55, 71, 62, 84, 87, 110, 190, 53, 183, 130, 189, 204, 97, 183, 61, 52, 162, 180, 190, 200, 182, 92, 190, 244, 166, 194, 189, 12, 234, 107, 190, 14, 163, 128, 189, 163, 229, 192, 189, 52, 162, 180, 190, 168, 168, 122, 189, 39, 247, 75, 190, 84, 87, 110, 190, 6, 216, 135, 61, 237, 131, 44, 190, 46, 226, 107, 190, 24, 92, 19, 62, 112, 207, 3, 190, 153, 212, 80, 190, 140, 76, 48, 62, 66, 233, 43, 190, 200, 93, 164, 189, 15, 123, 161, 61, 206, 142, 4, 190, 220, 100, 132, 190, 52, 16, 27, 62, 170, 130, 49, 190, 220, 101, 159, 189, 137, 239, 140, 190, 190, 159, 42, 190, 52, 162, 52, 189, 68, 196, 93, 190, 76, 167, 181, 61, 12, 234, 107, 190, 223, 222, 141, 190, 168, 109, 35, 62, 52, 162, 52, 189)
+"vertex_data": PackedByteArray("/15aPieIuj0OSji+sWtbPg3Fvb0OSji+Hef2PbqiFDqTjLS+ppcoPnOhMj3cgYq+ZFdKPgnEK76TADW9gbFOPvUsGL6aW6G9YXFIPrb3KT6TADW9b9QaPrKE1b2Eu/M9zqgZPkXY0D2Eu/M9L76oPbSt5j3Q8Ym+/guEPdI3KT4u4mu+o5PlvWK+PLqSIvI9GFsIvklNq77bhWY87iIMvoyCqD7bhWY8eM+BvRE3Rz5UV26+NbeCvcxhtz00orS+yLZcvvSmwr0M6mu+DqOAvaPlwL00orS+qKh6vSf3S75UV26+BtiHPe2DLL4u4mu+GFwTPnDPA76Z1FC+jEwwPkLpK77IXaS9D3uhPc6OBL7cZIS+NBAbPqqCMb7cZZ+9ie+Mvr6fKr40ojS9RMRdvkyntT0M6mu+396NvqhtIz40ojS9")
 }, {
 "aabb": AABB(0.214606, -0.05882, 0.014565, 0.014745, 0.116235, 0.113155),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AAACAAEAAQACAAMA"),
 "name": "Tooth",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(173, 193, 91, 62, 60, 193, 254, 60, 105, 198, 2, 62, 109, 29, 92, 62, 163, 201, 5, 189, 105, 198, 2, 62, 43, 50, 106, 62, 254, 43, 107, 61, 10, 162, 110, 60, 253, 218, 106, 62, 62, 237, 112, 189, 10, 162, 110, 60)
+"vertex_data": PackedByteArray("rcFbPjzB/jxpxgI+bR1cPqPJBb1pxgI+KzJqPv4raz0Kom48/dpqPj7tcL0Kom48")
 }]
 blend_shape_mode = 0
 
@@ -59,37 +62,40 @@ blend_shape_mode = 0
 resource_name = "bat_Head_40_750D24BA_cbmp"
 _surfaces = [{
 "aabb": AABB(-0.088894, -0.491064, -0.65658, 0.441265, 0.978671, 0.77559),
-"attribute_data": PackedByteArray(4, 0, 167, 62, 4, 0, 159, 62, 13, 0, 229, 62, 224, 255, 7, 61, 13, 0, 213, 62, 4, 0, 151, 62, 4, 0, 159, 62, 32, 0, 248, 61, 252, 255, 40, 63, 4, 0, 159, 62, 8, 0, 18, 63, 4, 0, 151, 62, 8, 0, 10, 63, 224, 255, 7, 61, 252, 255, 44, 63, 32, 0, 248, 61, 34, 0, 104, 62, 6, 128, 70, 63, 4, 0, 191, 62, 250, 127, 61, 63, 250, 127, 53, 63, 6, 128, 70, 63, 2, 128, 91, 63, 0, 0, 56, 63, 2, 128, 47, 63, 6, 128, 126, 63, 130, 116, 9, 63, 158, 150, 95, 63, 4, 0, 239, 62, 0, 0, 8, 63, 252, 255, 104, 63, 244, 255, 218, 62, 139, 224, 91, 63, 157, 45, 4, 63, 201, 0, 208, 60, 244, 255, 218, 62, 252, 255, 60, 63, 0, 252, 255, 58, 25, 0, 74, 62, 0, 252, 255, 58),
-"format": 4119,
+"attribute_data": PackedByteArray("BACnPgQAnz4NAOU+4P8HPQ0A1T4EAJc+BACfPiAA+D38/yg/BACfPggAEj8EAJc+CAAKP+D/Bz38/yw/IAD4PSIAaD4GgEY/BAC/Pvp/PT/6fzU/BoBGPwKAWz8AADg/AoAvPwaAfj+CdAk/npZfPwQA7z4AAAg//P9oP/T/2j6L4Fs/nS0EP8kA0Dz0/9o+/P88PwD8/zoZAEo+APz/Og=="),
+"format": 34359742487,
 "index_count": 39,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 0, 0, 1, 0, 4, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 9, 0, 13, 0, 11, 0, 11, 0, 13, 0, 12, 0, 10, 0, 14, 0, 8, 0, 14, 0, 16, 0, 15, 0, 14, 0, 10, 0, 16, 0, 14, 0, 17, 0, 8, 0, 14, 0, 15, 0, 18, 0, 19, 0, 14, 0, 18, 0, 19, 0, 17, 0, 14, 0),
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAAGAAUABwAGAAQACQANAAsACwANAAwACgAOAAgADgAQAA8ADgAKABAADgARAAgADgAPABIAEwAOABIAEwARAA4A"),
 "material": SubResource("StandardMaterial3D_h2fon"),
 "name": "Nose",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 20,
-"vertex_data": PackedByteArray(173, 162, 191, 60, 61, 125, 228, 62, 160, 21, 40, 191, 56, 229, 254, 125, 123, 125, 194, 126, 15, 14, 182, 189, 34, 139, 244, 61, 237, 153, 101, 190, 57, 228, 221, 120, 118, 119, 152, 123, 17, 144, 175, 61, 184, 148, 83, 62, 148, 251, 33, 191, 1, 199, 243, 149, 125, 158, 222, 112, 164, 85, 45, 61, 160, 167, 249, 62, 112, 177, 186, 190, 87, 222, 19, 93, 86, 94, 145, 110, 77, 106, 232, 60, 66, 91, 230, 190, 160, 21, 40, 191, 84, 228, 26, 131, 212, 131, 16, 126, 190, 76, 180, 61, 61, 158, 86, 190, 148, 251, 33, 191, 141, 199, 190, 106, 166, 98, 53, 113, 215, 75, 179, 189, 199, 161, 254, 189, 237, 153, 101, 190, 87, 227, 45, 136, 7, 138, 29, 123, 204, 155, 67, 61, 190, 108, 251, 190, 112, 177, 186, 190, 124, 221, 196, 163, 180, 163, 189, 110, 255, 94, 90, 62, 39, 136, 186, 61, 14, 74, 56, 190, 67, 218, 249, 205, 245, 183, 42, 104, 255, 94, 90, 62, 39, 136, 186, 61, 14, 74, 56, 190, 67, 218, 249, 205, 138, 186, 118, 114, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 206, 218, 154, 50, 36, 81, 100, 100, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 206, 218, 154, 50, 227, 90, 188, 99, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 37, 255, 81, 208, 122, 116, 201, 124, 166, 151, 40, 62, 115, 161, 50, 61, 220, 129, 138, 190, 42, 230, 83, 198, 115, 171, 129, 118, 249, 105, 180, 62, 146, 148, 244, 58, 185, 194, 187, 189, 169, 254, 146, 141, 128, 129, 67, 127, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 37, 181, 120, 58, 115, 56, 70, 91, 129, 177, 78, 62, 245, 44, 24, 190, 154, 91, 161, 189, 108, 199, 196, 45, 120, 61, 26, 92, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 44, 180, 130, 198, 125, 202, 189, 91, 111, 212, 26, 62, 178, 132, 213, 189, 132, 187, 243, 61, 195, 160, 163, 98, 71, 77, 206, 111, 206, 168, 25, 62, 69, 216, 208, 61, 132, 187, 243, 61, 106, 160, 177, 157, 30, 161, 80, 102)
+"vertex_data": PackedByteArray("raK/PD195D6gFSi/Dw62vSKL9D3tmWW+EZCvPbiUUz6U+yG/pFUtPaCn+T5wsbq+TWroPEJb5r6gFSi/vky0PT2eVr6U+yG/10uzvceh/r3tmWW+zJtDPb5s+75wsbq+/15aPieIuj0OSji+/15aPieIuj0OSji+sWtbPg3Fvb0OSji+sWtbPg3Fvb0OSji+Hef2PbqiFDqTjLS+ppcoPnOhMj3cgYq++Wm0PpKU9Dq5wru9ZFdKPgnEK76TADW9gbFOPvUsGL6aW6G9YXFIPrb3KT6TADW9b9QaPrKE1b2Eu/M9zqgZPkXY0D2Eu/M9OOX+fXt9wn455N14dneYewHH85V9nt5wV94TXVZekW5U5BqD1IMQfo3HvmqmYjVxV+MtiAeKHXt83cSjtKO9bkPa+c31typoQ9r5zYq6dnLO2poyJFFkZM7amjLjWrxjJf9R0Hp0yXwq5lPGc6uBdqn+ko2AgUN/JbV4OnM4Rltsx8QteD0aXCy0gsZ9yr1bw6CjYkdNzm9qoLGdHqFQZg==")
 }, {
 "aabb": AABB(-0.277091, -0.334574, -0.3528, 0.491369, 0.663695, 0.47181),
-"attribute_data": PackedByteArray(254, 127, 138, 63, 240, 255, 99, 62, 64, 163, 196, 62, 64, 163, 204, 62, 3, 64, 149, 63, 224, 255, 103, 62, 0, 115, 237, 61, 64, 163, 204, 62, 64, 163, 196, 62, 128, 185, 6, 62, 254, 127, 0, 63, 224, 255, 167, 61, 0, 115, 237, 61, 128, 185, 6, 62, 68, 108, 104, 63, 244, 226, 92, 63, 0, 115, 237, 61, 64, 163, 204, 62, 64, 163, 196, 62, 64, 163, 204, 62, 4, 0, 39, 63, 255, 63, 128, 63, 0, 115, 237, 61, 128, 185, 6, 62, 203, 248, 19, 63, 40, 88, 51, 190, 0, 115, 237, 61, 128, 185, 6, 62, 252, 255, 192, 62, 1, 192, 129, 63, 2, 128, 91, 63, 8, 0, 230, 190, 2, 128, 27, 63, 254, 127, 64, 63, 252, 255, 224, 62, 6, 128, 66, 63, 6, 76, 136, 62, 229, 208, 138, 63, 64, 163, 196, 62, 128, 185, 6, 62, 64, 163, 196, 62, 64, 163, 204, 62, 134, 0, 32, 61, 6, 128, 106, 63, 0, 115, 237, 61, 64, 163, 204, 62, 0, 115, 237, 61, 128, 185, 6, 62, 0, 115, 237, 61, 64, 163, 204, 62, 8, 0, 6, 63, 250, 127, 69, 63, 0, 115, 237, 61, 128, 185, 6, 62, 64, 163, 196, 62, 128, 185, 6, 62, 252, 255, 72, 63, 252, 255, 108, 63, 0, 115, 237, 61, 128, 185, 6, 62, 0, 115, 237, 61, 64, 163, 204, 62, 8, 0, 126, 62, 6, 128, 114, 63, 64, 163, 196, 62, 128, 185, 6, 62, 8, 0, 54, 191, 4, 0, 169, 63, 0, 115, 237, 61, 128, 185, 6, 62, 0, 115, 237, 61, 64, 163, 204, 62, 0, 0, 136, 62, 32, 0, 120, 189, 0, 115, 237, 61, 128, 185, 6, 62, 64, 163, 196, 62, 128, 185, 6, 62, 0, 0, 200, 62, 32, 0, 184, 61, 0, 115, 237, 61, 128, 185, 6, 62, 64, 163, 196, 62, 128, 185, 6, 62, 252, 255, 28, 63, 192, 255, 79, 189, 254, 127, 28, 63, 0, 0, 192, 61, 0, 0, 24, 191, 1, 192, 167, 63, 0, 115, 237, 61, 128, 185, 6, 62, 64, 163, 196, 62, 128, 185, 6, 62, 250, 127, 61, 63, 160, 255, 87, 189, 34, 0, 56, 62, 4, 0, 103, 63, 254, 127, 52, 63, 240, 255, 131, 189, 64, 163, 196, 62, 128, 185, 6, 62, 207, 101, 50, 63, 186, 73, 12, 63, 0, 115, 237, 61, 128, 185, 6, 62, 173, 110, 173, 62, 128, 250, 157, 189, 64, 163, 196, 62, 128, 185, 6, 62, 0, 115, 237, 61, 128, 185, 6, 62, 120, 71, 254, 62, 133, 11, 125, 63, 19, 127, 40, 63, 192, 254, 250, 188, 0, 115, 237, 61, 64, 163, 204, 62, 168, 170, 80, 62, 0, 243, 187, 188, 64, 163, 196, 62, 128, 185, 6, 62, 0, 115, 237, 61, 128, 185, 6, 62, 0, 115, 237, 61, 64, 163, 204, 62, 0, 115, 237, 61, 128, 185, 6, 62, 0, 115, 237, 61, 64, 163, 204, 62, 64, 163, 196, 62, 128, 185, 6, 62, 252, 255, 200, 62, 128, 0, 96, 189, 64, 163, 196, 62, 128, 185, 6, 62),
-"format": 4119,
+"attribute_data": PackedByteArray("/n+KP/D/Yz5Ao8Q+QKPMPgNAlT/g/2c+AHPtPUCjzD5Ao8Q+gLkGPv5/AD/g/6c9AHPtPYC5Bj5EbGg/9OJcPwBz7T1Ao8w+QKPEPkCjzD4EACc//z+APwBz7T2AuQY+y/gTPyhYM74Ac+09gLkGPvz/wD4BwIE/AoBbPwgA5r4CgBs//n9AP/z/4D4GgEI/BkyIPuXQij9Ao8Q+gLkGPkCjxD5Ao8w+hgAgPQaAaj8Ac+09QKPMPgBz7T2AuQY+AHPtPUCjzD4IAAY/+n9FPwBz7T2AuQY+QKPEPoC5Bj78/0g//P9sPwBz7T2AuQY+AHPtPUCjzD4IAH4+BoByP0CjxD6AuQY+CAA2vwQAqT8Ac+09gLkGPgBz7T1Ao8w+AACIPiAAeL0Ac+09gLkGPkCjxD6AuQY+AADIPiAAuD0Ac+09gLkGPkCjxD6AuQY+/P8cP8D/T73+fxw/AADAPQAAGL8BwKc/AHPtPYC5Bj5Ao8Q+gLkGPvp/PT+g/1e9IgA4PgQAZz/+fzQ/8P+DvUCjxD6AuQY+z2UyP7pJDD8Ac+09gLkGPq1urT6A+p29QKPEPoC5Bj4Ac+09gLkGPnhH/j6FC30/E38oP8D++rwAc+09QKPMPqiqUD4A87u8QKPEPoC5Bj4Ac+09gLkGPgBz7T1Ao8w+AHPtPYC5Bj4Ac+09QKPMPkCjxD6AuQY+/P/IPoAAYL1Ao8Q+gLkGPg=="),
+"format": 34359742487,
 "index_count": 129,
-"index_data": PackedByteArray(0, 0, 18, 0, 7, 0, 0, 0, 21, 0, 18, 0, 25, 0, 16, 0, 28, 0, 10, 0, 28, 0, 16, 0, 17, 0, 16, 0, 25, 0, 25, 0, 31, 0, 17, 0, 14, 0, 17, 0, 31, 0, 32, 0, 35, 0, 13, 0, 15, 0, 33, 0, 21, 0, 4, 0, 22, 0, 37, 0, 4, 0, 20, 0, 22, 0, 38, 0, 22, 0, 34, 0, 21, 0, 0, 0, 15, 0, 42, 0, 47, 0, 43, 0, 53, 0, 51, 0, 48, 0, 51, 0, 12, 0, 2, 0, 51, 0, 53, 0, 12, 0, 48, 0, 51, 0, 56, 0, 27, 0, 58, 0, 45, 0, 27, 0, 9, 0, 58, 0, 44, 0, 53, 0, 48, 0, 44, 0, 59, 0, 53, 0, 5, 0, 49, 0, 57, 0, 5, 0, 43, 0, 49, 0, 49, 0, 43, 0, 47, 0, 41, 0, 62, 0, 45, 0, 46, 0, 62, 0, 26, 0, 36, 0, 66, 0, 39, 0, 67, 0, 62, 0, 63, 0, 65, 0, 62, 0, 40, 0, 43, 0, 39, 0, 42, 0, 42, 0, 39, 0, 66, 0, 5, 0, 39, 0, 43, 0, 67, 0, 24, 0, 61, 0, 27, 0, 62, 0, 23, 0, 67, 0, 30, 0, 23, 0, 67, 0, 64, 0, 29, 0, 32, 0, 64, 0, 34, 0, 50, 0, 3, 0, 55, 0, 50, 0, 1, 0, 3, 0, 60, 0, 8, 0, 52, 0, 54, 0, 8, 0, 11, 0, 19, 0, 3, 0, 6, 0),
+"index_data": PackedByteArray("AAASAAcAAAAVABIAGQAQABwACgAcABAAEQAQABkAGQAfABEADgARAB8AIAAjAA0ADwAhABUABAAWACUABAAUABYAJgAWACIAFQAAAA8AKgAvACsANQAzADAAMwAMAAIAMwA1AAwAMAAzADgAGwA6AC0AGwAJADoALAA1ADAALAA7ADUABQAxADkABQArADEAMQArAC8AKQA+AC0ALgA+ABoAJABCACcAQwA+AD8AQQA+ACgAKwAnACoAKgAnAEIABQAnACsAQwAYAD0AGwA+ABcAQwAeABcAQwBAAB0AIABAACIAMgADADcAMgABAAMAPAAIADQANgAIAAsAEwADAAYA"),
 "material": SubResource("StandardMaterial3D_o3m08"),
 "name": "Eye",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 68,
-"vertex_data": PackedByteArray(255, 94, 90, 62, 39, 136, 186, 61, 14, 74, 56, 190, 67, 218, 249, 205, 225, 184, 217, 107, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 206, 218, 154, 50, 40, 158, 114, 176, 177, 107, 91, 62, 13, 197, 189, 189, 14, 74, 56, 190, 206, 218, 154, 50, 228, 184, 214, 238, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 37, 255, 81, 208, 202, 53, 160, 232, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 37, 255, 81, 208, 203, 184, 59, 173, 29, 231, 246, 61, 186, 162, 20, 58, 147, 140, 180, 190, 37, 255, 81, 208, 200, 85, 23, 115, 166, 151, 40, 62, 115, 161, 50, 61, 220, 129, 138, 190, 42, 230, 83, 198, 19, 67, 64, 234, 166, 151, 40, 62, 115, 161, 50, 61, 220, 129, 138, 190, 42, 230, 83, 198, 253, 168, 239, 111, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 37, 181, 120, 58, 45, 54, 69, 163, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 37, 181, 120, 58, 69, 172, 177, 210, 100, 87, 74, 62, 9, 196, 43, 190, 147, 0, 53, 189, 37, 181, 120, 58, 228, 56, 18, 91, 129, 177, 78, 62, 245, 44, 24, 190, 154, 91, 161, 189, 108, 199, 196, 45, 255, 52, 116, 162, 129, 177, 78, 62, 245, 44, 24, 190, 154, 91, 161, 189, 108, 199, 196, 45, 21, 205, 144, 233, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 44, 180, 130, 198, 211, 61, 244, 215, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 44, 180, 130, 198, 164, 203, 100, 92, 97, 113, 72, 62, 182, 247, 41, 62, 147, 0, 53, 189, 44, 180, 130, 198, 53, 216, 133, 99, 111, 212, 26, 62, 178, 132, 213, 189, 132, 187, 243, 61, 195, 160, 163, 98, 202, 174, 137, 131, 206, 168, 25, 62, 69, 216, 208, 61, 132, 187, 243, 61, 106, 160, 177, 157, 64, 210, 134, 93, 47, 190, 168, 61, 180, 173, 230, 61, 208, 241, 137, 190, 152, 208, 11, 225, 128, 199, 174, 104, 47, 190, 168, 61, 180, 173, 230, 61, 208, 241, 137, 190, 152, 208, 11, 225, 164, 57, 245, 217, 47, 190, 168, 61, 180, 173, 230, 61, 208, 241, 137, 190, 152, 208, 11, 225, 140, 194, 137, 117, 254, 11, 132, 61, 210, 55, 41, 62, 46, 226, 107, 190, 45, 191, 91, 229, 97, 215, 179, 99, 254, 11, 132, 61, 210, 55, 41, 62, 46, 226, 107, 190, 45, 191, 91, 229, 104, 210, 213, 130, 163, 147, 229, 189, 98, 190, 60, 186, 146, 34, 242, 61, 145, 92, 254, 127, 65, 47, 204, 226, 163, 147, 229, 189, 98, 190, 60, 186, 146, 34, 242, 61, 145, 92, 254, 127, 36, 127, 175, 255, 163, 147, 229, 189, 98, 190, 60, 186, 146, 34, 242, 61, 145, 92, 254, 127, 155, 98, 159, 138, 24, 91, 8, 190, 73, 77, 171, 190, 219, 133, 102, 60, 14, 105, 30, 48, 121, 225, 177, 131, 24, 91, 8, 190, 73, 77, 171, 190, 219, 133, 102, 60, 14, 105, 30, 48, 200, 225, 237, 138, 24, 91, 8, 190, 73, 77, 171, 190, 219, 133, 102, 60, 14, 105, 30, 48, 184, 17, 143, 43, 238, 34, 12, 190, 140, 130, 168, 62, 219, 133, 102, 60, 21, 105, 71, 207, 46, 24, 42, 175, 238, 34, 12, 190, 140, 130, 168, 62, 219, 133, 102, 60, 21, 105, 71, 207, 143, 10, 125, 233, 238, 34, 12, 190, 140, 130, 168, 62, 219, 133, 102, 60, 21, 105, 71, 207, 71, 216, 170, 54, 238, 34, 12, 190, 140, 130, 168, 62, 219, 133, 102, 60, 21, 105, 71, 207, 37, 120, 99, 176, 120, 207, 129, 189, 17, 55, 71, 62, 84, 87, 110, 190, 40, 73, 139, 248, 21, 236, 148, 94, 120, 207, 129, 189, 17, 55, 71, 62, 84, 87, 110, 190, 40, 73, 139, 248, 57, 107, 110, 212, 120, 207, 129, 189, 17, 55, 71, 62, 84, 87, 110, 190, 40, 73, 139, 248, 80, 46, 147, 198, 120, 207, 129, 189, 17, 55, 71, 62, 84, 87, 110, 190, 40, 73, 139, 248, 35, 21, 8, 172, 53, 183, 130, 189, 204, 97, 183, 61, 52, 162, 180, 190, 245, 34, 31, 238, 196, 230, 197, 164, 53, 183, 130, 189, 204, 97, 183, 61, 52, 162, 180, 190, 245, 34, 31, 238, 84, 175, 246, 131, 53, 183, 130, 189, 204, 97, 183, 61, 52, 162, 180, 190, 245, 34, 31, 238, 239, 189, 99, 115, 200, 182, 92, 190, 244, 166, 194, 189, 12, 234, 107, 190, 235, 25, 44, 58, 122, 85, 195, 243, 200, 182, 92, 190, 244, 166, 194, 189, 12, 234, 107, 190, 235, 25, 44, 58, 195, 83, 178, 222, 200, 182, 92, 190, 244, 166, 194, 189, 12, 234, 107, 190, 235, 25, 44, 58, 243, 163, 21, 148, 14, 163, 128, 189, 163, 229, 192, 189, 52, 162, 180, 190, 66, 35, 83, 17, 170, 86, 74, 90, 168, 168, 122, 189, 39, 247, 75, 190, 84, 87, 110, 190, 121, 73, 242, 7, 60, 234, 71, 225, 168, 168, 122, 189, 39, 247, 75, 190, 84, 87, 110, 190, 121, 73, 242, 7, 253, 21, 0, 213, 168, 168, 122, 189, 39, 247, 75, 190, 84, 87, 110, 190, 121, 73, 242, 7, 149, 215, 207, 245, 168, 168, 122, 189, 39, 247, 75, 190, 84, 87, 110, 190, 121, 73, 242, 7, 120, 27, 0, 66, 6, 216, 135, 61, 237, 131, 44, 190, 46, 226, 107, 190, 242, 191, 91, 27, 31, 214, 148, 230, 6, 216, 135, 61, 237, 131, 44, 190, 46, 226, 107, 190, 242, 191, 91, 27, 218, 42, 92, 83, 24, 92, 19, 62, 112, 207, 3, 190, 153, 212, 80, 190, 228, 203, 50, 39, 34, 171, 251, 183, 24, 92, 19, 62, 112, 207, 3, 190, 153, 212, 80, 190, 228, 203, 50, 39, 223, 201, 43, 234, 140, 76, 48, 62, 66, 233, 43, 190, 200, 93, 164, 189, 92, 182, 13, 32, 95, 44, 222, 172, 140, 76, 48, 62, 66, 233, 43, 190, 200, 93, 164, 189, 92, 182, 13, 32, 188, 220, 239, 228, 140, 76, 48, 62, 66, 233, 43, 190, 200, 93, 164, 189, 92, 182, 13, 32, 43, 39, 154, 172, 15, 123, 161, 61, 206, 142, 4, 190, 220, 100, 132, 190, 171, 209, 173, 31, 31, 200, 91, 189, 15, 123, 161, 61, 206, 142, 4, 190, 220, 100, 132, 190, 171, 209, 173, 31, 52, 197, 228, 235, 15, 123, 161, 61, 206, 142, 4, 190, 220, 100, 132, 190, 171, 209, 173, 31, 89, 101, 174, 94, 52, 16, 27, 62, 170, 130, 49, 190, 220, 101, 159, 189, 253, 176, 52, 26, 72, 178, 197, 189, 52, 16, 27, 62, 170, 130, 49, 190, 220, 101, 159, 189, 253, 176, 52, 26, 110, 225, 144, 227, 52, 16, 27, 62, 170, 130, 49, 190, 220, 101, 159, 189, 253, 176, 52, 26, 250, 39, 49, 176, 137, 239, 140, 190, 190, 159, 42, 190, 52, 162, 52, 189, 89, 47, 218, 92, 96, 91, 245, 234, 137, 239, 140, 190, 190, 159, 42, 190, 52, 162, 52, 189, 89, 47, 218, 92, 61, 185, 15, 141, 68, 196, 93, 190, 76, 167, 181, 61, 12, 234, 107, 190, 9, 24, 7, 197, 147, 93, 201, 207, 68, 196, 93, 190, 76, 167, 181, 61, 12, 234, 107, 190, 9, 24, 7, 197, 19, 99, 238, 211, 68, 196, 93, 190, 76, 167, 181, 61, 12, 234, 107, 190, 9, 24, 7, 197, 119, 150, 251, 235, 68, 196, 93, 190, 76, 167, 181, 61, 12, 234, 107, 190, 9, 24, 7, 197, 206, 90, 215, 146, 223, 222, 141, 190, 168, 109, 35, 62, 52, 162, 52, 189, 63, 46, 145, 160, 194, 70, 44, 144)
+"vertex_data": PackedByteArray("/15aPieIuj0OSji+sWtbPg3Fvb0OSji+sWtbPg3Fvb0OSji+Hef2PbqiFDqTjLS+Hef2PbqiFDqTjLS+Hef2PbqiFDqTjLS+ppcoPnOhMj3cgYq+ppcoPnOhMj3cgYq+ZFdKPgnEK76TADW9ZFdKPgnEK76TADW9ZFdKPgnEK76TADW9gbFOPvUsGL6aW6G9gbFOPvUsGL6aW6G9YXFIPrb3KT6TADW9YXFIPrb3KT6TADW9YXFIPrb3KT6TADW9b9QaPrKE1b2Eu/M9zqgZPkXY0D2Eu/M9L76oPbSt5j3Q8Ym+L76oPbSt5j3Q8Ym+L76oPbSt5j3Q8Ym+/guEPdI3KT4u4mu+/guEPdI3KT4u4mu+o5PlvWK+PLqSIvI9o5PlvWK+PLqSIvI9o5PlvWK+PLqSIvI9GFsIvklNq77bhWY8GFsIvklNq77bhWY8GFsIvklNq77bhWY87iIMvoyCqD7bhWY87iIMvoyCqD7bhWY87iIMvoyCqD7bhWY87iIMvoyCqD7bhWY8eM+BvRE3Rz5UV26+eM+BvRE3Rz5UV26+eM+BvRE3Rz5UV26+eM+BvRE3Rz5UV26+NbeCvcxhtz00orS+NbeCvcxhtz00orS+NbeCvcxhtz00orS+yLZcvvSmwr0M6mu+yLZcvvSmwr0M6mu+yLZcvvSmwr0M6mu+DqOAvaPlwL00orS+qKh6vSf3S75UV26+qKh6vSf3S75UV26+qKh6vSf3S75UV26+qKh6vSf3S75UV26+BtiHPe2DLL4u4mu+BtiHPe2DLL4u4mu+GFwTPnDPA76Z1FC+GFwTPnDPA76Z1FC+jEwwPkLpK77IXaS9jEwwPkLpK77IXaS9jEwwPkLpK77IXaS9D3uhPc6OBL7cZIS+D3uhPc6OBL7cZIS+D3uhPc6OBL7cZIS+NBAbPqqCMb7cZZ+9NBAbPqqCMb7cZZ+9NBAbPqqCMb7cZZ+9ie+Mvr6fKr40ojS9ie+Mvr6fKr40ojS9RMRdvkyntT0M6mu+RMRdvkyntT0M6mu+RMRdvkyntT0M6mu+RMRdvkyntT0M6mu+396NvqhtIz40ojS9Q9r5zeG42WvO2poyKJ5ysM7amjLkuNbuJf9R0Mo1oOgl/1HQy7g7rSX/UdDIVRdzKuZTxhNDQOoq5lPG/ajvbyW1eDotNkWjJbV4OkWssdIltXg65DgSW2zHxC3/NHSibMfELRXNkOkstILG0z301yy0gsaky2RcLLSCxjXYhWPDoKNiyq6Jg2qgsZ1A0oZdmNAL4YDHrmiY0AvhpDn12ZjQC+GMwol1Lb9b5WHXs2Mtv1vlaNLVgpFc/n9BL8zikVz+fyR/r/+RXP5/m2Kfig5pHjB54bGDDmkeMMjh7YoOaR4wuBGPKxVpR88uGCqvFWlHz48KfekVaUfPR9iqNhVpR88leGOwKEmL+BXslF4oSYv4OWtu1ChJi/hQLpPGKEmL+CMVCKz1Ih/uxObFpPUiH+5Ur/aD9SIf7u+9Y3PrGSw6elXD8+sZLDrDU7Le6xksOvOjFZRCI1MRqlZKWnlJ8gc86kfheUnyB/0VANV5SfIHldfP9XlJ8gd4GwBC8r9bGx/WlObyv1sb2ipcU+TLMiciq/u35MsyJ9/JK+pctg0gXyzerFy2DSC83O/kXLYNICsnmqyr0a0fH8hbvavRrR80xeTrq9GtH1llrl79sDQaSLLFvf2wNBpu4ZDj/bA0GvonMbBZL9pcYFv16lkv2lw9uQ+NCRgHxZNdyc8JGAfFE2Pu0wkYB8V3lvvrCRgHxc5a15I/LpGgwkYskA==")
 }, {
 "aabb": AABB(0.214606, -0.05882, 0.014565, 0.014745, 0.116235, 0.113155),
-"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63),
-"format": 4119,
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AACAPw=="),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 1, 0, 3, 0, 4, 0),
+"index_data": PackedByteArray("AAADAAIAAQADAAQA"),
 "material": SubResource("StandardMaterial3D_l8ln4"),
 "name": "Tooth",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 5,
-"vertex_data": PackedByteArray(173, 193, 91, 62, 60, 193, 254, 60, 105, 198, 2, 62, 33, 241, 158, 128, 178, 128, 88, 128, 109, 29, 92, 62, 163, 201, 5, 189, 105, 198, 2, 62, 32, 241, 159, 128, 54, 234, 253, 133, 109, 29, 92, 62, 163, 201, 5, 189, 105, 198, 2, 62, 32, 241, 159, 128, 179, 128, 89, 128, 43, 50, 106, 62, 254, 43, 107, 61, 10, 162, 110, 60, 31, 241, 159, 128, 54, 234, 253, 133, 253, 218, 106, 62, 62, 237, 112, 189, 10, 162, 110, 60, 31, 241, 159, 128, 54, 234, 253, 133)
+"vertex_data": PackedByteArray("rcFbPjzB/jxpxgI+bR1cPqPJBb1pxgI+bR1cPqPJBb1pxgI+KzJqPv4raz0Kom48/dpqPj7tcL0Kom48IfGegLKAWIAg8Z+ANur9hSDxn4CzgFmAH/GfgDbq/YUf8Z+ANur9hQ==")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kbdmm")
@@ -103,13 +109,14 @@ albedo_texture = ExtResource("4_jxmq5")
 [sub_resource type="ArrayMesh" id="ArrayMesh_k4rqq"]
 _surfaces = [{
 "aabb": AABB(-0.250433, -0.987099, -0.431925, 0.133168, 0.985166, 0.99781),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AAACAAEAAQACAAMA"),
 "name": "Wing",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(104, 91, 125, 190, 67, 172, 254, 186, 47, 221, 16, 63, 162, 40, 240, 189, 108, 176, 124, 191, 156, 196, 16, 63, 193, 56, 128, 190, 0, 111, 1, 187, 22, 246, 220, 190, 214, 84, 246, 189, 133, 178, 124, 191, 70, 37, 221, 190)
+"vertex_data": PackedByteArray("aFt9vkOs/rov3RA/oijwvWywfL+cxBA/wTiAvgBvAbsW9ty+1lT2vYWyfL9GJd2+")
 }]
 blend_shape_mode = 0
 
@@ -117,15 +124,16 @@ blend_shape_mode = 0
 resource_name = "bat_Right_Wing_71_640D0B7F_cbmp"
 _surfaces = [{
 "aabb": AABB(-0.250433, -0.987099, -0.431925, 0.133168, 0.985166, 0.99781),
-"attribute_data": PackedByteArray(0, 0, 0, 0, 224, 255, 7, 61, 2, 128, 119, 63, 224, 255, 7, 61, 0, 0, 0, 0, 0, 0, 128, 63, 2, 128, 119, 63, 224, 255, 7, 61, 2, 128, 119, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63),
-"format": 4119,
+"attribute_data": PackedByteArray("AAAAAOD/Bz0CgHc/4P8HPQAAAAAAAIA/AoB3P+D/Bz0CgHc/AACAPwAAAAAAAIA/"),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0),
+"index_data": PackedByteArray("AAACAAEAAwAFAAQA"),
 "material": SubResource("StandardMaterial3D_ksu7r"),
 "name": "Wing",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
-"vertex_data": PackedByteArray(104, 91, 125, 190, 67, 172, 254, 186, 47, 221, 16, 63, 25, 241, 60, 143, 249, 142, 136, 120, 162, 40, 240, 189, 108, 176, 124, 191, 156, 196, 16, 63, 25, 241, 60, 143, 249, 142, 136, 120, 193, 56, 128, 190, 0, 111, 1, 187, 22, 246, 220, 190, 25, 241, 60, 143, 249, 142, 136, 120, 162, 40, 240, 189, 108, 176, 124, 191, 156, 196, 16, 63, 25, 241, 60, 143, 248, 142, 136, 120, 214, 84, 246, 189, 133, 178, 124, 191, 70, 37, 221, 190, 25, 241, 60, 143, 248, 142, 136, 120, 193, 56, 128, 190, 0, 111, 1, 187, 22, 246, 220, 190, 25, 241, 60, 143, 248, 142, 136, 120)
+"vertex_data": PackedByteArray("aFt9vkOs/rov3RA/oijwvWywfL+cxBA/wTiAvgBvAbsW9ty+oijwvWywfL+cxBA/1lT2vYWyfL9GJd2+wTiAvgBvAbsW9ty+GfE8j/mOiHgZ8TyP+Y6IeBnxPI/5joh4GfE8j/iOiHgZ8TyP+I6IeBnxPI/4joh4")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_k4rqq")
@@ -139,13 +147,14 @@ albedo_texture = ExtResource("5_e8k5o")
 [sub_resource type="ArrayMesh" id="ArrayMesh_281ix"]
 _surfaces = [{
 "aabb": AABB(-0.055912, -0.212728, 0.067545, 9.99868e-06, 0.43501, 0.435),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 2, 0, 3, 0, 1, 0),
+"index_data": PackedByteArray("AAACAAEAAgADAAEA"),
 "name": "Body",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(251, 3, 101, 189, 69, 155, 99, 62, 8, 85, 138, 61, 239, 2, 101, 189, 69, 155, 99, 62, 202, 166, 0, 63, 251, 3, 101, 189, 94, 213, 89, 190, 8, 85, 138, 61, 239, 2, 101, 189, 94, 213, 89, 190, 202, 166, 0, 63)
+"vertex_data": PackedByteArray("+wNlvUWbYz4IVYo97wJlvUWbYz7KpgA/+wNlvV7VWb4IVYo97wJlvV7VWb7KpgA/")
 }]
 blend_shape_mode = 0
 
@@ -153,15 +162,16 @@ blend_shape_mode = 0
 resource_name = "bat_Body_70_5335491A_cbmp"
 _surfaces = [{
 "aabb": AABB(-0.055912, -0.212728, 0.067545, 9.99868e-06, 0.43501, 0.435),
-"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 2, 128, 119, 63, 0, 0, 128, 63, 0, 0, 0, 0, 224, 255, 7, 61, 0, 0, 0, 0, 224, 255, 7, 61, 2, 128, 119, 63, 0, 0, 128, 63, 2, 128, 119, 63, 224, 255, 7, 61),
-"format": 4119,
+"attribute_data": PackedByteArray("AAAAAAAAgD8CgHc/AACAPwAAAADg/wc9AAAAAOD/Bz0CgHc/AACAPwKAdz/g/wc9"),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0),
+"index_data": PackedByteArray("AAACAAEAAwAFAAQA"),
 "material": SubResource("StandardMaterial3D_scbvm"),
 "name": "Body",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
-"vertex_data": PackedByteArray(251, 3, 101, 189, 69, 155, 99, 62, 8, 85, 138, 61, 255, 255, 255, 127, 255, 127, 255, 191, 239, 2, 101, 189, 69, 155, 99, 62, 202, 166, 0, 63, 255, 255, 255, 127, 255, 127, 255, 191, 251, 3, 101, 189, 94, 213, 89, 190, 8, 85, 138, 61, 255, 255, 255, 127, 255, 127, 255, 191, 251, 3, 101, 189, 94, 213, 89, 190, 8, 85, 138, 61, 255, 255, 255, 127, 255, 127, 255, 191, 239, 2, 101, 189, 69, 155, 99, 62, 202, 166, 0, 63, 255, 255, 255, 127, 255, 127, 255, 191, 239, 2, 101, 189, 94, 213, 89, 190, 202, 166, 0, 63, 255, 255, 255, 127, 255, 127, 255, 191)
+"vertex_data": PackedByteArray("+wNlvUWbYz4IVYo97wJlvUWbYz7KpgA/+wNlvV7VWb4IVYo9+wNlvV7VWb4IVYo97wJlvUWbYz7KpgA/7wJlvV7VWb7KpgA/////f/9//7////9//3//v////3//f/+/////f/9//7////9//3//v////3//f/+/")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_281ix")
@@ -169,13 +179,14 @@ shadow_mesh = SubResource("ArrayMesh_281ix")
 [sub_resource type="ArrayMesh" id="ArrayMesh_o0v5r"]
 _surfaces = [{
 "aabb": AABB(-0.249028, -0.002307, -0.43062, 0.13798, 0.986902, 1.00023),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"index_data": PackedByteArray("AAACAAEAAQACAAMA"),
 "name": "Wing",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(96, 114, 227, 189, 195, 13, 124, 63, 30, 27, 17, 63, 201, 199, 126, 190, 228, 78, 233, 57, 246, 209, 17, 63, 184, 229, 227, 189, 88, 89, 123, 63, 58, 122, 220, 190, 50, 1, 127, 190, 10, 49, 23, 187, 137, 12, 219, 190)
+"vertex_data": PackedByteArray("YHLjvcMNfD8eGxE/ycd+vuRO6Tn20RE/uOXjvVhZez86ety+MgF/vgoxF7uJDNu+")
 }]
 blend_shape_mode = 0
 
@@ -183,15 +194,16 @@ blend_shape_mode = 0
 resource_name = "bat_Left_Wing_72_640D0B7F_cbmp"
 _surfaces = [{
 "aabb": AABB(-0.249028, -0.002307, -0.43062, 0.13798, 0.986902, 1.00023),
-"attribute_data": PackedByteArray(2, 128, 119, 63, 224, 255, 7, 61, 0, 0, 0, 0, 224, 255, 7, 61, 2, 128, 119, 63, 0, 0, 128, 63, 0, 0, 0, 0, 224, 255, 7, 61, 0, 0, 0, 0, 0, 0, 128, 63, 2, 128, 119, 63, 0, 0, 128, 63),
-"format": 4119,
+"attribute_data": PackedByteArray("AoB3P+D/Bz0AAAAA4P8HPQKAdz8AAIA/AAAAAOD/Bz0AAAAAAACAPwKAdz8AAIA/"),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0),
+"index_data": PackedByteArray("AAACAAEAAwAFAAQA"),
 "material": SubResource("StandardMaterial3D_ksu7r"),
 "name": "Wing",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
-"vertex_data": PackedByteArray(96, 114, 227, 189, 195, 13, 124, 63, 30, 27, 17, 63, 67, 240, 72, 112, 254, 143, 40, 248, 201, 199, 126, 190, 228, 78, 233, 57, 246, 209, 17, 63, 67, 240, 72, 112, 254, 143, 40, 248, 184, 229, 227, 189, 88, 89, 123, 63, 58, 122, 220, 190, 67, 240, 72, 112, 254, 143, 40, 248, 201, 199, 126, 190, 228, 78, 233, 57, 246, 209, 17, 63, 67, 240, 72, 112, 254, 143, 40, 248, 50, 1, 127, 190, 10, 49, 23, 187, 137, 12, 219, 190, 67, 240, 72, 112, 254, 143, 40, 248, 184, 229, 227, 189, 88, 89, 123, 63, 58, 122, 220, 190, 67, 240, 72, 112, 254, 143, 40, 248)
+"vertex_data": PackedByteArray("YHLjvcMNfD8eGxE/ycd+vuRO6Tn20RE/uOXjvVhZez86ety+ycd+vuRO6Tn20RE/MgF/vgoxF7uJDNu+uOXjvVhZez86ety+Q/BIcP6PKPhD8Ehw/o8o+EPwSHD+jyj4Q/BIcP6PKPhD8Ehw/o8o+EPwSHD+jyj4")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o0v5r")

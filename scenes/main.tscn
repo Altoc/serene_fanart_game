@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://nxvnmvql4cxf"]
+[gd_scene load_steps=40 format=3 uid="uid://nxvnmvql4cxf"]
 
 [ext_resource type="Script" path="res://scripts/SignalBus.gd" id="1_f4a8i"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_r0f8h"]
@@ -25,8 +25,11 @@
 [ext_resource type="Script" path="res://scripts/BtnRestart.gd" id="17_si5u1"]
 [ext_resource type="Script" path="res://scripts/BackBtn.gd" id="18_0fq3e"]
 [ext_resource type="Script" path="res://scripts/creditsLabel.gd" id="18_s2g4h"]
+[ext_resource type="Texture2D" uid="uid://dgr7crqpomdua" path="res://images/LMB_icon.PNG" id="19_4rsky"]
 [ext_resource type="Script" path="res://scripts/debugLabel.gd" id="19_s7q2n"]
 [ext_resource type="Script" path="res://scripts/BtnOptions.gd" id="20_h4ill"]
+[ext_resource type="Texture2D" uid="uid://b6111kla8rkiv" path="res://images/RMB_icon.PNG" id="20_x8ffu"]
+[ext_resource type="Texture2D" uid="uid://bk1gafxoe8pun" path="res://images/space_icon.PNG" id="21_3iup0"]
 [ext_resource type="Script" path="res://scripts/finalTimeLabel.gd" id="21_m8yfk"]
 [ext_resource type="LabelSettings" uid="uid://cf8cxhvualc5b" path="res://level_complete_label_settings.tres" id="23_mtc32"]
 [ext_resource type="Script" path="res://scripts/TimeValue.gd" id="24_6bjng"]
@@ -215,17 +218,44 @@ size_flags_vertical = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/HUD/HBoxContainer2/PanelContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "LMB: Forward"
 
-[node name="Label2" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-text = "RMB: Backward"
+texture = ExtResource("19_4rsky")
+expand_mode = 3
 
-[node name="Label3" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Space: Super Spin"
+text = ": Forward"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("20_x8ffu")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = ": Backward"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("21_3iup0")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="UI/HUD/HBoxContainer2/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = ": Super Spin"
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/HUD"]
 layout_mode = 2

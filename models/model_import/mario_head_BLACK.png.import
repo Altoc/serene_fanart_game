@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bium4p3t4u7qa"
+uid="uid://bmbbvjukrfnv2"
 path.s3tc="res://.godot/imported/mario_head_BLACK.png-63a43cbcbb5a2a166de31247f3bd2c11.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://plmymga76sua"]
+[gd_scene load_steps=10 format=4 uid="uid://plmymga76sua"]
 
 [ext_resource type="Texture2D" uid="uid://87ajddyiixhx" path="res://materials/blk_bobomb_blackbomb_grp.png" id="1_4svlw"]
 
@@ -41,58 +41,64 @@ albedo_texture = ExtResource("1_4svlw")
 [sub_resource type="ArrayMesh" id="ArrayMesh_xh3b8"]
 _surfaces = [{
 "aabb": AABB(12.3836, -2.66465, -6.62369, 0.622396, 9.32707, 7.46169),
-"format": 4097,
+"format": 34359742465,
 "index_count": 12,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 3, 0, 2, 0, 4, 0, 1, 0, 3, 0, 5, 0, 0, 0),
+"index_data": PackedByteArray("AAACAAEAAAABAAMAAgAEAAEAAwAFAAAA"),
 "name": "Material.094_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
-"vertex_data": PackedByteArray(10, 45, 78, 65, 18, 51, 4, 64, 192, 32, 81, 63, 162, 24, 80, 65, 189, 58, 1, 64, 62, 208, 210, 192, 77, 35, 70, 65, 63, 145, 39, 192, 26, 135, 86, 63, 92, 32, 73, 65, 30, 182, 211, 64, 62, 245, 211, 192, 228, 14, 72, 65, 152, 137, 42, 192, 123, 35, 210, 192, 194, 52, 71, 65, 144, 50, 213, 64, 219, 248, 71, 63)
+"vertex_data": PackedByteArray("Ci1OQRIzBEDAIFE/ohhQQb06AUA+0NLATSNGQT+RJ8Aah1Y/XCBJQR6200A+9dPA5A5IQZiJKsB7I9LAwjRHQZAy1UDb+Ec/")
 }, {
 "aabb": AABB(0.14698, 2.09871, -14.6349, 0.411232, 12.3207, 24.534),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 0, 0, 1, 0),
+"index_data": PackedByteArray("AAACAAEAAwAAAAEA"),
 "name": "Material.093_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(224, 156, 193, 62, 80, 81, 6, 64, 96, 212, 29, 65, 13, 114, 167, 62, 225, 181, 102, 65, 37, 154, 105, 193, 237, 129, 22, 62, 58, 139, 101, 65, 183, 98, 30, 65, 251, 230, 14, 63, 240, 251, 10, 64, 128, 40, 106, 193)
+"vertex_data": PackedByteArray("4JzBPlBRBkBg1B1BDXKnPuG1ZkElmmnB7YEWPjqLZUG3Yh5B++YOP/D7CkCAKGrB")
 }, {
 "aabb": AABB(0.37815, -10.1491, -14.6696, 0.411232, 12.3207, 24.534),
-"format": 4097,
+"format": 34359742465,
 "index_count": 6,
-"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 1, 0),
+"index_data": PackedByteArray("AgAAAAEAAwACAAEA"),
 "name": "Material.092_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(224, 156, 193, 62, 80, 81, 6, 64, 96, 212, 29, 65, 251, 230, 14, 63, 240, 251, 10, 64, 128, 40, 106, 193, 101, 252, 27, 63, 146, 98, 34, 193, 6, 70, 29, 65, 240, 20, 74, 63, 233, 55, 33, 193, 213, 182, 106, 193)
+"vertex_data": PackedByteArray("4JzBPlBRBkBg1B1B++YOP/D7CkCAKGrBZfwbP5JiIsEGRh1B8BRKP+k3IcHVtmrB")
 }, {
 "aabb": AABB(-4.36812, -3.45447, -15.573, 10.0376, 11.5082, 4.06445),
-"format": 4097,
+"format": 34359742465,
 "index_count": 48,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 2, 0, 3, 0, 1, 0, 1, 0, 3, 0, 4, 0, 3, 0, 5, 0, 4, 0, 6, 0, 7, 0, 0, 0, 7, 0, 2, 0, 0, 0, 8, 0, 9, 0, 6, 0, 9, 0, 7, 0, 6, 0, 4, 0, 5, 0, 10, 0, 5, 0, 11, 0, 10, 0, 10, 0, 11, 0, 8, 0, 11, 0, 9, 0, 8, 0, 11, 0, 5, 0, 9, 0, 5, 0, 3, 0, 9, 0, 3, 0, 2, 0, 9, 0, 2, 0, 7, 0, 9, 0),
+"index_data": PackedByteArray("AAACAAEAAgADAAEAAQADAAQAAwAFAAQABgAHAAAABwACAAAACAAJAAYACQAHAAYABAAFAAoABQALAAoACgALAAgACwAJAAgACwAFAAkABQADAAkAAwACAAkAAgAHAAkA"),
 "name": "Material.067_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 12,
-"vertex_data": PackedByteArray(159, 199, 139, 192, 239, 58, 3, 191, 214, 171, 59, 193, 168, 143, 20, 63, 14, 22, 93, 192, 233, 151, 59, 193, 208, 195, 137, 192, 234, 203, 226, 190, 41, 43, 121, 193, 33, 174, 36, 63, 207, 160, 88, 192, 60, 23, 121, 193, 55, 41, 178, 64, 246, 66, 21, 191, 242, 21, 57, 193, 233, 44, 180, 64, 168, 109, 3, 191, 73, 149, 118, 193, 137, 136, 138, 192, 132, 154, 163, 64, 17, 185, 58, 193, 186, 132, 136, 192, 36, 213, 165, 64, 99, 56, 120, 193, 235, 116, 40, 63, 57, 125, 255, 64, 22, 55, 56, 193, 83, 147, 56, 63, 235, 219, 0, 65, 113, 182, 117, 193, 48, 104, 179, 64, 144, 89, 161, 64, 41, 35, 56, 193, 28, 108, 181, 64, 35, 148, 163, 64, 127, 162, 117, 193)
+"vertex_data": PackedByteArray("n8eLwO86A7/WqzvBqI8UPw4WXcDplzvB0MOJwOrL4r4pK3nBIa4kP8+gWMA8F3nBNymyQPZCFb/yFTnB6Sy0QKhtA79JlXbBiYiKwISao0ARuTrBuoSIwCTVpUBjOHjB63QoPzl9/0AWNzjBU5M4P+vbAEFxtnXBMGizQJBZoUApIzjBHGy1QCOUo0B/onXB")
 }, {
 "aabb": AABB(-4.72034, -7.46239, 7.74824, 11.1731, 7.31203, 6.55432),
-"format": 4097,
+"format": 34359742465,
 "index_count": 84,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0, 4, 0, 5, 0, 6, 0, 7, 0, 9, 0, 8, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 11, 0, 10, 0, 12, 0, 13, 0, 6, 0, 14, 0, 14, 0, 6, 0, 5, 0, 11, 0, 0, 0, 8, 0, 8, 0, 0, 0, 7, 0, 7, 0, 15, 0, 9, 0, 11, 0, 12, 0, 0, 0, 0, 0, 12, 0, 2, 0, 3, 0, 10, 0, 5, 0, 5, 0, 10, 0, 9, 0, 14, 0, 15, 0, 13, 0, 13, 0, 15, 0, 1, 0, 6, 0, 2, 0, 4, 0, 4, 0, 2, 0, 12, 0, 13, 0, 1, 0, 6, 0, 6, 0, 1, 0, 2, 0, 4, 0, 12, 0, 3, 0, 3, 0, 12, 0, 10, 0, 5, 0, 9, 0, 14, 0, 14, 0, 9, 0, 15, 0, 1, 0, 15, 0, 0, 0, 0, 0, 15, 0, 7, 0),
+"index_data": PackedByteArray("AAACAAEAAwAFAAQABAAFAAYABwAJAAgACAAJAAoACAAKAAsACwAKAAwADQAGAA4ADgAGAAUACwAAAAgACAAAAAcABwAPAAkACwAMAAAAAAAMAAIAAwAKAAUABQAKAAkADgAPAA0ADQAPAAEABgACAAQABAACAAwADQABAAYABgABAAIABAAMAAMAAwAMAAoABQAJAA4ADgAJAA8AAQAPAAAAAAAPAAcA"),
 "name": "Material.066_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 16,
-"vertex_data": PackedByteArray(13, 13, 151, 192, 14, 44, 174, 192, 235, 240, 60, 65, 132, 213, 72, 63, 184, 19, 209, 192, 248, 91, 9, 65, 185, 27, 202, 63, 226, 203, 238, 192, 210, 9, 47, 65, 5, 253, 202, 64, 130, 1, 15, 192, 60, 96, 78, 65, 142, 59, 202, 64, 15, 127, 176, 192, 146, 178, 78, 65, 80, 125, 206, 64, 147, 55, 144, 191, 107, 162, 35, 65, 90, 55, 205, 64, 236, 10, 213, 192, 51, 45, 36, 65, 59, 70, 150, 192, 66, 92, 4, 192, 66, 156, 60, 65, 65, 245, 101, 192, 55, 226, 27, 192, 103, 149, 100, 65, 2, 216, 208, 63, 194, 248, 25, 190, 88, 82, 46, 65, 79, 62, 5, 64, 243, 61, 99, 191, 95, 200, 87, 65, 204, 42, 103, 192, 193, 239, 161, 192, 71, 215, 100, 65, 138, 145, 2, 64, 128, 100, 214, 192, 51, 90, 88, 65, 180, 227, 145, 64, 250, 26, 180, 192, 157, 159, 248, 64, 241, 175, 146, 64, 226, 57, 10, 192, 149, 241, 247, 64, 10, 216, 82, 63, 222, 90, 140, 191, 137, 211, 8, 65)
+"vertex_data": PackedByteArray("DQ2XwA4srsDr8DxBhNVIP7gT0cD4WwlBuRvKP+LL7sDSCS9BBf3KQIIBD8A8YE5BjjvKQA9/sMCSsk5BUH3OQJM3kL9roiNBWjfNQOwK1cAzLSRBO0aWwEJcBMBCnDxBQfVlwDfiG8BnlWRBAtjQP8L4Gb5YUi5BTz4FQPM9Y79fyFdBzCpnwMHvocBH12RBipECQIBk1sAzWlhBtOORQPoatMCdn/hA8a+SQOI5CsCV8fdACthSP95ajL+J0whB")
 }, {
 "aabb": AABB(-4.93211, 4.39428, 8.33343, 11.3449, 7.30544, 5.64069),
-"format": 4097,
+"format": 34359742465,
 "index_count": 84,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0, 4, 0, 5, 0, 6, 0, 7, 0, 9, 0, 8, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 7, 0, 7, 0, 12, 0, 9, 0, 13, 0, 6, 0, 14, 0, 14, 0, 6, 0, 5, 0, 7, 0, 8, 0, 11, 0, 11, 0, 8, 0, 0, 0, 8, 0, 10, 0, 15, 0, 0, 0, 1, 0, 11, 0, 11, 0, 1, 0, 12, 0, 6, 0, 10, 0, 4, 0, 4, 0, 10, 0, 9, 0, 14, 0, 2, 0, 13, 0, 13, 0, 2, 0, 15, 0, 3, 0, 12, 0, 5, 0, 5, 0, 12, 0, 1, 0, 5, 0, 1, 0, 14, 0, 14, 0, 1, 0, 2, 0, 4, 0, 9, 0, 3, 0, 3, 0, 9, 0, 12, 0, 13, 0, 15, 0, 6, 0, 6, 0, 15, 0, 10, 0, 15, 0, 2, 0, 8, 0, 8, 0, 2, 0, 0, 0),
+"index_data": PackedByteArray("AAACAAEAAwAFAAQABAAFAAYABwAJAAgACAAJAAoACwAMAAcABwAMAAkADQAGAA4ADgAGAAUABwAIAAsACwAIAAAACAAKAA8AAAABAAsACwABAAwABgAKAAQABAAKAAkADgACAA0ADQACAA8AAwAMAAUABQAMAAEABQABAA4ADgABAAIABAAJAAMAAwAJAAwADQAPAAYABgAPAAoADwACAAgACAACAAAA"),
 "name": "Material.065_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 16,
-"vertex_data": PackedByteArray(208, 211, 157, 192, 23, 174, 27, 65, 205, 243, 52, 65, 50, 147, 184, 63, 12, 50, 59, 65, 166, 20, 54, 65, 39, 220, 119, 63, 145, 225, 45, 65, 170, 125, 14, 65, 46, 88, 187, 64, 59, 244, 25, 65, 111, 136, 94, 65, 97, 97, 187, 64, 142, 2, 203, 64, 107, 71, 92, 65, 143, 37, 205, 64, 131, 190, 45, 65, 152, 83, 53, 65, 53, 53, 205, 64, 210, 168, 170, 64, 238, 134, 49, 65, 38, 156, 136, 192, 20, 219, 211, 64, 245, 211, 92, 65, 21, 202, 157, 192, 60, 119, 203, 64, 72, 162, 50, 65, 246, 153, 197, 63, 24, 253, 160, 64, 106, 135, 91, 65, 130, 229, 184, 63, 233, 157, 140, 64, 197, 14, 49, 65, 163, 163, 136, 192, 19, 227, 19, 65, 145, 161, 94, 65, 147, 87, 197, 63, 38, 231, 46, 65, 6, 150, 95, 65, 44, 0, 154, 64, 33, 120, 207, 64, 191, 85, 5, 65, 77, 246, 153, 64, 94, 46, 31, 65, 180, 183, 7, 65, 109, 87, 120, 63, 97, 238, 173, 64, 124, 193, 10, 65)
+"vertex_data": PackedByteArray("0NOdwBeuG0HN8zRBMpO4PwwyO0GmFDZBJ9x3P5HhLUGqfQ5BLli7QDv0GUFviF5BYWG7QI4Cy0BrR1xBjyXNQIO+LUGYUzVBNTXNQNKoqkDuhjFBJpyIwBTb00D101xBFcqdwDx3y0BIojJB9pnFPxj9oEBqh1tBguW4P+mdjEDFDjFBo6OIwBPjE0GRoV5Bk1fFPybnLkEGll9BLACaQCF4z0C/VQVBTfaZQF4uH0G0twdBbVd4P2HurUB8wQpB")
 }]
 blend_shape_mode = 0
 
@@ -100,70 +106,76 @@ blend_shape_mode = 0
 resource_name = "blk_bobomb_blakbobomb"
 _surfaces = [{
 "aabb": AABB(12.3836, -2.66465, -6.62369, 0.622396, 9.32707, 7.46169),
-"attribute_data": PackedByteArray(61, 154, 62, 63, 224, 153, 80, 61, 61, 154, 62, 63, 190, 134, 160, 62, 17, 29, 110, 63, 224, 153, 80, 61, 239, 226, 17, 63, 190, 134, 160, 62, 17, 29, 110, 63, 190, 134, 160, 62, 239, 226, 17, 63, 224, 153, 80, 61),
-"format": 4119,
+"attribute_data": PackedByteArray("PZo+P+CZUD09mj4/voagPhEdbj/gmVA97+IRP76GoD4RHW4/voagPu/iET/gmVA9"),
+"format": 34359742487,
 "index_count": 12,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 3, 0, 2, 0, 4, 0, 1, 0, 3, 0, 5, 0, 0, 0),
+"index_data": PackedByteArray("AAACAAEAAAABAAMAAgAEAAEAAwAFAAAA"),
 "material": SubResource("StandardMaterial3D_qsmvg"),
 "name": "Material.094_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 6,
-"vertex_data": PackedByteArray(10, 45, 78, 65, 18, 51, 4, 64, 192, 32, 81, 63, 194, 0, 202, 130, 55, 127, 198, 128, 162, 24, 80, 65, 189, 58, 1, 64, 62, 208, 210, 192, 194, 0, 202, 130, 55, 127, 198, 128, 77, 35, 70, 65, 63, 145, 39, 192, 26, 135, 86, 63, 52, 12, 30, 142, 166, 115, 110, 134, 92, 32, 73, 65, 30, 182, 211, 64, 62, 245, 211, 192, 239, 10, 67, 115, 255, 138, 242, 133, 228, 14, 72, 65, 152, 137, 42, 192, 123, 35, 210, 192, 52, 12, 30, 142, 166, 115, 110, 134, 194, 52, 71, 65, 144, 50, 213, 64, 219, 248, 71, 63, 239, 10, 67, 115, 255, 138, 242, 133)
+"vertex_data": PackedByteArray("Ci1OQRIzBEDAIFE/ohhQQb06AUA+0NLATSNGQT+RJ8Aah1Y/XCBJQR6200A+9dPA5A5IQZiJKsB7I9LAwjRHQZAy1UDb+Ec/wgDKgjd/xoDCAMqCN3/GgDQMHo6mc26G7wpDc/+K8oU0DB6OpnNuhu8KQ3P/ivKF")
 }, {
 "aabb": AABB(0.14698, 2.09871, -14.6349, 0.411232, 12.3207, 24.534),
-"attribute_data": PackedByteArray(239, 226, 17, 63, 88, 173, 212, 62, 17, 29, 110, 63, 98, 246, 114, 63, 17, 29, 110, 63, 88, 173, 212, 62, 239, 226, 17, 63, 98, 246, 114, 63),
-"format": 4119,
+"attribute_data": PackedByteArray("7+IRP1it1D4RHW4/YvZyPxEdbj9YrdQ+7+IRP2L2cj8="),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 3, 0, 0, 0, 1, 0),
+"index_data": PackedByteArray("AAACAAEAAwAAAAEA"),
 "material": SubResource("StandardMaterial3D_ny3nl"),
 "name": "Material.093_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(224, 156, 193, 62, 80, 81, 6, 64, 96, 212, 29, 65, 185, 252, 88, 130, 162, 125, 163, 254, 13, 114, 167, 62, 225, 181, 102, 65, 37, 154, 105, 193, 185, 252, 88, 130, 162, 125, 163, 254, 237, 129, 22, 62, 58, 139, 101, 65, 183, 98, 30, 65, 185, 252, 88, 130, 162, 125, 163, 254, 251, 230, 14, 63, 240, 251, 10, 64, 128, 40, 106, 193, 185, 252, 88, 130, 162, 125, 163, 254)
+"vertex_data": PackedByteArray("4JzBPlBRBkBg1B1BDXKnPuG1ZkElmmnB7YEWPjqLZUG3Yh5B++YOP/D7CkCAKGrBufxYgqJ9o/65/FiCon2j/rn8WIKifaP+ufxYgqJ9o/4=")
 }, {
 "aabb": AABB(0.37815, -10.1491, -14.6696, 0.411232, 12.3207, 24.534),
-"attribute_data": PackedByteArray(33, 58, 220, 62, 88, 173, 212, 62, 33, 58, 220, 62, 98, 246, 114, 63, 122, 23, 143, 61, 88, 173, 212, 62, 122, 23, 143, 61, 98, 246, 114, 63),
-"format": 4119,
+"attribute_data": PackedByteArray("ITrcPlit1D4hOtw+YvZyP3oXjz1YrdQ+ehePPWL2cj8="),
+"format": 34359742487,
 "index_count": 6,
-"index_data": PackedByteArray(2, 0, 0, 0, 1, 0, 3, 0, 2, 0, 1, 0),
+"index_data": PackedByteArray("AgAAAAEAAwACAAEA"),
 "material": SubResource("StandardMaterial3D_174w7"),
 "name": "Material.092_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 4,
-"vertex_data": PackedByteArray(224, 156, 193, 62, 80, 81, 6, 64, 96, 212, 29, 65, 185, 252, 88, 130, 162, 125, 163, 254, 251, 230, 14, 63, 240, 251, 10, 64, 128, 40, 106, 193, 185, 252, 88, 130, 162, 125, 163, 254, 101, 252, 27, 63, 146, 98, 34, 193, 6, 70, 29, 65, 185, 252, 88, 130, 162, 125, 163, 254, 240, 20, 74, 63, 233, 55, 33, 193, 213, 182, 106, 193, 185, 252, 88, 130, 162, 125, 163, 254)
+"vertex_data": PackedByteArray("4JzBPlBRBkBg1B1B++YOP/D7CkCAKGrBZfwbP5JiIsEGRh1B8BRKP+k3IcHVtmrBufxYgqJ9o/65/FiCon2j/rn8WIKifaP+ufxYgqJ9o/4=")
 }, {
 "aabb": AABB(-4.36812, -3.45447, -15.573, 10.0376, 11.5082, 4.06445),
-"attribute_data": PackedByteArray(188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 40, 21, 77, 62, 188, 92, 4, 61, 40, 21, 77, 62, 182, 49, 54, 62, 112, 233, 95, 61),
-"format": 4119,
+"attribute_data": PackedByteArray("vFwEPSgVTT62MTY+KBVNPrxcBD0oFU0+tjE2PigVTT68XAQ9KBVNPrYxNj5w6V89vFwEPSgVTT62MTY+cOlfPbxcBD0oFU0+tjE2PigVTT68XAQ9KBVNPrYxNj5w6V89vFwEPSgVTT62MTY+KBVNPrxcBD0oFU0+tjE2PnDpXz28XAQ9KBVNPrYxNj4oFU0+vFwEPSgVTT62MTY+cOlfPbYxNj4oFU0+vFwEPSgVTT62MTY+KBVNPrxcBD0oFU0+tjE2PnDpXz0="),
+"format": 34359742487,
 "index_count": 48,
-"index_data": PackedByteArray(0, 0, 5, 0, 3, 0, 4, 0, 7, 0, 3, 0, 2, 0, 7, 0, 9, 0, 6, 0, 11, 0, 9, 0, 12, 0, 15, 0, 1, 0, 14, 0, 5, 0, 1, 0, 16, 0, 19, 0, 13, 0, 18, 0, 15, 0, 13, 0, 8, 0, 11, 0, 22, 0, 10, 0, 24, 0, 22, 0, 21, 0, 24, 0, 17, 0, 23, 0, 19, 0, 17, 0, 23, 0, 11, 0, 20, 0, 10, 0, 7, 0, 20, 0, 6, 0, 5, 0, 20, 0, 4, 0, 15, 0, 20, 0),
+"index_data": PackedByteArray("AAAFAAMABAAHAAMAAgAHAAkABgALAAkADAAPAAEADgAFAAEAEAATAA0AEgAPAA0ACAALABYACgAYABYAFQAYABEAFwATABEAFwALABQACgAHABQABgAFABQABAAPABQA"),
 "material": SubResource("StandardMaterial3D_vlelg"),
 "name": "Material.067_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 25,
-"vertex_data": PackedByteArray(159, 199, 139, 192, 239, 58, 3, 191, 214, 171, 59, 193, 106, 208, 112, 173, 246, 174, 232, 150, 159, 199, 139, 192, 239, 58, 3, 191, 214, 171, 59, 193, 106, 208, 112, 173, 121, 156, 177, 165, 168, 143, 20, 63, 14, 22, 93, 192, 233, 151, 59, 193, 216, 128, 223, 252, 130, 252, 141, 191, 168, 143, 20, 63, 14, 22, 93, 192, 233, 151, 59, 193, 216, 128, 223, 252, 116, 198, 63, 191, 208, 195, 137, 192, 234, 203, 226, 190, 41, 43, 121, 193, 174, 179, 192, 156, 209, 182, 117, 253, 208, 195, 137, 192, 234, 203, 226, 190, 41, 43, 121, 193, 174, 179, 192, 156, 31, 81, 124, 243, 33, 174, 36, 63, 207, 160, 88, 192, 60, 23, 121, 193, 148, 127, 229, 198, 205, 199, 57, 255, 33, 174, 36, 63, 207, 160, 88, 192, 60, 23, 121, 193, 148, 127, 229, 198, 54, 34, 175, 230, 55, 41, 178, 64, 246, 66, 21, 191, 242, 21, 57, 193, 0, 47, 119, 175, 167, 174, 249, 231, 55, 41, 178, 64, 246, 66, 21, 191, 242, 21, 57, 193, 0, 47, 119, 175, 102, 157, 106, 217, 233, 44, 180, 64, 168, 109, 3, 191, 73, 149, 118, 193, 68, 75, 117, 157, 173, 74, 195, 254, 233, 44, 180, 64, 168, 109, 3, 191, 73, 149, 118, 193, 68, 75, 117, 157, 24, 26, 52, 236, 137, 136, 138, 192, 132, 154, 163, 64, 17, 185, 58, 193, 157, 208, 22, 81, 10, 80, 71, 151, 137, 136, 138, 192, 132, 154, 163, 64, 17, 185, 58, 193, 157, 208, 22, 81, 26, 97, 172, 165, 186, 132, 136, 192, 36, 213, 165, 64, 99, 56, 120, 193, 156, 178, 73, 97, 177, 76, 55, 161, 186, 132, 136, 192, 36, 213, 165, 64, 99, 56, 120, 193, 156, 178, 73, 97, 172, 174, 200, 231, 235, 116, 40, 63, 57, 125, 255, 64, 22, 55, 56, 193, 224, 124, 216, 0, 227, 0, 189, 193, 235, 116, 40, 63, 57, 125, 255, 64, 22, 55, 56, 193, 224, 124, 216, 0, 62, 55, 190, 191, 83, 147, 56, 63, 235, 219, 0, 65, 113, 182, 117, 193, 155, 126, 56, 55, 204, 32, 126, 199, 83, 147, 56, 63, 235, 219, 0, 65, 113, 182, 117, 193, 155, 126, 56, 55, 84, 73, 227, 207, 83, 147, 56, 63, 235, 219, 0, 65, 113, 182, 117, 193, 155, 126, 56, 55, 145, 179, 246, 207, 48, 104, 179, 64, 144, 89, 161, 64, 41, 35, 56, 193, 89, 45, 131, 80, 69, 82, 143, 232, 48, 104, 179, 64, 144, 89, 161, 64, 41, 35, 56, 193, 89, 45, 131, 80, 248, 97, 139, 217, 28, 108, 181, 64, 35, 148, 163, 64, 127, 162, 117, 193, 67, 75, 230, 97, 111, 57, 227, 230, 28, 108, 181, 64, 35, 148, 163, 64, 127, 162, 117, 193, 67, 75, 230, 97, 111, 57, 227, 230)
+"vertex_data": PackedByteArray("n8eLwO86A7/WqzvBn8eLwO86A7/WqzvBqI8UPw4WXcDplzvBqI8UPw4WXcDplzvB0MOJwOrL4r4pK3nB0MOJwOrL4r4pK3nBIa4kP8+gWMA8F3nBIa4kP8+gWMA8F3nBNymyQPZCFb/yFTnBNymyQPZCFb/yFTnB6Sy0QKhtA79JlXbB6Sy0QKhtA79JlXbBiYiKwISao0ARuTrBiYiKwISao0ARuTrBuoSIwCTVpUBjOHjBuoSIwCTVpUBjOHjB63QoPzl9/0AWNzjB63QoPzl9/0AWNzjBU5M4P+vbAEFxtnXBU5M4P+vbAEFxtnXBU5M4P+vbAEFxtnXBMGizQJBZoUApIzjBMGizQJBZoUApIzjBHGy1QCOUo0B/onXBHGy1QCOUo0B/onXBatBwrfau6JZq0HCteZyxpdiA3/yC/I2/2IDf/HTGP7+us8Cc0bZ1/a6zwJwfUXzzlH/lxs3HOf+Uf+XGNiKv5gAvd6+nrvnnAC93r2adatlES3WdrUrD/kRLdZ0YGjTsndAWUQpQR5ed0BZRGmGspZyySWGxTDehnLJJYayuyOfgfNgA4wC9weB82AA+N76/m344N8wgfsebfjg3VEnjz5t+ODeRs/bPWS2DUEVSj+hZLYNQ+GGL2UNL5mFvOePmQ0vmYW854+Y=")
 }, {
 "aabb": AABB(-4.72034, -7.46239, 7.74824, 11.1731, 7.31203, 6.55432),
-"attribute_data": PackedByteArray(191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62),
-"format": 4119,
+"attribute_data": PackedByteArray("v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+F9WyPrB0fj0X1bI+WHJFPr/UXz5YckU+F9WyPrB0fj2/1F8+WHJFPhfVsj6wdH49v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+v9RfPlhyRT4X1bI+sHR+Pb/UXz5YckU+F9WyPrB0fj0X1bI+sHR+PRfVsj5YckU+F9WyPrB0fj0X1bI+WHJFPr/UXz5YckU+F9WyPrB0fj0X1bI+sHR+PRfVsj5YckU+v9RfPlhyRT4X1bI+sHR+Pb/UXz5YckU+F9WyPrB0fj0X1bI+sHR+PRfVsj5YckU+"),
+"format": 34359742487,
 "index_count": 84,
-"index_data": PackedByteArray(0, 0, 7, 0, 4, 0, 8, 0, 14, 0, 11, 0, 10, 0, 14, 0, 16, 0, 18, 0, 23, 0, 21, 0, 20, 0, 23, 0, 24, 0, 20, 0, 25, 0, 27, 0, 26, 0, 25, 0, 28, 0, 30, 0, 17, 0, 33, 0, 32, 0, 17, 0, 13, 0, 26, 0, 2, 0, 21, 0, 20, 0, 2, 0, 19, 0, 18, 0, 35, 0, 22, 0, 26, 0, 29, 0, 1, 0, 0, 0, 29, 0, 6, 0, 8, 0, 25, 0, 13, 0, 12, 0, 25, 0, 22, 0, 32, 0, 35, 0, 31, 0, 30, 0, 35, 0, 4, 0, 15, 0, 7, 0, 11, 0, 10, 0, 7, 0, 28, 0, 30, 0, 5, 0, 16, 0, 15, 0, 5, 0, 6, 0, 10, 0, 29, 0, 9, 0, 8, 0, 29, 0, 24, 0, 12, 0, 23, 0, 33, 0, 32, 0, 23, 0, 34, 0, 3, 0, 35, 0, 1, 0, 0, 0, 35, 0, 19, 0),
+"index_data": PackedByteArray("AAAHAAQACAAOAAsACgAOABAAEgAXABUAFAAXABgAFAAZABsAGgAZABwAHgARACEAIAARAA0AGgACABUAFAACABMAEgAjABYAGgAdAAEAAAAdAAYACAAZAA0ADAAZABYAIAAjAB8AHgAjAAQADwAHAAsACgAHABwAHgAFABAADwAFAAYACgAdAAkACAAdABgADAAXACEAIAAXACIAAwAjAAEAAAAjABMA"),
 "material": SubResource("StandardMaterial3D_5hfy8"),
 "name": "Material.066_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 36,
-"vertex_data": PackedByteArray(13, 13, 151, 192, 14, 44, 174, 192, 235, 240, 60, 65, 35, 42, 231, 68, 2, 231, 10, 4, 13, 13, 151, 192, 14, 44, 174, 192, 235, 240, 60, 65, 35, 42, 231, 68, 39, 74, 73, 21, 13, 13, 151, 192, 14, 44, 174, 192, 235, 240, 60, 65, 35, 42, 231, 68, 185, 215, 116, 109, 132, 213, 72, 63, 184, 19, 209, 192, 248, 91, 9, 65, 45, 46, 29, 22, 134, 66, 245, 7, 132, 213, 72, 63, 184, 19, 209, 192, 248, 91, 9, 65, 45, 46, 29, 22, 217, 48, 218, 32, 132, 213, 72, 63, 184, 19, 209, 192, 248, 91, 9, 65, 45, 46, 29, 22, 224, 39, 5, 48, 185, 27, 202, 63, 226, 203, 238, 192, 210, 9, 47, 65, 181, 120, 148, 5, 201, 4, 120, 47, 185, 27, 202, 63, 226, 203, 238, 192, 210, 9, 47, 65, 181, 120, 148, 5, 136, 4, 122, 43, 5, 253, 202, 64, 130, 1, 15, 192, 60, 96, 78, 65, 200, 180, 198, 154, 247, 103, 11, 89, 5, 253, 202, 64, 130, 1, 15, 192, 60, 96, 78, 65, 200, 180, 198, 154, 119, 69, 212, 65, 142, 59, 202, 64, 15, 127, 176, 192, 146, 178, 78, 65, 231, 178, 248, 98, 250, 72, 145, 82, 142, 59, 202, 64, 15, 127, 176, 192, 146, 178, 78, 65, 231, 178, 248, 98, 226, 71, 185, 79, 80, 125, 206, 64, 147, 55, 144, 191, 107, 162, 35, 65, 134, 204, 252, 195, 100, 69, 180, 29, 80, 125, 206, 64, 147, 55, 144, 191, 107, 162, 35, 65, 134, 204, 252, 195, 54, 70, 247, 29, 80, 125, 206, 64, 147, 55, 144, 191, 107, 162, 35, 65, 134, 204, 252, 195, 123, 42, 131, 23, 90, 55, 205, 64, 236, 10, 213, 192, 51, 45, 36, 65, 130, 201, 79, 59, 61, 41, 85, 104, 90, 55, 205, 64, 236, 10, 213, 192, 51, 45, 36, 65, 130, 201, 79, 59, 64, 73, 53, 95, 90, 55, 205, 64, 236, 10, 213, 192, 51, 45, 36, 65, 130, 201, 79, 59, 46, 107, 17, 84, 59, 70, 150, 192, 66, 92, 4, 192, 66, 156, 60, 65, 69, 42, 219, 187, 245, 218, 118, 18, 59, 70, 150, 192, 66, 92, 4, 192, 66, 156, 60, 65, 69, 42, 219, 187, 173, 204, 132, 20, 65, 245, 101, 192, 55, 226, 27, 192, 103, 149, 100, 65, 101, 93, 250, 161, 221, 50, 111, 94, 65, 245, 101, 192, 55, 226, 27, 192, 103, 149, 100, 65, 101, 93, 250, 161, 69, 12, 89, 34, 2, 216, 208, 63, 194, 248, 25, 190, 88, 82, 46, 65, 62, 118, 92, 252, 40, 55, 180, 63, 2, 216, 208, 63, 194, 248, 25, 190, 88, 82, 46, 65, 62, 118, 92, 252, 116, 68, 46, 63, 79, 62, 5, 64, 243, 61, 99, 191, 95, 200, 87, 65, 56, 136, 237, 183, 18, 73, 150, 81, 79, 62, 5, 64, 243, 61, 99, 191, 95, 200, 87, 65, 56, 136, 237, 183, 193, 48, 70, 74, 204, 42, 103, 192, 193, 239, 161, 192, 71, 215, 100, 65, 29, 93, 137, 94, 74, 197, 182, 84, 204, 42, 103, 192, 193, 239, 161, 192, 71, 215, 100, 65, 29, 93, 137, 94, 249, 207, 111, 65, 138, 145, 2, 64, 128, 100, 214, 192, 51, 90, 88, 65, 64, 136, 194, 71, 144, 35, 249, 92, 138, 145, 2, 64, 128, 100, 214, 192, 51, 90, 88, 65, 64, 136, 194, 71, 171, 36, 43, 94, 180, 227, 145, 64, 250, 26, 180, 192, 157, 159, 248, 64, 18, 224, 106, 25, 60, 36, 59, 88, 180, 227, 145, 64, 250, 26, 180, 192, 157, 159, 248, 64, 18, 224, 106, 25, 245, 4, 108, 44, 241, 175, 146, 64, 226, 57, 10, 192, 149, 241, 247, 64, 4, 225, 3, 230, 237, 82, 99, 29, 241, 175, 146, 64, 226, 57, 10, 192, 149, 241, 247, 64, 4, 225, 3, 230, 9, 31, 115, 40, 10, 216, 82, 63, 222, 90, 140, 191, 137, 211, 8, 65, 166, 46, 129, 235, 179, 79, 10, 46, 10, 216, 82, 63, 222, 90, 140, 191, 137, 211, 8, 65, 166, 46, 129, 235, 14, 225, 44, 45)
+"vertex_data": PackedByteArray("DQ2XwA4srsDr8DxBDQ2XwA4srsDr8DxBDQ2XwA4srsDr8DxBhNVIP7gT0cD4WwlBhNVIP7gT0cD4WwlBhNVIP7gT0cD4WwlBuRvKP+LL7sDSCS9BuRvKP+LL7sDSCS9BBf3KQIIBD8A8YE5BBf3KQIIBD8A8YE5BjjvKQA9/sMCSsk5BjjvKQA9/sMCSsk5BUH3OQJM3kL9roiNBUH3OQJM3kL9roiNBUH3OQJM3kL9roiNBWjfNQOwK1cAzLSRBWjfNQOwK1cAzLSRBWjfNQOwK1cAzLSRBO0aWwEJcBMBCnDxBO0aWwEJcBMBCnDxBQfVlwDfiG8BnlWRBQfVlwDfiG8BnlWRBAtjQP8L4Gb5YUi5BAtjQP8L4Gb5YUi5BTz4FQPM9Y79fyFdBTz4FQPM9Y79fyFdBzCpnwMHvocBH12RBzCpnwMHvocBH12RBipECQIBk1sAzWlhBipECQIBk1sAzWlhBtOORQPoatMCdn/hAtOORQPoatMCdn/hA8a+SQOI5CsCV8fdA8a+SQOI5CsCV8fdACthSP95ajL+J0whBCthSP95ajL+J0whBIyrnRALnCgQjKudEJ0pJFSMq50S513RtLS4dFoZC9QctLh0W2TDaIC0uHRbgJwUwtXiUBckEeC+1eJQFiAR6K8i0xpr3ZwtZyLTGmndF1EHnsvhi+kiRUuey+GLiR7lPhsz8w2RFtB2GzPzDNkb3HYbM/MN7KoMXgslPOz0pVWiCyU87QEk1X4LJTzsuaxFURSrbu/XadhJFKtu7rcyEFGVd+qHdMm9eZV36oUUMWSI+dlz8KDe0Pz52XPx0RC4/OIjttxJJllE4iO23wTBGSh1diV5KxbZUHV2JXvnPb0FAiMJHkCP5XECIwkerJCteEuBqGTwkO1gS4GoZ9QRsLAThA+btUmMdBOED5gkfcyimLoHrs08KLqYugesO4Swt")
 }, {
 "aabb": AABB(-4.93211, 4.39428, 8.33343, 11.3449, 7.30544, 5.64069),
-"attribute_data": PackedByteArray(191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 191, 212, 95, 62, 88, 114, 69, 62, 23, 213, 178, 62, 176, 116, 126, 61, 23, 213, 178, 62, 88, 114, 69, 62),
-"format": 4119,
+"attribute_data": PackedByteArray("v9RfPlhyRT4X1bI+sHR+PRfVsj6wdH49F9WyPlhyRT4X1bI+sHR+PRfVsj5YckU+v9RfPlhyRT4X1bI+sHR+Pb/UXz5YckU+F9WyPrB0fj2/1F8+WHJFPhfVsj6wdH49F9WyPlhyRT6/1F8+WHJFPhfVsj6wdH49F9WyPlhyRT6/1F8+WHJFPhfVsj6wdH49v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+F9WyPrB0fj0X1bI+WHJFPhfVsj6wdH49F9WyPlhyRT6/1F8+WHJFPhfVsj6wdH49F9WyPrB0fj0X1bI+WHJFPr/UXz5YckU+F9WyPrB0fj2/1F8+WHJFPhfVsj6wdH49v9RfPlhyRT4X1bI+sHR+PRfVsj5YckU+"),
+"format": 34359742487,
 "index_count": 84,
-"index_data": PackedByteArray(0, 0, 5, 0, 2, 0, 6, 0, 12, 0, 9, 0, 8, 0, 12, 0, 14, 0, 16, 0, 22, 0, 19, 0, 18, 0, 22, 0, 23, 0, 25, 0, 28, 0, 17, 0, 16, 0, 28, 0, 21, 0, 29, 0, 15, 0, 32, 0, 31, 0, 15, 0, 11, 0, 16, 0, 20, 0, 26, 0, 25, 0, 20, 0, 1, 0, 18, 0, 24, 0, 34, 0, 0, 0, 3, 0, 26, 0, 25, 0, 3, 0, 27, 0, 13, 0, 24, 0, 9, 0, 8, 0, 24, 0, 21, 0, 31, 0, 5, 0, 30, 0, 29, 0, 5, 0, 34, 0, 6, 0, 28, 0, 11, 0, 10, 0, 28, 0, 2, 0, 10, 0, 3, 0, 32, 0, 31, 0, 3, 0, 4, 0, 8, 0, 22, 0, 7, 0, 6, 0, 22, 0, 27, 0, 29, 0, 35, 0, 14, 0, 13, 0, 35, 0, 23, 0, 33, 0, 5, 0, 19, 0, 18, 0, 5, 0, 1, 0),
+"index_data": PackedByteArray("AAAFAAIABgAMAAkACAAMAA4AEAAWABMAEgAWABcAGQAcABEAEAAcABUAHQAPACAAHwAPAAsAEAAUABoAGQAUAAEAEgAYACIAAAADABoAGQADABsADQAYAAkACAAYABUAHwAFAB4AHQAFACIABgAcAAsACgAcAAIACgADACAAHwADAAQACAAWAAcABgAWABsAHQAjAA4ADQAjABcAIQAFABMAEgAFAAEA"),
 "material": SubResource("StandardMaterial3D_l6kug"),
 "name": "Material.065_pinkbomb_grp.png",
 "primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 36,
-"vertex_data": PackedByteArray(208, 211, 157, 192, 23, 174, 27, 65, 205, 243, 52, 65, 80, 41, 205, 193, 29, 194, 22, 24, 208, 211, 157, 192, 23, 174, 27, 65, 205, 243, 52, 65, 80, 41, 205, 193, 69, 202, 75, 23, 50, 147, 184, 63, 12, 50, 59, 65, 166, 20, 54, 65, 33, 120, 109, 250, 4, 47, 116, 65, 50, 147, 184, 63, 12, 50, 59, 65, 166, 20, 54, 65, 33, 120, 109, 250, 106, 61, 248, 64, 39, 220, 119, 63, 145, 225, 45, 65, 170, 125, 14, 65, 58, 51, 232, 241, 217, 72, 93, 47, 39, 220, 119, 63, 145, 225, 45, 65, 170, 125, 14, 65, 58, 51, 232, 241, 9, 218, 252, 47, 46, 88, 187, 64, 59, 244, 25, 65, 111, 136, 94, 65, 52, 173, 190, 152, 174, 97, 247, 89, 46, 88, 187, 64, 59, 244, 25, 65, 111, 136, 94, 65, 52, 173, 190, 152, 105, 63, 152, 68, 97, 97, 187, 64, 142, 2, 203, 64, 107, 71, 92, 65, 88, 171, 40, 97, 186, 66, 89, 84, 97, 97, 187, 64, 142, 2, 203, 64, 107, 71, 92, 65, 88, 171, 40, 97, 68, 65, 67, 81, 143, 37, 205, 64, 131, 190, 45, 65, 152, 83, 53, 65, 164, 199, 247, 189, 230, 66, 181, 28, 143, 37, 205, 64, 131, 190, 45, 65, 152, 83, 53, 65, 164, 199, 247, 189, 205, 67, 6, 29, 143, 37, 205, 64, 131, 190, 45, 65, 152, 83, 53, 65, 164, 199, 247, 189, 211, 43, 136, 20, 53, 53, 205, 64, 210, 168, 170, 64, 238, 134, 49, 65, 220, 200, 131, 64, 160, 40, 158, 107, 53, 53, 205, 64, 210, 168, 170, 64, 238, 134, 49, 65, 220, 200, 131, 64, 175, 70, 195, 97, 53, 53, 205, 64, 210, 168, 170, 64, 238, 134, 49, 65, 220, 200, 131, 64, 157, 100, 136, 84, 38, 156, 136, 192, 20, 219, 211, 64, 245, 211, 92, 65, 254, 85, 132, 92, 199, 27, 247, 105, 38, 156, 136, 192, 20, 219, 211, 64, 245, 211, 92, 65, 254, 85, 132, 92, 42, 197, 55, 66, 21, 202, 157, 192, 60, 119, 203, 64, 72, 162, 50, 65, 52, 39, 93, 61, 164, 229, 226, 9, 21, 202, 157, 192, 60, 119, 203, 64, 72, 162, 50, 65, 52, 39, 93, 61, 106, 73, 87, 20, 21, 202, 157, 192, 60, 119, 203, 64, 72, 162, 50, 65, 52, 39, 93, 61, 107, 218, 189, 105, 246, 153, 197, 63, 24, 253, 160, 64, 106, 135, 91, 65, 174, 128, 59, 65, 157, 33, 210, 96, 246, 153, 197, 63, 24, 253, 160, 64, 106, 135, 91, 65, 174, 128, 59, 65, 143, 34, 194, 97, 130, 229, 184, 63, 233, 157, 140, 64, 197, 14, 49, 65, 205, 116, 47, 3, 234, 4, 165, 42, 130, 229, 184, 63, 233, 157, 140, 64, 197, 14, 49, 65, 205, 116, 47, 3, 56, 5, 183, 38, 163, 163, 136, 192, 19, 227, 19, 65, 145, 161, 94, 65, 244, 84, 158, 158, 53, 183, 182, 30, 163, 163, 136, 192, 19, 227, 19, 65, 145, 161, 94, 65, 244, 84, 158, 158, 188, 189, 29, 44, 147, 87, 197, 63, 38, 231, 46, 65, 6, 150, 95, 65, 27, 126, 134, 184, 50, 67, 254, 82, 147, 87, 197, 63, 38, 231, 46, 65, 6, 150, 95, 65, 27, 126, 134, 184, 180, 40, 226, 75, 44, 0, 154, 64, 33, 120, 207, 64, 191, 85, 5, 65, 118, 228, 117, 33, 66, 35, 61, 92, 44, 0, 154, 64, 33, 120, 207, 64, 191, 85, 5, 65, 118, 228, 117, 33, 181, 3, 240, 40, 77, 246, 153, 64, 94, 46, 31, 65, 180, 183, 7, 65, 103, 222, 243, 223, 191, 79, 7, 30, 77, 246, 153, 64, 94, 46, 31, 65, 180, 183, 7, 65, 103, 222, 243, 223, 66, 28, 248, 37, 109, 87, 120, 63, 97, 238, 173, 64, 124, 193, 10, 65, 20, 46, 60, 14, 31, 71, 90, 5, 109, 87, 120, 63, 97, 238, 173, 64, 124, 193, 10, 65, 20, 46, 60, 14, 170, 46, 98, 31, 109, 87, 120, 63, 97, 238, 173, 64, 124, 193, 10, 65, 20, 46, 60, 14, 241, 31, 12, 47)
+"vertex_data": PackedByteArray("0NOdwBeuG0HN8zRB0NOdwBeuG0HN8zRBMpO4PwwyO0GmFDZBMpO4PwwyO0GmFDZBJ9x3P5HhLUGqfQ5BJ9x3P5HhLUGqfQ5BLli7QDv0GUFviF5BLli7QDv0GUFviF5BYWG7QI4Cy0BrR1xBYWG7QI4Cy0BrR1xBjyXNQIO+LUGYUzVBjyXNQIO+LUGYUzVBjyXNQIO+LUGYUzVBNTXNQNKoqkDuhjFBNTXNQNKoqkDuhjFBNTXNQNKoqkDuhjFBJpyIwBTb00D101xBJpyIwBTb00D101xBFcqdwDx3y0BIojJBFcqdwDx3y0BIojJBFcqdwDx3y0BIojJB9pnFPxj9oEBqh1tB9pnFPxj9oEBqh1tBguW4P+mdjEDFDjFBguW4P+mdjEDFDjFBo6OIwBPjE0GRoV5Bo6OIwBPjE0GRoV5Bk1fFPybnLkEGll9Bk1fFPybnLkEGll9BLACaQCF4z0C/VQVBLACaQCF4z0C/VQVBTfaZQF4uH0G0twdBTfaZQF4uH0G0twdBbVd4P2HurUB8wQpBbVd4P2HurUB8wQpBbVd4P2HurUB8wQpBUCnNwR3CFhhQKc3BRcpLFyF4bfoEL3RBIXht+mo9+EA6M+jx2UhdLzoz6PEJ2vwvNK2+mK5h91k0rb6YaT+YRFirKGG6QllUWKsoYURBQ1Gkx/e95kK1HKTH973NQwYdpMf3vdMriBTcyINAoCiea9zIg0CvRsNh3MiDQJ1kiFT+VYRcxxv3af5VhFwqxTdCNCddPaTl4gk0J109aklXFDQnXT1r2r1proA7QZ0h0mCugDtBjyLCYc10LwPqBKUqzXQvAzgFtyb0VJ6eNbe2HvRUnp68vR0sG36GuDJD/lIbfoa4tCjiS3bkdSFCIz1cduR1IbUD8Chn3vPfv08HHmfe899CHPglFC48Dh9HWgUULjwOqi5iHxQuPA7xHwwv")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xh3b8")

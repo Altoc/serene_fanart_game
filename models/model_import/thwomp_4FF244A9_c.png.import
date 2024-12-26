@@ -2,13 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b26uhyictevpy"
+uid="uid://cqh76gp612vts"
 path.s3tc="res://.godot/imported/thwomp_4FF244A9_c.png-da47eac70dbc4d4bb8175c48b6adfd48.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
 
 [deps]
 

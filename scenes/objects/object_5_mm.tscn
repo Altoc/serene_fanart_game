@@ -11,10 +11,10 @@ size = Vector3(0.75, 1, 0.25)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 collision_layer = 4
 collision_mask = 3
-max_contacts_reported = 7
-contact_monitor = true
 sleeping = true
 can_sleep = false
+contact_monitor = true
+max_contacts_reported = 7
 script = ExtResource("1_7j1go")
 myName = "Sign"
 peachMessage = "I wonder what that sign thinks of you rolling it up... Who cares."
@@ -26,4 +26,4 @@ shape = SubResource("BoxShape3D_g0ehs")
 [node name="Model" parent="." instance=ExtResource("2_tpyx1")]
 transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, -0.5, 0)
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
